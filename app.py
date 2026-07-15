@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import streamlit as st
 from google import generativeai as genai
 from supabase import create_client, Client
