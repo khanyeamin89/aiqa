@@ -56,23 +56,17 @@ st.subheader("Interactive OCR Parser & Knowledge Base Assistant")
 
 # Sidebar Configuration
 with st.sidebar:
-    st.header("🔑 API Credentials")
+    st.header("🗄️ Database & Environment Settings")
     
-    # Load default keys from environment if present
-    env_gemini = os.getenv("GEMINI_API_KEY", "")
+    # Load keys directly from environment (not exposed in the UI for security)
+    gemini_key = os.getenv("GEMINI_API_KEY", "")
+    groq_key = os.getenv("GROQ_API_KEY", "")
+    mistral_key = os.getenv("MISTRAL_API_KEY", "")
+    openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
+    
     env_sub_url = os.getenv("SUPABASE_URL", "")
     env_sub_key = os.getenv("SUPABASE_ANON_KEY", "")
-    env_groq = os.getenv("GROQ_API_KEY", "")
-    env_mistral = os.getenv("MISTRAL_API_KEY", "")
-    env_openrouter = os.getenv("OPENROUTER_API_KEY", "")
     
-    gemini_key = st.text_input("Gemini API Key", value=env_gemini, type="password")
-    groq_key = st.text_input("Groq API Key", value=env_groq, type="password")
-    mistral_key = st.text_input("Mistral API Key", value=env_mistral, type="password")
-    openrouter_key = st.text_input("OpenRouter API Key", value=env_openrouter, type="password")
-    
-    st.markdown("---")
-    st.header("🗄️ Supabase Settings")
     supabase_url = st.text_input("Supabase Project URL", value=env_sub_url)
     supabase_key = st.text_input("Supabase Anon Key", value=env_sub_key, type="password")
     
@@ -86,7 +80,7 @@ api_configured = any([gemini_key, groq_key, mistral_key, openrouter_key])
 supabase_configured = False
 
 if gemini_key:
-    genai.configure(apiKey=gemini_key)
+    genai.configure(api_key=gemini_key)
 
 if supabase_url and supabase_key:
     try:
