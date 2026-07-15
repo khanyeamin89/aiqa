@@ -201,76 +201,213 @@ def generate_text_with_fallback(system_instruction, query, gemini_key, groq_key,
             
     raise Exception(f"All LLM fallback providers failed.\nDetails:\n" + "\n".join(errors))
 
+# Parse the 5 provided technical specification text files sequentially
+def parse_specification_documents():
+    import re
+    pages = []
+    files = [
+        "doc_part1.txt",
+        "doc_part2.txt",
+        "doc_part3.txt",
+        "doc_part4.txt",
+        "doc_part5.txt",
+    ]
+    for filename in files:
+        if not os.path.exists(filename):
+            continue
+        try:
+            with open(filename, "r", encoding="utf-8") as f:
+                file_content = f.read()
+            # Find all [PAGE X] page markers
+            matches = list(re.finditer(r"\[PAGE\s+(\d+)\]", file_content, re.IGNORECASE))
+            if matches:
+                for i, match in enumerate(matches):
+                    start = match.start()
+                    end = matches[i + 1].start() if i + 1 < len(matches) else len(file_content)
+                    page_number = int(match.group(1))
+                    page_text = file_content[start:end].strip()
+                    pages.append({
+                        "number": page_number,
+                        "content": page_text,
+                        "sourceFile": filename
+                    })
+            else:
+                # Fallback: treat whole file as one page
+                pages.append({
+                    "number": 1,
+                    "content": file_content.strip(),
+                    "sourceFile": filename
+                })
+        except Exception:
+            pass
+    pages.sort(key=lambda p: p["number"])
+    return pages
+
+# Load local uploaded documents fallback storage
+def load_uploaded_documents():
+    local_path = "uploaded_docs.json"
+    if os.path.exists(local_path):
+        try:
+            with open(local_path, "r", encoding="utf-8") as lf:
+                return json.load(lf)
+        except Exception:
+            pass
+    return []
+
 # 2-Column Main Layout
 col1, col2 = st.columns([1, 1.2])
 
 with col1:
-    st.header("📤 Reference PDF Upload")
+    st.header("📤 Document Upload")
     
     # Check configurations before allowing uploads
     if not api_configured:
-        st.warning("⚠️ Please provide a valid Gemini API Key in the sidebar to perform OCR.")
+        st.warning("⚠️ Please configure at least one API Key (like Gemini) in settings or environment to parse documents.")
     else:
-        uploaded_file = st.file_uploader("Choose a PDF document", type=["pdf"])
+        uploaded_file = st.file_uploader("Choose a PDF or Text document", type=["pdf", "txt"])
         
         if uploaded_file is not None:
             st.success(f"File loaded successfully: {uploaded_file.name}")
             
-            # Read pdf bytes
-            pdf_bytes = uploaded_file.read()
+            is_pdf = uploaded_file.name.lower().endswith(".pdf")
+            is_txt = uploaded_file.name.lower().endswith(".txt")
             
-            if st.button("🚀 Process PDF & Store in Supabase"):
-                with st.spinner("Analyzing document with Gemini OCR & parsing pages..."):
-                    try:
-                        # Prepare Gemini inline data
-                        model = genai.GenerativeModel("gemini-3.5-flash")
-                        prompt = (
-                            "Perform complete OCR on this PDF document. Extract all pages. "
-                            "For each page, identify its number and extract the text content exactly as-is. "
-                            "Return the response strictly as a JSON array of objects with the structure: "
-                            '[{"number": 1, "content": "..."}]. Do not summarize or omit text. Return only raw JSON.'
-                        )
-                        
-                        response = model.generate_content([
-                            {
-                                'mime_type': 'application/pdf',
-                                'data': pdf_bytes
-                            },
-                            prompt
-                        ])
-                        
-                        # Parse JSON results
-                        clean_text = response.text.strip()
-                        # Strip markdown blocks if returned
-                        if clean_text.startswith("```json"):
-                            clean_text = clean_text[7:]
-                        if clean_text.endswith("```"):
-                            clean_text = clean_text[:-3]
+            if is_pdf:
+                # Read pdf bytes
+                pdf_bytes = uploaded_file.read()
+                
+                if st.button("🚀 Process PDF & Store"):
+                    with st.spinner("Analyzing PDF with Gemini OCR..."):
+                        try:
+                            # Prepare Gemini inline data
+                            model = genai.GenerativeModel("gemini-3.5-flash")
+                            prompt = (
+                                "Perform complete OCR on this PDF document. Extract all pages. "
+                                "For each page, identify its number and extract the text content exactly as-is. "
+                                "Return the response strictly as a JSON array of objects with the structure: "
+                                '[{"number": 1, "content": "..."}]. Do not summarize or omit text. Return only raw JSON.'
+                            )
                             
-                        pages = json.loads(clean_text)
-                        
-                        st.info(f"Successfully extracted {len(pages)} pages using Gemini OCR!")
-                        
-                        # Store in Supabase if configured
-                        if supabase_configured:
-                            with st.spinner("Syncing OCR contents with Supabase database..."):
-                                records = []
+                            response = model.generate_content([
+                                {
+                                    'mime_type': 'application/pdf',
+                                    'data': pdf_bytes
+                                },
+                                prompt
+                            ])
+                            
+                            # Parse JSON results
+                            clean_text = response.text.strip()
+                            # Strip markdown blocks if returned
+                            if clean_text.startswith("```json"):
+                                clean_text = clean_text[7:]
+                            if clean_text.endswith("```"):
+                                clean_text = clean_text[:-3]
+                                
+                            pages = json.loads(clean_text)
+                            
+                            st.info(f"Successfully extracted {len(pages)} pages using Gemini OCR!")
+                            
+                            # Store in Supabase or local fallback
+                            if supabase_configured:
+                                with st.spinner("Syncing OCR contents with Supabase database..."):
+                                    records = []
+                                    for page in pages:
+                                        records.append({
+                                            "filename": uploaded_file.name,
+                                            "page_number": page.get("number", 1),
+                                            "content": page.get("content", ""),
+                                        })
+                                    supabase_client.table("document_pages").insert(records).execute()
+                                    st.success(f"✨ Successfully stored {len(records)} records in Supabase 'document_pages' table!")
+                            else:
+                                st.warning("⚠️ Supabase not configured. Saving locally to uploaded_docs.json...")
+                                local_path = "uploaded_docs.json"
+                                existing_pages = []
+                                if os.path.exists(local_path):
+                                    try:
+                                        with open(local_path, "r", encoding="utf-8") as lf:
+                                            existing_pages = json.load(lf)
+                                    except Exception:
+                                        pass
                                 for page in pages:
-                                    records.append({
+                                    existing_pages.append({
                                         "filename": uploaded_file.name,
                                         "page_number": page.get("number", 1),
                                         "content": page.get("content", ""),
                                     })
-                                
-                                result = supabase_client.table("document_pages").insert(records).execute()
-                                st.success(f"✨ Successfully stored {len(records)} records in Supabase 'document_pages' table!")
-                        else:
-                            # Local fallback display
-                            st.warning("⚠️ Supabase credentials not configured. Displaying OCR preview locally:")
-                            st.json(pages[:2])  # Preview first two pages
+                                with open(local_path, "w", encoding="utf-8") as lf:
+                                    json.dump(existing_pages, lf, indent=2)
+                                st.success("✨ Successfully saved uploaded document pages to local fallback!")
+                        except Exception as err:
+                            st.error(f"Processing failed: {err}")
+            elif is_txt:
+                txt_content = uploaded_file.read().decode("utf-8", errors="ignore")
+                
+                if st.button("🚀 Process Text & Store"):
+                    with st.spinner("Parsing text content..."):
+                        try:
+                            import re
+                            matches = list(re.finditer(r"\[PAGE\s+(\d+)\]", txt_content, re.IGNORECASE))
+                            pages = []
+                            if matches:
+                                for i, match in enumerate(matches):
+                                    start = match.start()
+                                    end = matches[i + 1].start() if i + 1 < len(matches) else len(txt_content)
+                                    page_number = int(match.group(1))
+                                    page_text = txt_content[start:end].strip()
+                                    pages.append({
+                                        "number": page_number,
+                                        "content": page_text
+                                    })
+                            else:
+                                # Treat as a single block or chunk by size
+                                if len(txt_content) > 3000:
+                                    for idx, chunk_start in enumerate(range(0, len(txt_content), 1500)):
+                                        pages.append({
+                                            "number": idx + 1,
+                                            "content": txt_content[chunk_start:chunk_start+1500]
+                                        })
+                                else:
+                                    pages.append({
+                                        "number": 1,
+                                        "content": txt_content
+                                    })
                             
-                    except Exception as err:
-                        st.error(f"Processing failed: {err}")
+                            st.info(f"Successfully parsed {len(pages)} chunks from the text file!")
+                            
+                            if supabase_configured:
+                                with st.spinner("Syncing contents with Supabase database..."):
+                                    records = []
+                                    for page in pages:
+                                        records.append({
+                                            "filename": uploaded_file.name,
+                                            "page_number": page.get("number", 1),
+                                            "content": page.get("content", ""),
+                                        })
+                                    supabase_client.table("document_pages").insert(records).execute()
+                                    st.success(f"✨ Successfully stored {len(records)} records in Supabase 'document_pages' table!")
+                            else:
+                                st.warning("⚠️ Supabase not configured. Saving locally to uploaded_docs.json...")
+                                local_path = "uploaded_docs.json"
+                                existing_pages = []
+                                if os.path.exists(local_path):
+                                    try:
+                                        with open(local_path, "r", encoding="utf-8") as lf:
+                                            existing_pages = json.load(lf)
+                                    except Exception:
+                                        pass
+                                for page in pages:
+                                    existing_pages.append({
+                                        "filename": uploaded_file.name,
+                                        "page_number": page.get("number", 1),
+                                        "content": page.get("content", ""),
+                                    })
+                                with open(local_path, "w", encoding="utf-8") as lf:
+                                    json.dump(existing_pages, lf, indent=2)
+                                st.success("✨ Successfully saved uploaded document pages to local fallback!")
+                        except Exception as err:
+                            st.error(f"Processing failed: {err}")
 
 with col2:
     st.header("💬 Document Intelligence Q&A")
@@ -285,21 +422,39 @@ with col2:
                 try:
                     context_passages = []
                     
-                    # Fetch extra knowledge context from Supabase if configured
+                    # 1. Load the 5 provided specification documents
+                    spec_pages = parse_specification_documents()
+                    for p in spec_pages:
+                        context_passages.append(f"Source: {p['sourceFile']} (Page {p['number']})\n{p['content']}")
+                    
+                    # 2. Fetch extra knowledge context from Supabase if configured
                     if supabase_configured:
                         try:
-                            # Optional: Retrieve relevant document content based on keyword matching
-                            # In a production setup, full-text-search or vector embeddings would be ideal.
-                            response = supabase_client.table("document_pages").select("content, filename, page_number").limit(10).execute()
+                            # Retrieve relevant document content based on keyword matching
+                            response = supabase_client.table("document_pages").select("content, filename, page_number").limit(100).execute()
                             if response.data:
                                 for row in response.data:
                                     context_passages.append(f"Source: {row['filename']} (Page {row['page_number']})\n{row['content']}")
                         except Exception as e:
                             st.warning(f"Could not load Supabase context: {e}")
+                    else:
+                        # 3. Load from local uploaded_docs.json fallback
+                        uploaded_local = load_uploaded_documents()
+                        for up in uploaded_local:
+                            context_passages.append(f"Source: {up.get('filename', 'Uploaded Document')} (Page {up.get('page_number', 1)})\n{up.get('content', '')}")
                     
                     context_str = "\n\n---\n\n".join(context_passages) if context_passages else "No additional documents uploaded yet."
                     
-                    system_instruction = f"""You are a helpful and precise assistant. Use the following parsed document pages as extra context to answer the user's question. If the information is not in the context, use your general knowledge, but prioritize the provided document facts.
+                    system_instruction = f"""You are the Rooppur NPP Unit 1 Safety & Technical Operations AI Assistant. You have full access to the complete Technical Specification document of the NPP safe operation.
+Your primary objective is to assist nuclear operators, engineers, and plant managers by answering questions with absolute factual accuracy based ONLY on the provided technical specification text below.
+
+CRITICAL INSTRUCTIONS:
+1. Answers MUST be strictly from within the provided documents.
+2. If the requested information is not covered in the provided documents or is outside the documents, you MUST write "outside document" as your response. Do NOT use any external or pre-trained knowledge to answer. If it's not in the text, literally say "outside document".
+3. You MUST ALWAYS include exact references and cite the specific documents and Page numbers in your answers. Format your page references exactly as "[Page X]" (e.g. "[Page 111]", "[Page 153]") and mention the source filename.
+4. If an answer draws from multiple pages, include citations for each, for example: "[Page 111] and [Page 112]".
+5. Reference tables specifically, e.g., "Table 4.1 on [Page 153]" or "Table 3.8 on [Page 54]".
+6. Keep your tone professional, authoritative, conservative, and safety-focused.
 
 === DOCUMENT CONTEXT ===
 {context_str}
