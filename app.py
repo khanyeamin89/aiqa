@@ -106,7 +106,7 @@ if supabase_url and supabase_key:
         st.sidebar.error(f"Supabase connection failed: {e}")
 
 # Helper for robust multi-provider fallback completion
-def generate_text_with_fallback(system_instruction, query, gemini_key, groq_key, mistral_key, openrouter_key):
+def generate_text_with_fallback(system_instruction, history, query, gemini_key, groq_key, mistral_key, openrouter_key):
     import json
     import urllib.request
     
@@ -117,19 +117,35 @@ def generate_text_with_fallback(system_instruction, query, gemini_key, groq_key,
         try:
             import google.generativeai as genai
             genai.configure(api_key=gemini_key)
-            model = genai.GenerativeModel("gemini-3.5-flash")
-            full_prompt = f"{system_instruction}\n\nQuestion: {query}"
-            response = model.generate_content(full_prompt)
+            
+            # Format history for Gemini
+            contents = []
+            for h in history:
+                contents.append({
+                    "role": "user" if h["role"] == "user" else "model",
+                    "parts": [{"text": h["content"]}]
+                })
+            # Add current user query
+            contents.append({
+                "role": "user",
+                "parts": [{"text": query}]
+            })
+            
+            model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
+            response = model.generate_content(contents)
             if response and response.text:
                 return response.text, "Gemini", "gemini-3.5-flash"
         except Exception as e:
             errors.append(f"Gemini: {str(e)}")
             
     # OpenAI compatible structure
-    messages = [
-        {"role": "system", "content": system_instruction},
-        {"role": "user", "content": query}
-    ]
+    messages = [{"role": "system", "content": system_instruction}]
+    for h in history:
+        messages.append({
+            "role": "user" if h["role"] == "user" else "assistant",
+            "content": h["content"]
+        })
+    messages.append({"role": "user", "content": query})
     
     # 2. Try Groq
     if groq_key:
@@ -277,34 +293,84 @@ with col1:
                 pdf_bytes = uploaded_file.read()
                 
                 if st.button("🚀 Process PDF & Store"):
-                    with st.spinner("Analyzing PDF with Gemini OCR..."):
+                    with st.spinner("Analyzing and Chunking PDF with Gemini OCR..."):
                         try:
-                            # Prepare Gemini inline data
+                            # Split PDF into smaller chunks of 5 pages each using python libraries
+                            import io
+                            pdf_reader_lib = None
+                            try:
+                                from pypdf import PdfReader, PdfWriter
+                                pdf_reader_lib = "pypdf"
+                            except ImportError:
+                                try:
+                                    from PyPDF2 import PdfReader, PdfWriter
+                                    pdf_reader_lib = "PyPDF2"
+                                except ImportError:
+                                    pdf_reader_lib = None
+
+                            chunks = []
+                            if pdf_reader_lib:
+                                reader = PdfReader(io.BytesIO(pdf_bytes))
+                                total_pages = len(reader.pages)
+                                chunk_size = 5
+                                for start_page in range(0, total_pages, chunk_size):
+                                    end_page = min(start_page + chunk_size, total_pages)
+                                    writer = PdfWriter()
+                                    for page_idx in range(start_page, end_page):
+                                        writer.add_page(reader.pages[page_idx])
+                                    chunk_io = io.BytesIO()
+                                    writer.write(chunk_io)
+                                    chunks.append((start_page, chunk_io.getvalue()))
+                            else:
+                                chunks.append((0, pdf_bytes))
+
+                            all_extracted_pages = []
                             model = genai.GenerativeModel("gemini-3.5-flash")
-                            prompt = (
-                                "Perform complete OCR on this PDF document. Extract all pages. "
-                                "For each page, identify its number and extract the text content exactly as-is. "
-                                "Return the response strictly as a JSON array of objects with the structure: "
-                                '[{"number": 1, "content": "..."}]. Do not summarize or omit text. Return only raw JSON.'
-                            )
-                            
-                            response = model.generate_content([
-                                {
-                                    'mime_type': 'application/pdf',
-                                    'data': pdf_bytes
-                                },
-                                prompt
-                            ])
-                            
-                            # Parse JSON results
-                            clean_text = response.text.strip()
-                            # Strip markdown blocks if returned
-                            if clean_text.startswith("```json"):
-                                clean_text = clean_text[7:]
-                            if clean_text.endswith("```"):
-                                clean_text = clean_text[:-3]
-                                
-                            pages = json.loads(clean_text)
+
+                            for start_page, chunk_data in chunks:
+                                st.write(f"⏳ Processing page segment starting at page {start_page + 1}...")
+
+                                prompt = (
+                                    f"Perform complete OCR on this PDF segment representing pages {start_page + 1} onwards. Extract all pages. "
+                                    "For each page, identify its number relative to this segment (starting from 1) and extract the text content exactly as-is. "
+                                    "Return the response strictly as a JSON array of objects with the structure: "
+                                    '[{"number": 1, "content": "..."}]. Do not summarize or omit text. Return only raw JSON.'
+                                )
+
+                                response = model.generate_content([
+                                    {
+                                        'mime_type': 'application/pdf',
+                                        'data': chunk_data
+                                    },
+                                    prompt
+                                ])
+
+                                clean_text = response.text.strip()
+                                if clean_text.startswith("```json"):
+                                    clean_text = clean_text[7:]
+                                if clean_text.endswith("```"):
+                                    clean_text = clean_text[:-3]
+
+                                try:
+                                    chunk_pages = json.loads(clean_text)
+                                    if isinstance(chunk_pages, list):
+                                        chunk_pages.sort(key=lambda p: p.get("number", 0))
+                                        for idx, p in enumerate(chunk_pages):
+                                            absolute_page = start_page + 1 + idx
+                                            all_extracted_pages.append({
+                                                "number": absolute_page,
+                                                "content": p.get("content", "")
+                                            })
+                                except Exception as parse_e:
+                                    st.warning(f"Failed to parse chunk starting at page {start_page + 1}: {parse_e}")
+                                    all_extracted_pages.append({
+                                        "number": start_page + 1,
+                                        "content": clean_text
+                                    })
+
+                            # Rearrange/sort final pages
+                            all_extracted_pages.sort(key=lambda p: p["number"])
+                            pages = all_extracted_pages
                             
                             st.info(f"Successfully extracted {len(pages)} pages using Gemini OCR!")
                             
@@ -410,13 +476,49 @@ with col1:
                             st.error(f"Processing failed: {err}")
 
 with col2:
-    st.header("💬 Document Intelligence Q&A")
-    
-    query = st.text_input("Ask a question about the document:")
-    
-    if query:
+    col2_header, col2_clear = st.columns([3, 1])
+    with col2_header:
+        st.header("💬 Document Intelligence Q&A")
+    with col2_clear:
+        if st.button("🔄 Reset Chat", use_container_width=True):
+            st.session_state.messages = [
+                {
+                    "role": "assistant",
+                    "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
+                }
+            ]
+            st.rerun()
+
+    # Initialize chat history in session state
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {
+                "role": "assistant",
+                "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
+            }
+        ]
+
+    # Render previous messages
+    for msg in st.session_state.messages:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+            if "provider" in msg:
+                st.caption(f"⚡ **Resolved by**: {msg['provider']} ({msg['model']})")
+
+    # Accept new user question
+    if user_query := st.chat_input("Ask about safe pressure limits, water levels, chemistry values..."):
+        # Display user message in chat message container
+        with st.chat_message("user"):
+            st.markdown(user_query)
+        
+        # Append user message to state
+        st.session_state.messages.append({"role": "user", "content": user_query})
+        
         if not api_configured:
-            st.error("⚠️ Please configure at least one API Key in the sidebar (Gemini, Groq, Mistral, or OpenRouter).")
+            with st.chat_message("assistant"):
+                err_msg = "⚠️ Please configure at least one API Key in the sidebar (Gemini, Groq, Mistral, or OpenRouter)."
+                st.error(err_msg)
+                st.session_state.messages.append({"role": "assistant", "content": err_msg})
         else:
             with st.spinner("Searching document context & generating response..."):
                 try:
@@ -461,18 +563,31 @@ CRITICAL INSTRUCTIONS:
 {context_str}
 ========================"""
 
+                    # History is all messages except the newly added user query at the end
+                    history_payload = st.session_state.messages[:-1]
+
                     answer_text, provider, model_name = generate_text_with_fallback(
                         system_instruction,
-                        query,
+                        history_payload,
+                        user_query,
                         gemini_key,
                         groq_key,
                         mistral_key,
                         openrouter_key
                     )
                     
-                    st.markdown("### Answer")
-                    st.markdown(answer_text)
-                    st.caption(f"⚡ **Resolved by**: {provider} ({model_name})")
+                    # Display assistant response in chat message container
+                    with st.chat_message("assistant"):
+                        st.markdown(answer_text)
+                        st.caption(f"⚡ **Resolved by**: {provider} ({model_name})")
+                        
+                    # Append assistant message to state
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "content": answer_text,
+                        "provider": provider,
+                        "model": model_name
+                    })
                     
                 except Exception as err:
                     st.error(f"Generation failed: {err}")
