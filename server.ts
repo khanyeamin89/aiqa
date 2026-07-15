@@ -5,8 +5,67 @@ import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
 import { PDFDocument } from "pdf-lib";
+import { createRequire } from "module";
 
 dotenv.config();
+
+const require = createRequire(import.meta.url);
+const pdfParser = require("pdf-parse");
+
+// Helper to extract page-by-page text from PDF locally
+async function extractPagesFromPdf(pdfBuffer: Buffer): Promise<{ number: number; content: string }[]> {
+  const pages: { number: number; content: string }[] = [];
+  
+  try {
+    const options = {
+      pagerender: (pageData: any) => {
+        return pageData.getTextContent()
+          .then((textContent: any) => {
+            const text = textContent.items.map((item: any) => item.str).join(" ");
+            pages.push({
+              number: pageData.pageIndex + 1,
+              content: text.trim()
+            });
+            return text;
+          });
+      }
+    };
+
+    await pdfParser(pdfBuffer, options);
+  } catch (err) {
+    console.warn("Custom pdf-parse pagerender failed, using default full text parser:", err);
+    try {
+      const parsed = await pdfParser(pdfBuffer);
+      const parts = parsed.text.split(/\f/);
+      parts.forEach((part: string, idx: number) => {
+        if (part.trim()) {
+          pages.push({
+            number: idx + 1,
+            content: part.trim()
+          });
+        }
+      });
+    } catch (innerErr) {
+      console.error("Complete local PDF parsing failure:", innerErr);
+    }
+  }
+  
+  // Remove duplicates and sort by page number
+  const uniquePagesMap = new Map<number, string>();
+  for (const page of pages) {
+    if (page.content.trim()) {
+      uniquePagesMap.set(page.number, page.content);
+    }
+  }
+  
+  const finalPages = Array.from(uniquePagesMap.entries()).map(([num, content]) => ({
+    number: num,
+    content: content
+  }));
+  
+  finalPages.sort((a, b) => a.number - b.number);
+  return finalPages;
+}
 
 const app = express();
 const PORT = 3000;
@@ -197,7 +256,7 @@ if (apiKey) {
 
 // --- API ENDPOINTS ---
 
-// 0. PDF Upload & Gemini OCR Endpoint
+// 0. PDF Upload & Gemini OCR Endpoint with Local Text Fallback
 app.post("/api/upload-pdf", async (req, res) => {
   const { filename, base64Data } = req.body;
 
@@ -205,14 +264,8 @@ app.post("/api/upload-pdf", async (req, res) => {
     return res.status(400).json({ error: "Parameters 'filename' and 'base64Data' are required." });
   }
 
-  if (!aiClient) {
-    return res.status(500).json({
-      error: "The AI OCR engine is currently unavailable because the GEMINI_API_KEY is not configured.",
-    });
-  }
-
   try {
-    console.log(`Starting Gemini OCR on uploaded PDF: ${filename}...`);
+    console.log(`Starting PDF Processing: ${filename}...`);
 
     // Remove base64 header if present (e.g., "data:application/pdf;base64,")
     const rawBase64 = base64Data.replace(/^data:application\/pdf;base64,/, "");
@@ -221,97 +274,111 @@ app.post("/api/upload-pdf", async (req, res) => {
     console.log(`Uploaded file size: ${(pdfBuffer.length / (1024 * 1024)).toFixed(2)} MB`);
 
     let pages: { number: number; content: string }[] = [];
+    let isGeminiUsed = false;
+    let fallbackUsed = false;
 
-    // Load PDF using pdf-lib to split it into chunks
+    // Load PDF using pdf-lib to check total pages
     const pdfDoc = await PDFDocument.load(pdfBuffer);
     const totalPages = pdfDoc.getPageCount();
     console.log(`Loaded PDF with ${totalPages} pages.`);
 
-    // Define chunk size (e.g., 5 pages per chunk is safe and performs excellent OCR)
-    const CHUNK_SIZE = 5;
+    // Try Gemini OCR first, but only if configured
+    if (aiClient) {
+      try {
+        console.log("Attempting Gemini OCR...");
+        const CHUNK_SIZE = 5;
 
-    for (let startPage = 0; startPage < totalPages; startPage += CHUNK_SIZE) {
-      const endPage = Math.min(startPage + CHUNK_SIZE, totalPages);
-      console.log(`Processing page chunk ${startPage + 1} to ${endPage} (of ${totalPages})...`);
+        for (let startPage = 0; startPage < totalPages; startPage += CHUNK_SIZE) {
+          const endPage = Math.min(startPage + CHUNK_SIZE, totalPages);
+          console.log(`Processing page chunk ${startPage + 1} to ${endPage} (of ${totalPages}) via Gemini OCR...`);
 
-      // Create a separate PDF document for this page range
-      const chunkDoc = await PDFDocument.create();
-      const pageIndices = Array.from({ length: endPage - startPage }, (_, i) => startPage + i);
-      const copiedPages = await chunkDoc.copyPages(pdfDoc, pageIndices);
-      
-      for (const page of copiedPages) {
-        chunkDoc.addPage(page);
-      }
-
-      const chunkBytes = await chunkDoc.save();
-      const chunkBase64 = Buffer.from(chunkBytes).toString("base64");
-
-      // Send the split chunk to Gemini for OCR
-      const response = await aiClient.models.generateContent({
-        model: "gemini-3.5-flash",
-        contents: [
-          {
-            inlineData: {
-              mimeType: "application/pdf",
-              data: chunkBase64,
-            },
-          },
-          {
-            text: `Perform complete OCR on this PDF chunk containing pages ${startPage + 1} to ${endPage} of the larger document. Extract all pages. For each page, identify its number relative to this chunk (starting from 1) and extract the text content exactly as-is. Return the response strictly as a JSON array of objects. Do not summarize or omit text. Return only the JSON.`
+          // Create a separate PDF document for this page range
+          const chunkDoc = await PDFDocument.create();
+          const pageIndices = Array.from({ length: endPage - startPage }, (_, i) => startPage + i);
+          const copiedPages = await chunkDoc.copyPages(pdfDoc, pageIndices);
+          
+          for (const page of copiedPages) {
+            chunkDoc.addPage(page);
           }
-        ],
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                number: { type: Type.INTEGER, description: "The sequential page number starting from 1" },
-                content: { type: Type.STRING, description: "The full text content of the page" }
+
+          const chunkBytes = await chunkDoc.save();
+          const chunkBase64 = Buffer.from(chunkBytes).toString("base64");
+
+          // Send the split chunk to Gemini for OCR
+          const response = await aiClient.models.generateContent({
+            model: "gemini-3.5-flash",
+            contents: [
+              {
+                inlineData: {
+                  mimeType: "application/pdf",
+                  data: chunkBase64,
+                },
               },
-              required: ["number", "content"]
+              {
+                text: `Perform complete OCR on this PDF chunk containing pages ${startPage + 1} to ${endPage} of the larger document. Extract all pages. For each page, identify its number relative to this chunk (starting from 1) and extract the text content exactly as-is. Return the response strictly as a JSON array of objects. Do not summarize or omit text. Return only the JSON.`
+              }
+            ],
+            config: {
+              responseMimeType: "application/json",
+              responseSchema: {
+                type: Type.ARRAY,
+                items: {
+                  type: Type.OBJECT,
+                  properties: {
+                    number: { type: Type.INTEGER, description: "The sequential page number starting from 1" },
+                    content: { type: Type.STRING, description: "The full text content of the page" }
+                  },
+                  required: ["number", "content"]
+                }
+              }
+            }
+          });
+
+          const resultText = response.text;
+          if (!resultText) {
+            console.warn(`Empty response for chunk ${startPage + 1} to ${endPage}`);
+            continue;
+          }
+
+          const parsedChunkPages = JSON.parse(resultText.trim());
+          if (Array.isArray(parsedChunkPages)) {
+            // Sort pages inside the chunk to make sure order is correct
+            parsedChunkPages.sort((a, b) => (a.number || 0) - (b.number || 0));
+
+            for (let i = 0; i < parsedChunkPages.length; i++) {
+              const absolutePageNumber = startPage + 1 + i;
+              pages.push({
+                number: absolutePageNumber,
+                content: parsedChunkPages[i].content || "",
+              });
             }
           }
         }
-      });
-
-      const resultText = response.text;
-      if (!resultText) {
-        console.warn(`Empty response for chunk ${startPage + 1} to ${endPage}`);
-        continue;
+        
+        isGeminiUsed = pages.length > 0;
+      } catch (geminiErr: any) {
+        console.warn("Gemini OCR failed or quota exceeded. Automatically falling back to local text extraction...", geminiErr);
+        fallbackUsed = true;
       }
+    } else {
+      console.log("No Gemini API key available. Automatically using local text extraction...");
+      fallbackUsed = true;
+    }
 
-      try {
-        const parsedChunkPages = JSON.parse(resultText.trim());
-        if (Array.isArray(parsedChunkPages)) {
-          // Sort pages inside the chunk to make sure order is correct
-          parsedChunkPages.sort((a, b) => (a.number || 0) - (b.number || 0));
-
-          for (let i = 0; i < parsedChunkPages.length; i++) {
-            const absolutePageNumber = startPage + 1 + i;
-            pages.push({
-              number: absolutePageNumber,
-              content: parsedChunkPages[i].content || "",
-            });
-          }
-        }
-      } catch (parseErr) {
-        console.error(`Failed to parse response for chunk ${startPage + 1}-${endPage}:`, parseErr);
-        // Fallback: use whole chunk text as a combined page content
-        pages.push({
-          number: startPage + 1,
-          content: resultText,
-        });
-      }
+    // If Gemini failed or was unconfigured, run the high-fidelity local parser
+    if (fallbackUsed || pages.length === 0) {
+      console.log("Starting high-fidelity local text extraction via pdf-parse...");
+      const extractedLocalPages = await extractPagesFromPdf(pdfBuffer);
+      pages = extractedLocalPages;
+      isGeminiUsed = false;
     }
 
     // Rearrange/sort the pages by absolute page number in order
     pages.sort((a, b) => a.number - b.number);
-    console.log(`Finished processing all chunks. Total arranged pages: ${pages.length}`);
+    console.log(`Finished processing PDF. Total pages ingested: ${pages.length}`);
 
     if (pages.length === 0) {
-      throw new Error("No pages could be extracted from the PDF document chunks.");
+      throw new Error("No pages could be extracted from the PDF document.");
     }
 
     // 1. Local storage fallback
@@ -356,7 +423,6 @@ app.post("/api/upload-pdf", async (req, res) => {
 
         if (error) {
           console.error("Supabase insert error:", error);
-          // Don't fail the whole request, since local fallback is active
         } else {
           console.log("Successfully stored pages in Supabase.");
         }
@@ -368,17 +434,21 @@ app.post("/api/upload-pdf", async (req, res) => {
     // 3. Hot-reload the knowledge base in memory
     await loadUploadedDocuments();
 
+    const modeMessage = isGeminiUsed 
+      ? `Successfully processed and indexed ${pages.length} pages using Gemini OCR!`
+      : `Successfully processed and indexed ${pages.length} pages locally (bypassed AI quota constraints)!`;
+
     res.json({
       success: true,
       filename,
       pagesParsed: pages.length,
-      message: `Successfully processed and stored ${pages.length} pages in order.`
+      message: modeMessage
     });
 
   } catch (err: any) {
-    console.error("Error during PDF OCR:", err);
+    console.error("Error during PDF ingestion:", err);
     res.status(500).json({
-      error: "Failed to perform OCR on the PDF document.",
+      error: "Failed to perform text extraction or OCR on the PDF document.",
       details: err.message
     });
   }
