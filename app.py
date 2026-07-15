@@ -56,7 +56,7 @@ st.subheader("Interactive OCR Parser & Knowledge Base Assistant")
 
 # Sidebar Configuration
 with st.sidebar:
-    st.header("🗄️ Database & Environment Settings")
+    st.header("⚙️ System Status")
     
     # Load keys directly from environment (not exposed in the UI for security)
     gemini_key = os.getenv("GEMINI_API_KEY", "")
@@ -64,11 +64,27 @@ with st.sidebar:
     mistral_key = os.getenv("MISTRAL_API_KEY", "")
     openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
     
-    env_sub_url = os.getenv("SUPABASE_URL", "")
-    env_sub_key = os.getenv("SUPABASE_ANON_KEY", "")
+    supabase_url = os.getenv("SUPABASE_URL", "")
+    supabase_key = os.getenv("SUPABASE_ANON_KEY", "")
     
-    supabase_url = st.text_input("Supabase Project URL", value=env_sub_url)
-    supabase_key = st.text_input("Supabase Anon Key", value=env_sub_key, type="password")
+    # Display configuration statuses
+    active_providers = []
+    if gemini_key: active_providers.append("Gemini")
+    if groq_key: active_providers.append("Groq")
+    if mistral_key: active_providers.append("Mistral")
+    if openrouter_key: active_providers.append("OpenRouter")
+    
+    st.markdown("### 🤖 LLM Engine")
+    if active_providers:
+        st.success(f"Configured: {', '.join(active_providers)}")
+    else:
+        st.error("❌ No LLM providers configured! Add API keys in settings.")
+        
+    st.markdown("### 🗄️ Database")
+    if supabase_url and supabase_key:
+        st.success("✅ Supabase configured via environment.")
+    else:
+        st.warning("⚠️ Supabase not configured. Using local JSON fallback storage.")
     
     st.markdown("---")
     st.markdown("### Max Upload Configuration")
