@@ -1,593 +1,486 @@
-import os
-import json
-import streamlit as st
-from google import generativeai as genai
-from supabase import create_client, Client
+import React, { useState, useEffect, useRef } from "react";
+import { 
+  Bot, 
+  User, 
+  Send, 
+  BookOpen, 
+  ShieldAlert, 
+  Activity, 
+  Sparkles, 
+  Loader2, 
+  AlertCircle, 
+  RotateCcw, 
+  Compass, 
+  HelpCircle, 
+  ShieldCheck,
+  ChevronRight,
+  Maximize2
+} from "lucide-react";
+import { Message } from "./types";
+import DocumentViewer from "./components/DocumentViewer";
+import SafetyDashboard from "./components/SafetyDashboard";
+import FlowchartRenderer from "./components/FlowchartRenderer";
 
-# Page layout configuration
-st.set_page_config(
-    page_title="AI Document Intelligence & Q&A Hub",
-    page_icon="📄",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+const SUGGESTED_PROMPTS = [
+  "What is the safety limit for core fuel element cladding temperature?",
+  "What are the nominal parameters for pressurizer water level at 100% reactor power?",
+  "What operations directives apply if the primary circuit pressure exceeds 16.5 MPa?",
+  "What is the safety limit of the primary circuit pressure for coolant temperature < 140°C?"
+];
 
-# Custom Styling
-st.markdown("""
-    <style>
-    .main {
-        background-color: #0b091a;
-        color: #f1f5f9;
+export default function App() {
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = localStorage.getItem("rooppur_chat_history");
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error("Failed to parse saved chat history", e);
+      }
     }
-    .stApp {
-        background: linear-gradient(135deg, #0b091a 0%, #120f2b 100%);
-    }
-    h1, h2, h3 {
-        color: #ffffff !important;
-        font-family: 'Inter', sans-serif;
-    }
-    .stButton>button {
-        background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 0.5rem 1rem;
-        font-weight: 600;
-        transition: all 0.2s ease;
-    }
-    .stButton>button:hover {
-        background: linear-gradient(90deg, #4f46e5 0%, #4338ca 100%);
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-    }
-    .status-card {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    </style>
-""", unsafe_allow_html=True)
+    return [
+      {
+        id: "initial",
+        role: "assistant",
+        content: "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nClick any suggested questions below, or type your own. Citations like [Page 44] are clickable and will automatically scroll the document browser to the exact page.",
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      }
+    ];
+  });
+  const [input, setInput] = useState("");
+  const [currentPage, setCurrentPage] = useState<number>(4); // Default to Chapter 4 (usually where limits are)
+  const [activeTab, setActiveTab] = useState<"document" | "validator">("document");
+  const [isAsking, setIsAsking] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-# App Header
-st.title("📄 AI Document Intelligence Dashboard")
-st.subheader("Interactive OCR Parser & Knowledge Base Assistant")
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-# Sidebar Configuration
-with st.sidebar:
-    st.header("⚙️ System Status")
-    
-    # Load keys directly from environment (not exposed in the UI for security)
-    gemini_key = os.getenv("GEMINI_API_KEY", "")
-    groq_key = os.getenv("GROQ_API_KEY", "")
-    mistral_key = os.getenv("MISTRAL_API_KEY", "")
-    openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
-    
-    supabase_url = os.getenv("SUPABASE_URL", "")
-    supabase_key = os.getenv("SUPABASE_ANON_KEY", "")
-    
-    # Display configuration statuses
-    active_providers = []
-    if gemini_key: active_providers.append("Gemini")
-    if groq_key: active_providers.append("Groq")
-    if mistral_key: active_providers.append("Mistral")
-    if openrouter_key: active_providers.append("OpenRouter")
-    
-    st.markdown("### 🤖 LLM Engine")
-    if active_providers:
-        st.success(f"Configured: {', '.join(active_providers)}")
-    else:
-        st.error("❌ No LLM providers configured! Add API keys in settings.")
-        
-    st.markdown("### 🗄️ Database")
-    if supabase_url and supabase_key:
-        st.success("✅ Supabase configured via environment.")
-    else:
-        st.warning("⚠️ Supabase not configured. Using local JSON fallback storage.")
-    
-    st.markdown("---")
-    st.markdown("### Max Upload Configuration")
-    # Streamlit default file upload limit can be customized in config.toml
-    st.info("💡 To increase the file size limit to 50MB, configure Streamlit via `.streamlit/config.toml` or run with `--server.maxUploadSize 50`.")
+  // Scroll to bottom of chat when new messages arrive
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
-# Initialize Clients
-api_configured = any([gemini_key, groq_key, mistral_key, openrouter_key])
-supabase_configured = False
+  // Persist messages to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("rooppur_chat_history", JSON.stringify(messages));
+  }, [messages]);
 
-if gemini_key:
-    genai.configure(api_key=gemini_key)
+  // Handle asking a question
+  const handleAskQuestion = async (textToSend: string) => {
+    if (!textToSend.trim()) return;
 
-if supabase_url and supabase_key:
-    try:
-        supabase_client: Client = create_client(supabase_url, supabase_key)
-        supabase_configured = True
-    except Exception as e:
-        st.sidebar.error(f"Supabase connection failed: {e}")
+    // Add user message
+    const userMsgId = Date.now().toString();
+    const newUserMessage: Message = {
+      id: userMsgId,
+      role: "user",
+      content: textToSend,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
 
-# Helper for robust multi-provider fallback completion
-def generate_text_with_fallback(system_instruction, history, query, gemini_key, groq_key, mistral_key, openrouter_key):
-    import json
-    import urllib.request
-    
-    errors = []
-    
-    # 1. Try Gemini
-    if gemini_key:
-        try:
-            import google.generativeai as genai
-            genai.configure(api_key=gemini_key)
-            
-            # Format history for Gemini
-            contents = []
-            for h in history:
-                contents.append({
-                    "role": "user" if h["role"] == "user" else "model",
-                    "parts": [{"text": h["content"]}]
-                })
-            # Add current user query
-            contents.append({
-                "role": "user",
-                "parts": [{"text": query}]
-            })
-            
-            model = genai.GenerativeModel("gemini-3.5-flash", system_instruction=system_instruction)
-            response = model.generate_content(contents)
-            if response and response.text:
-                return response.text, "Gemini", "gemini-3.5-flash"
-        except Exception as e:
-            errors.append(f"Gemini: {str(e)}")
-            
-    # OpenAI compatible structure
-    messages = [{"role": "system", "content": system_instruction}]
-    for h in history:
-        messages.append({
-            "role": "user" if h["role"] == "user" else "assistant",
-            "content": h["content"]
+    setMessages((prev) => [...prev, newUserMessage]);
+    setInput("");
+    setIsAsking(true);
+    setErrorMessage(null);
+
+    try {
+      // Build history payload matching schema
+      const chatHistory = messages
+        .filter(m => m.id !== "initial")
+        .map(m => ({
+          role: m.role,
+          content: m.content
+        }));
+
+      const response = await fetch("/api/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question: textToSend,
+          history: chatHistory
         })
-    messages.append({"role": "user", "content": query})
-    
-    # 2. Try Groq
-    if groq_key:
-        try:
-            url = "https://api.groq.com/openai/v1/chat/completions"
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {groq_key}"
-            }
-            payload = {
-                "model": "llama-3.3-70b-versatile",
-                "messages": messages,
-                "temperature": 0.1
-            }
-            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-            with urllib.request.urlopen(req, timeout=10) as res:
-                data = json.loads(res.read().decode("utf-8"))
-                text = data["choices"][0]["message"]["content"]
-                if text:
-                    return text, "Groq", "llama-3.3-70b-versatile"
-        except Exception as e:
-            errors.append(f"Groq: {str(e)}")
-            
-    # 3. Try Mistral
-    if mistral_key:
-        try:
-            url = "https://api.mistral.ai/v1/chat/completions"
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {mistral_key}"
-            }
-            payload = {
-                "model": "mistral-large-latest",
-                "messages": messages,
-                "temperature": 0.1
-            }
-            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-            with urllib.request.urlopen(req, timeout=10) as res:
-                data = json.loads(res.read().decode("utf-8"))
-                text = data["choices"][0]["message"]["content"]
-                if text:
-                    return text, "Mistral", "mistral-large-latest"
-        except Exception as e:
-            errors.append(f"Mistral: {str(e)}")
-            
-    # 4. Try OpenRouter
-    if openrouter_key:
-        try:
-            url = "https://openrouter.ai/api/v1/chat/completions"
-            headers = {
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {openrouter_key}",
-                "HTTP-Referer": "https://ai.studio/build",
-                "X-Title": "Nuclear Safety AI Hub"
-            }
-            payload = {
-                "model": "meta-llama/llama-3-8b-instruct:free",
-                "messages": messages,
-                "temperature": 0.1
-            }
-            req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers, method="POST")
-            with urllib.request.urlopen(req, timeout=10) as res:
-                data = json.loads(res.read().decode("utf-8"))
-                text = data["choices"][0]["message"]["content"]
-                if text:
-                    return text, "OpenRouter", "meta-llama/llama-3-8b-instruct:free"
-        except Exception as e:
-            errors.append(f"OpenRouter: {str(e)}")
-            
-    raise Exception(f"All LLM fallback providers failed.\nDetails:\n" + "\n".join(errors))
+      });
 
-# Parse the 5 provided technical specification text files sequentially
-def parse_specification_documents():
-    import re
-    pages = []
-    files = [
-        "doc_part1.txt",
-        "doc_part2.txt",
-        "doc_part3.txt",
-        "doc_part4.txt",
-        "doc_part5.txt",
-    ]
-    for filename in files:
-        if not os.path.exists(filename):
-            continue
-        try:
-            with open(filename, "r", encoding="utf-8") as f:
-                file_content = f.read()
-            # Find all [PAGE X] page markers
-            matches = list(re.finditer(r"\[PAGE\s+(\d+)\]", file_content, re.IGNORECASE))
-            if matches:
-                for i, match in enumerate(matches):
-                    start = match.start()
-                    end = matches[i + 1].start() if i + 1 < len(matches) else len(file_content)
-                    page_number = int(match.group(1))
-                    page_text = file_content[start:end].strip()
-                    pages.append({
-                        "number": page_number,
-                        "content": page_text,
-                        "sourceFile": filename
-                    })
-            else:
-                # Fallback: treat whole file as one page
-                pages.append({
-                    "number": 1,
-                    "content": file_content.strip(),
-                    "sourceFile": filename
-                })
-        except Exception:
-            pass
-    pages.sort(key=lambda p: p["number"])
-    return pages
+      if (!response.ok) {
+        const errData = await response.json();
+        throw new Error(errData.error || "Failed to generate answer");
+      }
 
-# Load local uploaded documents fallback storage
-def load_uploaded_documents():
-    local_path = "uploaded_docs.json"
-    if os.path.exists(local_path):
-        try:
-            with open(local_path, "r", encoding="utf-8") as lf:
-                return json.load(lf)
-        except Exception:
-            pass
-    return []
+      const data = await response.json();
+      
+      const assistantMsg: Message = {
+        id: (Date.now() + 1).toString(),
+        role: "assistant",
+        content: data.answer,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        provider: data.provider,
+        model: data.model
+      };
 
-# 2-Column Main Layout
-col1, col2 = st.columns([1, 1.2])
+      setMessages((prev) => [...prev, assistantMsg]);
+    } catch (err: any) {
+      console.error("Error communicating with AI endpoint:", err);
+      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsAsking(false);
+    }
+  };
 
-with col1:
-    st.header("📤 Document Upload")
-    
-    # Check configurations before allowing uploads
-    if not api_configured:
-        st.warning("⚠️ Please configure at least one API Key (like Gemini) in settings or environment to parse documents.")
-    else:
-        uploaded_file = st.file_uploader("Choose a PDF or Text document", type=["pdf", "txt"])
+  // Click handler to select and display referenced page
+  const handlePageCitationClick = (pageNum: number) => {
+    setCurrentPage(pageNum);
+    setActiveTab("document"); // Bring document viewer to focus
+  };
+
+  const handleResetChat = () => {
+    const initialMsg = [
+      {
+        id: "initial",
+        role: "assistant",
+        content: "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nClick any suggested questions below, or type your own. Citations like [Page 44] are clickable and will automatically scroll the document browser to the exact page.",
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      }
+    ];
+    setMessages(initialMsg);
+    localStorage.setItem("rooppur_chat_history", JSON.stringify(initialMsg));
+    setErrorMessage(null);
+  };
+
+  // Parser to convert text into nodes with clickable page citation buttons and dynamic flowcharts
+  const renderMessageContent = (text: string) => {
+    if (!text) return null;
+
+    // Detect flowchart blocks
+    const flowchartRegex = /```flowchart([\s\S]*?)```/g;
+    const segments = [];
+    let lastSegmentIndex = 0;
+    let fcMatch;
+
+    while ((fcMatch = flowchartRegex.exec(text)) !== null) {
+      const fcIndex = fcMatch.index;
+      const flowchartContent = fcMatch[1];
+
+      // Add preceding plain text
+      if (fcIndex > lastSegmentIndex) {
+        segments.push({
+          type: "text",
+          content: text.substring(lastSegmentIndex, fcIndex)
+        });
+      }
+
+      // Add flowchart segment
+      segments.push({
+        type: "flowchart",
+        content: flowchartContent
+      });
+
+      lastSegmentIndex = flowchartRegex.lastIndex;
+    }
+
+    if (lastSegmentIndex < text.length) {
+      segments.push({
+        type: "text",
+        content: text.substring(lastSegmentIndex)
+      });
+    }
+
+    // Parse citation pages inside text segment
+    const renderTextSegment = (txt: string, segKey: number) => {
+      const regex = /\[[pP]age\s+(\d+)\]/gi;
+      const parts = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(txt)) !== null) {
+        const matchIndex = match.index;
+        const pageNum = parseInt(match[1], 10);
+
+        // Add preceding plain text
+        if (matchIndex > lastIndex) {
+          parts.push(txt.substring(lastIndex, matchIndex));
+        }
+
+        // Add interactive citation link
+        parts.push(
+          <button
+            key={`cite-${matchIndex}`}
+            onClick={() => handlePageCitationClick(pageNum)}
+            className="inline-flex items-center gap-0.5 px-1.5 py-0.5 mx-0.5 rounded-md text-xs font-bold font-mono bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500 hover:text-white border border-indigo-500/30 transition-all cursor-pointer shadow-xs"
+            title={`Jump directly to Technical Specification Page ${pageNum}`}
+          >
+            <span>[Page {pageNum}]</span>
+          </button>
+        );
+
+        lastIndex = regex.lastIndex;
+      }
+
+      if (lastIndex < txt.length) {
+        parts.push(txt.substring(lastIndex));
+      }
+
+      return (
+        <span key={`seg-${segKey}`} className="whitespace-pre-wrap">
+          {parts.length > 0 ? parts : txt}
+        </span>
+      );
+    };
+
+    return (
+      <div className="leading-relaxed text-sm text-slate-100 font-sans flex flex-col gap-2">
+        {segments.map((seg, idx) => {
+          if (seg.type === "flowchart") {
+            return (
+              <div key={`fc-${idx}`}>
+                <FlowchartRenderer content={seg.content} />
+              </div>
+            );
+          }
+          return renderTextSegment(seg.content, idx);
+        })}
+      </div>
+    );
+  };
+
+  return (
+    <div className="w-full h-screen flex flex-col overflow-hidden font-sans text-slate-100 relative bg-[#0a071e]" style={{ background: "radial-gradient(circle at top left, #0e0a2d, #1a1742, #0b0821)" }}>
+      {/* Background Mesh Blobs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[130px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[130px] pointer-events-none"></div>
+      <div className="absolute top-[35%] left-[25%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+      {/* Primary Navigation & Control Header */}
+      <header className="h-16 flex items-center justify-between px-6 bg-white/5 backdrop-blur-md border-b border-white/10 z-20 shrink-0">
+        <div className="flex items-center space-x-3">
+          <div className="w-9 h-9 bg-gradient-to-tr from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center border border-white/20 shadow-lg shadow-indigo-500/20">
+            <Bot className="w-5 h-5 text-white animate-pulse" />
+          </div>
+          <div>
+            <h1 className="text-sm md:text-base font-bold tracking-tight text-white flex items-center gap-1.5">
+              Rooppur NPP Unit 1 Safety Assistant
+              <span className="text-[9px] uppercase tracking-widest font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded">
+                Operational Support
+              </span>
+            </h1>
+            <p className="text-[10px] text-slate-400 font-medium hidden sm:block">Technical Specification Safe Operation Guidance System</p>
+          </div>
+        </div>
+
+        {/* Global Stats indicators in margins */}
+        <div className="flex items-center space-x-4">
+          <div className="items-center space-x-1.5 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium text-slate-300 flex">
+            <span className="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+            <span>Gemini Model Active</span>
+          </div>
+          <button 
+            onClick={handleResetChat}
+            className="p-1.5 rounded-lg hover:bg-white/10 border border-white/5 hover:border-white/10 text-slate-400 hover:text-white transition-colors"
+            title="Clear Conversational Session"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </button>
+        </div>
+      </header>
+
+      {/* Main Container Layout */}
+      <main className="flex-1 flex flex-col lg:flex-row overflow-hidden p-4 lg:p-6 gap-6 z-10">
         
-        if uploaded_file is not None:
-            st.success(f"File loaded successfully: {uploaded_file.name}")
-            
-            is_pdf = uploaded_file.name.lower().endswith(".pdf")
-            is_txt = uploaded_file.name.lower().endswith(".txt")
-            
-            if is_pdf:
-                # Read pdf bytes
-                pdf_bytes = uploaded_file.read()
-                
-                if st.button("🚀 Process PDF & Store"):
-                    with st.spinner("Analyzing and Chunking PDF with Gemini OCR..."):
-                        try:
-                            # Split PDF into smaller chunks of 5 pages each using python libraries
-                            import io
-                            pdf_reader_lib = None
-                            try:
-                                from pypdf import PdfReader, PdfWriter
-                                pdf_reader_lib = "pypdf"
-                            except ImportError:
-                                try:
-                                    from PyPDF2 import PdfReader, PdfWriter
-                                    pdf_reader_lib = "PyPDF2"
-                                except ImportError:
-                                    pdf_reader_lib = None
+        {/* Left Column: Conversational AI Console */}
+        <section className="flex-1 lg:max-w-[42%] flex flex-col bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl relative" id="qa-console">
+          
+          {/* Section Header */}
+          <div className="p-4 bg-white/5 border-b border-white/10 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <h2 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Safety Guidance Console</h2>
+            </div>
+            <div className="text-[10px] font-mono text-slate-400">
+              Rev 2 • Doc Segmented Index
+            </div>
+          </div>
 
-                            chunks = []
-                            if pdf_reader_lib:
-                                reader = PdfReader(io.BytesIO(pdf_bytes))
-                                total_pages = len(reader.pages)
-                                chunk_size = 5
-                                for start_page in range(0, total_pages, chunk_size):
-                                    end_page = min(start_page + chunk_size, total_pages)
-                                    writer = PdfWriter()
-                                    for page_idx in range(start_page, end_page):
-                                        writer.add_page(reader.pages[page_idx])
-                                    chunk_io = io.BytesIO()
-                                    writer.write(chunk_io)
-                                    chunks.append((start_page, chunk_io.getvalue()))
-                            else:
-                                chunks.append((0, pdf_bytes))
+          {/* Messages Scroll Area */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4" id="chat-scroller">
+            {messages.map((msg) => (
+              <div 
+                key={msg.id} 
+                className={`flex gap-3 max-w-[90%] ${msg.role === "user" ? "ml-auto flex-row-reverse" : ""}`}
+              >
+                {/* Profile Icon */}
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center border shrink-0 ${
+                  msg.role === "user" 
+                    ? "bg-indigo-600/50 border-indigo-500/50 text-indigo-100" 
+                    : "bg-white/10 border-white/10 text-indigo-300"
+                }`}>
+                  {msg.role === "user" ? <User className="w-4.5 h-4.5" /> : <Bot className="w-4.5 h-4.5" />}
+                </div>
 
-                            all_extracted_pages = []
-                            model = genai.GenerativeModel("gemini-3.5-flash")
+                {/* Message Body */}
+                <div className="flex flex-col gap-1">
+                  <div className={`p-4 rounded-2xl border ${
+                    msg.role === "user" 
+                      ? "bg-indigo-600/75 rounded-tr-none border-white/10 text-white" 
+                      : "bg-white/5 backdrop-blur-sm rounded-tl-none border-white/10"
+                  }`}>
+                    {msg.role === "user" ? (
+                      <p className="text-sm whitespace-pre-wrap text-slate-100 font-sans">{msg.content}</p>
+                    ) : (
+                      renderMessageContent(msg.content)
+                    )}
+                  </div>
+                  <div className={`flex items-center gap-2 mt-1 ${msg.role === "user" ? "justify-end mr-1" : "justify-between ml-1"}`}>
+                    <span className="text-[9px] font-mono text-slate-400">
+                      {msg.timestamp}
+                    </span>
+                    {msg.role === "assistant" && msg.provider && (
+                      <span className="text-[8px] font-mono tracking-wider text-indigo-300 bg-indigo-500/15 px-1.5 py-0.5 rounded border border-indigo-500/25">
+                        {msg.provider.toUpperCase()} ({msg.model})
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
 
-                            for start_page, chunk_data in chunks:
-                                st.write(f"⏳ Processing page segment starting at page {start_page + 1}...")
+            {/* AI generating loader */}
+            {isAsking && (
+              <div className="flex gap-3 max-w-[80%]">
+                <div className="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center border border-white/10 text-indigo-400">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-2xl rounded-tl-none border border-white/10 text-slate-400 text-xs flex items-center gap-2">
+                  <span>Synthesizing regulatory parameters against Tech Specs...</span>
+                </div>
+              </div>
+            )}
 
-                                prompt = (
-                                    f"Perform complete OCR on this PDF segment representing pages {start_page + 1} onwards. Extract all pages. "
-                                    "For each page, identify its number relative to this segment (starting from 1) and extract the text content exactly as-is. "
-                                    "Return the response strictly as a JSON array of objects with the structure: "
-                                    '[{"number": 1, "content": "..."}]. Do not summarize or omit text. Return only raw JSON.'
-                                )
+            {/* Error Message notification */}
+            {errorMessage && (
+              <div className="p-3 bg-red-950/40 border border-red-500/20 text-red-300 rounded-xl flex items-start gap-2.5 text-xs">
+                <AlertCircle className="w-4.5 h-4.5 text-red-400 shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold">System Directive Conflict</h4>
+                  <p className="text-[11px] mt-0.5 text-red-200/90">{errorMessage}</p>
+                </div>
+              </div>
+            )}
 
-                                response = model.generate_content([
-                                    {
-                                        'mime_type': 'application/pdf',
-                                        'data': chunk_data
-                                    },
-                                    prompt
-                                ])
+            <div ref={messagesEndRef} />
+          </div>
 
-                                clean_text = response.text.strip()
-                                if clean_text.startswith("```json"):
-                                    clean_text = clean_text[7:]
-                                if clean_text.endswith("```"):
-                                    clean_text = clean_text[:-3]
+          {/* Suggestion Prompts Section */}
+          <div className="p-4 bg-gradient-to-t from-white/5 to-transparent border-t border-white/10">
+            <div className="mb-2.5 flex items-center gap-1.5">
+              <Compass className="w-3.5 h-3.5 text-indigo-400" />
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Suggested Operational Queries</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pr-1">
+              {SUGGESTED_PROMPTS.map((promptText, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => handleAskQuestion(promptText)}
+                  disabled={isAsking}
+                  className="text-left text-[11px] px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 rounded-xl text-slate-300 hover:text-white transition-all disabled:opacity-50 disabled:pointer-events-none flex items-center gap-1"
+                >
+                  <ChevronRight className="w-3 h-3 text-indigo-400 shrink-0" />
+                  <span className="truncate">{promptText}</span>
+                </button>
+              ))}
+            </div>
+          </div>
 
-                                try:
-                                    chunk_pages = json.loads(clean_text)
-                                    if isinstance(chunk_pages, list):
-                                        chunk_pages.sort(key=lambda p: p.get("number", 0))
-                                        for idx, p in enumerate(chunk_pages):
-                                            absolute_page = start_page + 1 + idx
-                                            all_extracted_pages.append({
-                                                "number": absolute_page,
-                                                "content": p.get("content", "")
-                                            })
-                                except Exception as parse_e:
-                                    st.warning(f"Failed to parse chunk starting at page {start_page + 1}: {parse_e}")
-                                    all_extracted_pages.append({
-                                        "number": start_page + 1,
-                                        "content": clean_text
-                                    })
+          {/* Input Interface */}
+          <div className="p-4 bg-white/5 border-t border-white/10 relative">
+            <div className="relative flex items-center">
+              <input
+                type="text"
+                placeholder="Ask about safe pressure limits, water levels, chemistry values..."
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !isAsking) {
+                    handleAskQuestion(input);
+                  }
+                }}
+                disabled={isAsking}
+                className="w-full bg-white/5 border border-white/15 focus:border-indigo-500 rounded-xl py-3 pl-4 pr-12 text-xs text-white focus:outline-none focus:ring-1 focus:ring-indigo-500/40 backdrop-blur-lg placeholder:text-slate-400"
+                id="query-input-field"
+              />
+              <button
+                onClick={() => handleAskQuestion(input)}
+                disabled={!input.trim() || isAsking}
+                className="absolute right-1.5 p-2 bg-indigo-500 hover:bg-indigo-400 text-white rounded-lg transition-all disabled:opacity-40 disabled:hover:bg-indigo-500 shadow-md shadow-indigo-500/20"
+                title="Submit Operational Query"
+                id="submit-query-btn"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </div>
+            <p className="text-[9px] text-center text-slate-500 mt-2">
+              Operational Assistant is grounded directly in Rooppur NPP Unit 1 Safe Operation Tech Specs. Always cross-verify critical safety thresholds.
+            </p>
+          </div>
 
-                            # Rearrange/sort final pages
-                            all_extracted_pages.sort(key=lambda p: p["number"])
-                            pages = all_extracted_pages
-                            
-                            st.info(f"Successfully extracted {len(pages)} pages using Gemini OCR!")
-                            
-                            # Store in Supabase or local fallback
-                            if supabase_configured:
-                                with st.spinner("Syncing OCR contents with Supabase database..."):
-                                    records = []
-                                    for page in pages:
-                                        records.append({
-                                            "filename": uploaded_file.name,
-                                            "page_number": page.get("number", 1),
-                                            "content": page.get("content", ""),
-                                        })
-                                    supabase_client.table("document_pages").insert(records).execute()
-                                    st.success(f"✨ Successfully stored {len(records)} records in Supabase 'document_pages' table!")
-                            else:
-                                st.warning("⚠️ Supabase not configured. Saving locally to uploaded_docs.json...")
-                                local_path = "uploaded_docs.json"
-                                existing_pages = []
-                                if os.path.exists(local_path):
-                                    try:
-                                        with open(local_path, "r", encoding="utf-8") as lf:
-                                            existing_pages = json.load(lf)
-                                    except Exception:
-                                        pass
-                                for page in pages:
-                                    existing_pages.append({
-                                        "filename": uploaded_file.name,
-                                        "page_number": page.get("number", 1),
-                                        "content": page.get("content", ""),
-                                    })
-                                with open(local_path, "w", encoding="utf-8") as lf:
-                                    json.dump(existing_pages, lf, indent=2)
-                                st.success("✨ Successfully saved uploaded document pages to local fallback!")
-                        except Exception as err:
-                            st.error(f"Processing failed: {err}")
-            elif is_txt:
-                txt_content = uploaded_file.read().decode("utf-8", errors="ignore")
-                
-                if st.button("🚀 Process Text & Store"):
-                    with st.spinner("Parsing text content..."):
-                        try:
-                            import re
-                            matches = list(re.finditer(r"\[PAGE\s+(\d+)\]", txt_content, re.IGNORECASE))
-                            pages = []
-                            if matches:
-                                for i, match in enumerate(matches):
-                                    start = match.start()
-                                    end = matches[i + 1].start() if i + 1 < len(matches) else len(txt_content)
-                                    page_number = int(match.group(1))
-                                    page_text = txt_content[start:end].strip()
-                                    pages.append({
-                                        "number": page_number,
-                                        "content": page_text
-                                    })
-                            else:
-                                # Treat as a single block or chunk by size
-                                if len(txt_content) > 3000:
-                                    for idx, chunk_start in enumerate(range(0, len(txt_content), 1500)):
-                                        pages.append({
-                                            "number": idx + 1,
-                                            "content": txt_content[chunk_start:chunk_start+1500]
-                                        })
-                                else:
-                                    pages.append({
-                                        "number": 1,
-                                        "content": txt_content
-                                    })
-                            
-                            st.info(f"Successfully parsed {len(pages)} chunks from the text file!")
-                            
-                            if supabase_configured:
-                                with st.spinner("Syncing contents with Supabase database..."):
-                                    records = []
-                                    for page in pages:
-                                        records.append({
-                                            "filename": uploaded_file.name,
-                                            "page_number": page.get("number", 1),
-                                            "content": page.get("content", ""),
-                                        })
-                                    supabase_client.table("document_pages").insert(records).execute()
-                                    st.success(f"✨ Successfully stored {len(records)} records in Supabase 'document_pages' table!")
-                            else:
-                                st.warning("⚠️ Supabase not configured. Saving locally to uploaded_docs.json...")
-                                local_path = "uploaded_docs.json"
-                                existing_pages = []
-                                if os.path.exists(local_path):
-                                    try:
-                                        with open(local_path, "r", encoding="utf-8") as lf:
-                                            existing_pages = json.load(lf)
-                                    except Exception:
-                                        pass
-                                for page in pages:
-                                    existing_pages.append({
-                                        "filename": uploaded_file.name,
-                                        "page_number": page.get("number", 1),
-                                        "content": page.get("content", ""),
-                                    })
-                                with open(local_path, "w", encoding="utf-8") as lf:
-                                    json.dump(existing_pages, lf, indent=2)
-                                st.success("✨ Successfully saved uploaded document pages to local fallback!")
-                        except Exception as err:
-                            st.error(f"Processing failed: {err}")
+        </section>
 
-with col2:
-    col2_header, col2_clear = st.columns([3, 1])
-    with col2_header:
-        st.header("💬 Document Intelligence Q&A")
-    with col2_clear:
-        if st.button("🔄 Reset Chat", use_container_width=True):
-            st.session_state.messages = [
-                {
-                    "role": "assistant",
-                    "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
-                }
-            ]
-            st.rerun()
+        {/* Right Column: Interactive Reference Viewer & Operational Dashboard */}
+        <section className="flex-1 flex flex-col overflow-hidden">
+          
+          {/* Navigation Segments Tab Bar */}
+          <div className="flex items-center justify-between mb-4 shrink-0">
+            {/* Tabs */}
+            <div className="bg-white/5 p-1 rounded-xl flex gap-1 border border-white/10">
+              <button
+                onClick={() => setActiveTab("document")}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                  activeTab === "document"
+                    ? "bg-indigo-600/70 border border-white/10 shadow text-white"
+                    : "text-slate-400 hover:text-white hover:bg-white/5 border border-transparent"
+                }`}
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Technical Specifications Browser</span>
+              </button>
+              
+              <button
+                onClick={() => setActiveTab("validator")}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
+                  activeTab === "validator"
+                    ? "bg-indigo-600/70 border border-white/10 shadow text-white"
+                    : "text-slate-400 hover:text-white hover:bg-white/5 border border-transparent"
+                }`}
+              >
+                <Activity className="w-4 h-4" />
+                <span>Operations Parameter Validator</span>
+              </button>
+            </div>
 
-    # Initialize chat history in session state
-    if "messages" not in st.session_state:
-        st.session_state.messages = [
-            {
-                "role": "assistant",
-                "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
-            }
-        ]
+            {/* Quick Context display */}
+            <div className="text-[11px] font-mono text-slate-400 items-center gap-1.5 hidden md:flex bg-white/5 px-3 py-1.5 rounded-lg border border-white/5">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Plant Safe State: Normal Power (Nnom)</span>
+            </div>
+          </div>
 
-    # Render previous messages
-    for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
-            if "provider" in msg:
-                st.caption(f"⚡ **Resolved by**: {msg['provider']} ({msg['model']})")
+          {/* Active Tab Panel */}
+          <div className="flex-1 overflow-hidden relative">
+            {activeTab === "document" ? (
+              <DocumentViewer 
+                currentPageNumber={currentPage} 
+                onPageSelect={setCurrentPage} 
+              />
+            ) : (
+              <div className="h-full overflow-y-auto pr-1">
+                <SafetyDashboard />
+              </div>
+            )}
+          </div>
 
-    # Accept new user question
-    if user_query := st.chat_input("Ask about safe pressure limits, water levels, chemistry values..."):
-        # Display user message in chat message container
-        with st.chat_message("user"):
-            st.markdown(user_query)
-        
-        # Append user message to state
-        st.session_state.messages.append({"role": "user", "content": user_query})
-        
-        if not api_configured:
-            with st.chat_message("assistant"):
-                err_msg = "⚠️ Please configure at least one API Key in the sidebar (Gemini, Groq, Mistral, or OpenRouter)."
-                st.error(err_msg)
-                st.session_state.messages.append({"role": "assistant", "content": err_msg})
-        else:
-            with st.spinner("Searching document context & generating response..."):
-                try:
-                    context_passages = []
-                    
-                    # 1. Load the 5 provided specification documents
-                    spec_pages = parse_specification_documents()
-                    for p in spec_pages:
-                        context_passages.append(f"Source: {p['sourceFile']} (Page {p['number']})\n{p['content']}")
-                    
-                    # 2. Fetch extra knowledge context from Supabase if configured
-                    if supabase_configured:
-                        try:
-                            # Retrieve relevant document content based on keyword matching
-                            response = supabase_client.table("document_pages").select("content, filename, page_number").limit(100).execute()
-                            if response.data:
-                                for row in response.data:
-                                    context_passages.append(f"Source: {row['filename']} (Page {row['page_number']})\n{row['content']}")
-                        except Exception as e:
-                            st.warning(f"Could not load Supabase context: {e}")
-                    else:
-                        # 3. Load from local uploaded_docs.json fallback
-                        uploaded_local = load_uploaded_documents()
-                        for up in uploaded_local:
-                            context_passages.append(f"Source: {up.get('filename', 'Uploaded Document')} (Page {up.get('page_number', 1)})\n{up.get('content', '')}")
-                    
-                    context_str = "\n\n---\n\n".join(context_passages) if context_passages else "No additional documents uploaded yet."
-                    
-                    system_instruction = f"""You are the Rooppur NPP Unit 1 Safety & Technical Operations AI Assistant. You have full access to the complete Technical Specification document of the NPP safe operation.
-Your primary objective is to assist nuclear operators, engineers, and plant managers by answering questions with absolute factual accuracy based ONLY on the provided technical specification text below.
+        </section>
 
-CRITICAL INSTRUCTIONS:
-1. Answers MUST be strictly from within the provided documents.
-2. If the requested information is not covered in the provided documents or is outside the documents, you MUST write "outside document" as your response. Do NOT use any external or pre-trained knowledge to answer. If it's not in the text, literally say "outside document".
-3. DO NOT copy-paste blocks of text word-for-word. Instead, use your AI language capabilities to explain, rephrase, and format the answers so they are clear, structured, and easy to understand for a human operator, while remaining 100% factually accurate to the source.
-4. You MUST ALWAYS include exact references and cite the specific documents and Page numbers in your answers. Format your page references exactly as "[Page X]" (e.g. "[Page 111]", "[Page 153]") and mention the source filename.
-5. If an answer draws from multiple pages, include citations for each, for example: "[Page 111] and [Page 112]".
-6. Reference tables specifically, e.g., "Table 4.1 on [Page 153]" or "Table 3.8 on [Page 54]".
-7. Keep your tone professional, authoritative, conservative, and safety-focused.
-
-=== DOCUMENT CONTEXT ===
-{context_str}
-========================"""
-
-                    # History is all messages except the newly added user query at the end
-                    history_payload = st.session_state.messages[:-1]
-
-                    answer_text, provider, model_name = generate_text_with_fallback(
-                        system_instruction,
-                        history_payload,
-                        user_query,
-                        gemini_key,
-                        groq_key,
-                        mistral_key,
-                        openrouter_key
-                    )
-                    
-                    # Display assistant response in chat message container
-                    with st.chat_message("assistant"):
-                        st.markdown(answer_text)
-                        st.caption(f"⚡ **Resolved by**: {provider} ({model_name})")
-                        
-                    # Append assistant message to state
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": answer_text,
-                        "provider": provider,
-                        "model": model_name
-                    })
-                    
-                except Exception as err:
-                    st.error(f"Generation failed: {err}")
+      </main>
+    </div>
+  );
+}
