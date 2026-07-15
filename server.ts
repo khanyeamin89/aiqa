@@ -4,15 +4,16 @@ import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import dotenv from "dotenv";
+import { PDFDocument } from "pdf-lib";
 
 dotenv.config();
 
 const app = express();
 const PORT = 3000;
 
-// Set payload limit to 50MB to support large PDF Base64 uploads
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ limit: "50mb", extended: true }));
+// Set payload limit to 500MB to support large PDF Base64 uploads (like 300MB+ files)
+app.use(express.json({ limit: "500mb" }));
+app.use(express.urlencoded({ limit: "500mb", extended: true }));
 
 // Structure for parsed document pages
 interface Page {
@@ -215,48 +216,103 @@ app.post("/api/upload-pdf", async (req, res) => {
 
     // Remove base64 header if present (e.g., "data:application/pdf;base64,")
     const rawBase64 = base64Data.replace(/^data:application\/pdf;base64,/, "");
+    const pdfBuffer = Buffer.from(rawBase64, "base64");
+    
+    console.log(`Uploaded file size: ${(pdfBuffer.length / (1024 * 1024)).toFixed(2)} MB`);
 
-    // Request Gemini to parse pages and return structured JSON
-    const response = await aiClient.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: [
-        {
-          inlineData: {
-            mimeType: "application/pdf",
-            data: rawBase64,
-          },
-        },
-        {
-          text: "Perform complete OCR on this PDF document. Extract all pages. For each page, identify its number and extract the text content exactly as-is. Return the response strictly as a JSON array of objects. Do not summarize or omit text. Return only the JSON."
-        }
-      ],
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.ARRAY,
-          items: {
-            type: Type.OBJECT,
-            properties: {
-              number: { type: Type.INTEGER, description: "The sequential page number starting from 1" },
-              content: { type: Type.STRING, description: "The full text content of the page" }
+    let pages: { number: number; content: string }[] = [];
+
+    // Load PDF using pdf-lib to split it into chunks
+    const pdfDoc = await PDFDocument.load(pdfBuffer);
+    const totalPages = pdfDoc.getPageCount();
+    console.log(`Loaded PDF with ${totalPages} pages.`);
+
+    // Define chunk size (e.g., 5 pages per chunk is safe and performs excellent OCR)
+    const CHUNK_SIZE = 5;
+
+    for (let startPage = 0; startPage < totalPages; startPage += CHUNK_SIZE) {
+      const endPage = Math.min(startPage + CHUNK_SIZE, totalPages);
+      console.log(`Processing page chunk ${startPage + 1} to ${endPage} (of ${totalPages})...`);
+
+      // Create a separate PDF document for this page range
+      const chunkDoc = await PDFDocument.create();
+      const pageIndices = Array.from({ length: endPage - startPage }, (_, i) => startPage + i);
+      const copiedPages = await chunkDoc.copyPages(pdfDoc, pageIndices);
+      
+      for (const page of copiedPages) {
+        chunkDoc.addPage(page);
+      }
+
+      const chunkBytes = await chunkDoc.save();
+      const chunkBase64 = Buffer.from(chunkBytes).toString("base64");
+
+      // Send the split chunk to Gemini for OCR
+      const response = await aiClient.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: [
+          {
+            inlineData: {
+              mimeType: "application/pdf",
+              data: chunkBase64,
             },
-            required: ["number", "content"]
+          },
+          {
+            text: `Perform complete OCR on this PDF chunk containing pages ${startPage + 1} to ${endPage} of the larger document. Extract all pages. For each page, identify its number relative to this chunk (starting from 1) and extract the text content exactly as-is. Return the response strictly as a JSON array of objects. Do not summarize or omit text. Return only the JSON.`
+          }
+        ],
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.ARRAY,
+            items: {
+              type: Type.OBJECT,
+              properties: {
+                number: { type: Type.INTEGER, description: "The sequential page number starting from 1" },
+                content: { type: Type.STRING, description: "The full text content of the page" }
+              },
+              required: ["number", "content"]
+            }
           }
         }
+      });
+
+      const resultText = response.text;
+      if (!resultText) {
+        console.warn(`Empty response for chunk ${startPage + 1} to ${endPage}`);
+        continue;
       }
-    });
 
-    const resultText = response.text;
-    if (!resultText) {
-      throw new Error("No text output received from Gemini during OCR.");
+      try {
+        const parsedChunkPages = JSON.parse(resultText.trim());
+        if (Array.isArray(parsedChunkPages)) {
+          // Sort pages inside the chunk to make sure order is correct
+          parsedChunkPages.sort((a, b) => (a.number || 0) - (b.number || 0));
+
+          for (let i = 0; i < parsedChunkPages.length; i++) {
+            const absolutePageNumber = startPage + 1 + i;
+            pages.push({
+              number: absolutePageNumber,
+              content: parsedChunkPages[i].content || "",
+            });
+          }
+        }
+      } catch (parseErr) {
+        console.error(`Failed to parse response for chunk ${startPage + 1}-${endPage}:`, parseErr);
+        // Fallback: use whole chunk text as a combined page content
+        pages.push({
+          number: startPage + 1,
+          content: resultText,
+        });
+      }
     }
 
-    const pages = JSON.parse(resultText.trim());
-    if (!Array.isArray(pages) || pages.length === 0) {
-      throw new Error("Invalid or empty page array returned by Gemini OCR.");
-    }
+    // Rearrange/sort the pages by absolute page number in order
+    pages.sort((a, b) => a.number - b.number);
+    console.log(`Finished processing all chunks. Total arranged pages: ${pages.length}`);
 
-    console.log(`Gemini OCR complete! Extracted ${pages.length} pages.`);
+    if (pages.length === 0) {
+      throw new Error("No pages could be extracted from the PDF document chunks.");
+    }
 
     // 1. Local storage fallback
     const localPath = path.join(process.cwd(), "uploaded_docs.json");
@@ -316,7 +372,7 @@ app.post("/api/upload-pdf", async (req, res) => {
       success: true,
       filename,
       pagesParsed: pages.length,
-      message: `Successfully processed and stored ${pages.length} pages.`
+      message: `Successfully processed and stored ${pages.length} pages in order.`
     });
 
   } catch (err: any) {
