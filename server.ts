@@ -644,6 +644,15 @@ CRITICAL INSTRUCTIONS:
 4. If an answer draws from multiple pages, include citations for each, for example: "[Page 111] and [Page 112]".
 5. Reference tables specifically, e.g., "Table 4.1 on [Page 153]" or "Table 3.8 on [Page 54]".
 6. Keep your tone professional, authoritative, conservative, and safety-focused.
+7. CRITICAL: When describing step-by-step procedures, sequential operations, safety checks, or decision flow paths, you MUST also output an interactive flowchart of those steps using this markdown block format:
+\`\`\`flowchart
+Step 1 Title -> Step 2 Title -> Step 3 Title -> Step 4 Title
+\`\`\`
+For example:
+\`\`\`flowchart
+Verify Coolant Level -> Check Pressurizer Pressure -> Isolate Steam Line -> Monitor Decay Heat
+\`\`\`
+Keep the step labels concise (2-5 words). The frontend will automatically compile this into an interactive, animated operational flowchart widget.
 
 Here is the complete Technical Specification of Safe Operation for Rooppur NPP Unit 1:
 =========================================
