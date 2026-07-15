@@ -683,38 +683,36 @@ with col2:
                     "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
                 }
             ]
+            save_chat_history(st.session_state.messages)
             st.rerun()
-
+ 
     # Initialize chat history in session state
     if "messages" not in st.session_state:
-        st.session_state.messages = [
-            {
-                "role": "assistant",
-                "content": "Welcome, Nuclear Operator. I am your Rooppur NPP Unit 1 Safety & Technical Operations Assistant. I can answer operations questions with factual accuracy from the Safe Operation Technical Specifications. \n\nCitations like [Page 44] indicate referenced pages."
-            }
-        ]
-
+        st.session_state.messages = load_chat_history()
+ 
     # Render previous messages
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
+            render_response_text(msg["content"])
             if "provider" in msg:
                 st.caption(f"⚡ **Resolved by**: {msg['provider']} ({msg['model']})")
-
+ 
     # Accept new user question
     if user_query := st.chat_input("Ask about safe pressure limits, water levels, chemistry values..."):
         # Display user message in chat message container
         with st.chat_message("user"):
             st.markdown(user_query)
         
-        # Append user message to state
+        # Append user message to state and save
         st.session_state.messages.append({"role": "user", "content": user_query})
+        save_chat_history(st.session_state.messages)
         
         if not api_configured:
             with st.chat_message("assistant"):
                 err_msg = "⚠️ Please configure at least one API Key in the sidebar (Gemini, Groq, Mistral, or OpenRouter)."
                 st.error(err_msg)
                 st.session_state.messages.append({"role": "assistant", "content": err_msg})
+                save_chat_history(st.session_state.messages)
         else:
             with st.spinner("Searching document context & generating response..."):
                 try:
@@ -728,10 +726,50 @@ with col2:
                     # 2. Fetch extra knowledge context from Supabase if configured
                     if supabase_configured:
                         try:
-                            # Retrieve relevant document content based on keyword matching
-                            response = supabase_client.table("document_pages").select("content, filename, page_number").limit(100).execute()
-                            if response.data:
-                                for row in response.data:
+                            # Clean query to build list of valid search keywords (words > 3 chars)
+                            search_words = [w.strip() for w in re.split(r'\W+', user_query) if len(w.strip()) > 3]
+                            stop_words = {"what", "where", "when", "how", "with", "from", "that", "this", "their", "about", "which", "there"}
+                            search_words = [w for w in search_words if w.lower() not in stop_words]
+                            
+                            fetched_rows = []
+                            # Try Full-Text Search first if possible
+                            try:
+                                if search_words:
+                                    ts_query = " | ".join(search_words)
+                                    response = supabase_client.table("document_pages")\
+                                        .select("content, filename, page_number")\
+                                        .text_search("content", ts_query)\
+                                        .limit(30)\
+                                        .execute()
+                                    fetched_rows = response.data or []
+                            except Exception:
+                                fetched_rows = []
+
+                            # If no results from FTS, try simple ilike matching for first word
+                            if not fetched_rows and search_words:
+                                try:
+                                    response = supabase_client.table("document_pages")\
+                                        .select("content, filename, page_number")\
+                                        .ilike("content", f"%{search_words[0]}%")\
+                                        .limit(20)\
+                                        .execute()
+                                    fetched_rows = response.data or []
+                                except Exception:
+                                    pass
+
+                            # If still no results, fetch recent entries up to 30 pages
+                            if not fetched_rows:
+                                try:
+                                    response = supabase_client.table("document_pages")\
+                                        .select("content, filename, page_number")\
+                                        .limit(30)\
+                                        .execute()
+                                    fetched_rows = response.data or []
+                                except Exception:
+                                    pass
+
+                            if fetched_rows:
+                                for row in fetched_rows:
                                     context_passages.append(f"Source: {row['filename']} (Page {row['page_number']})\n{row['content']}")
                         except Exception as e:
                             st.warning(f"Could not load Supabase context: {e}")
@@ -762,11 +800,11 @@ Keep the step labels concise (2-5 words). The system will automatically compile 
 
 === DOCUMENT CONTEXT ===
 {context_str}
-========================"""
-
+========================="""
+ 
                     # History is all messages except the newly added user query at the end
                     history_payload = st.session_state.messages[:-1]
-
+ 
                     answer_text, provider, model_name = generate_text_with_fallback(
                         system_instruction,
                         history_payload,
@@ -779,16 +817,17 @@ Keep the step labels concise (2-5 words). The system will automatically compile 
                     
                     # Display assistant response in chat message container
                     with st.chat_message("assistant"):
-                        st.markdown(answer_text)
+                        render_response_text(answer_text)
                         st.caption(f"⚡ **Resolved by**: {provider} ({model_name})")
                         
-                    # Append assistant message to state
+                    # Append assistant message to state and save
                     st.session_state.messages.append({
                         "role": "assistant",
                         "content": answer_text,
                         "provider": provider,
                         "model": model_name
                     })
+                    save_chat_history(st.session_state.messages)
                     
                 except Exception as err:
                     st.error(f"Generation failed: {err}")
