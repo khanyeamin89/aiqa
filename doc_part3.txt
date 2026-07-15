@@ -1,0 +1,1984 @@
+[PAGE 76]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+71 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+(11SAC20, 12SAC20, 11SAC40, 
+12SAC40) are operable; 
+- two MCR life support systems 
+(11SAC41, 12SAC41) and compressed 
+air cylinders (11SAC42) are operable; 
+- four plants of the plenum and exhaust 
+ventilation systems for the premises of 
+safety system storage batteries 
+(11SAC23, 12SAC23, 11SAC43, 
+12SAC43) are operable; 
+- four plants of the plenum and exhaust 
+ventilation systems with recirculation of 
+electrical premises of safety systems 
+(11SAC25, 12SAC25, 11SAC45, 
+12SAC45) are operable; 
+- four plants of the plenum and exhaust 
+ventilation systems with recirculation of 
+the premises of control safety systems 
+(11SAC26, 12SAC26, 11SAC46, 
+12SAC46) are operable; 
+- twelve plants of plenum and 
+recirculation air cooling systems for 
+premises of safety system diesel 
+generator plants (11SAD01, 12SAD01) 
+are operable; 
+- four plants of plenum and exhaust 
+ventilation systems for tank premises in 
+HS, HU 2) Inoperability of one channel of ventilation and air 
+conditioning system due to non-redundant 
+component failure 
+А1 Restore 
+the channel 
+operability  
+192 hours 
+ 
+8 hours  
+ 
+ 
+current  
+ 
+current  
+ 
+ 
+[PAGE 77]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+72 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+the safety system diesel generator plant 
+building (11SAD21, 12SAD21, 
+11SAD41, 12SAD41) are operable; 
+- two plants of the emergency plenum 
+and exhaust ventilation system for tank 
+premises in the safety system diesel 
+generator plant building 
+(11SAD43,12SAD43, 11SAD23, 
+12SAD23) are operable. 
+- four plants of plenum and exhaust 
+ventilation systems (11SAD47, 
+11SAD27, 12SAD47, 12SAD27) are 
+operable; 
+- two fans of emergency exhaust 
+ventilation system of chilling machine 
+rooms (11SAD82); 
+- four recirculation air cooling plants for 
+chilling machine premises (11SAD03, 
+12SAD03); 
+- four plants of the plenum and exhaust 
+general ventilation systems for diesel 
+generator plant premise (11SAD40, 
+12SAD40, 11SAD20, 12SAD20); 
+- four plants of the plenum and 
+recirculation ventilation system for safety 
+system cable premises (11SAE45, 
+12SAE45, 11SAE25, 12SAE25) are 
+184 hours 
+ 
+24 h  
+ 
+ 
+ 
+24 h 
+current 
+ 
+cold state 
+ 
+ 
+cold state 
+[PAGE 78]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+72 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the redundant component of one 
+channel of the ventilation and air conditioning 
+system 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component  
+В1 Check (by 
+ESFAS 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+240 hours  
+ 
+ 
+8 hours  
+ 
+ 
+ 
+ 
+ 
+232 hours  
+ 
+See it. 
+1.3.4.1, 
+subitem 1)  
+ 
+ 
+ 
+ 
+31 (30, 24, 
+24) hours 
+current  
+ 
+ 
+current  
+ 
+ 
+ 
+ 
+ 
+current  
+ 
+current 
+ 
+ 
+ 
+ 
+ 
+cold 
+state  
+[PAGE 79]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+73 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+operable; 
+- four plants of the plenum and 
+recirculation ventilation system for safety 
+system electrical premises (11SAC44, 
+12SAC44, 11SAC24, 12SAC24) are 
+operable; 
+- four plenum and four exhaust plants of 
+the ventilation systems for safety system 
+cable tunnels (11SAE41, 12SAE41, 
+11SAE21, 12SAE21) are operable; 
+- four plants of the plenum and exhaust 
+ventilation systems with recirculation of 
+ECR cable premises (11SAE42, 
+12SAE42, 11SAE22, 12SAE22) are 
+operable; 
+- four plants of the plenum and exhaust 
+ventilation systems with recirculation for 
+safety system cable premises (11SAE44, 
+12SAE44, 11SAE24, 12SAE24) are 
+operable; 
+- four plants of the plenum and exhaust 
+ventilation systems with recirculation of 
+MCR cable premises (11SAE56, 
+12SAE56, 11SAE36, 12SAE36) are 
+operable; 
+- four plants of the (plenum and exhaust) 
+systems for ECR air conditioning 
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of other 
+redundant 
+component is 
+detected 
+under B1, act 
+as in case of 
+inoperability 
+of one 
+channel of 
+ventilation 
+and air 
+conditioning 
+system  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+[PAGE 80]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+74 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+(11SAC30, 12SAC30, 11SAC50, 
+12SAC50) are operable; 
+- two plants of the ECR life support 
+system (11SAC51, 12SAC51) and 
+compressed air cylinders (12SAC52) are 
+operable. 
+ 
+ 
+ 
+ 
+ 
+changeover 
+to “Cold 
+state” 
+ 
+  
+ 4) Inoperability of two channels of ventilation and 
+air conditioning system due to non-redundant 
+component failure  
+А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”.  
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels  
+31 (30, 24, 
+24) h 
+ 
+As soon as 
+possible  
+cold state 
+ 
+cold state 
+[PAGE 81]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+75 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+1.3.6.2 At least one channel of 
+ventilation and air conditioning system is 
+operable 
+CS, PO, 
+RF, CD 
+Inoperability of two channels of ventilation and air 
+conditioning system 
+Arrange 
+twenty-four-
+hour works to 
+restore 
+operability of 
+one channel 
+As soon as 
+possible 
+current  
+state 
+1.3 Supporting safety systems 
+1.3.1 PE cooling water system for essential loads (fan cooling towers) 
+1.3.1.1 The system is operable, namely: 
+- both system channels are in operation, 
+one of two pumps is in operation in each 
+channel;  
+- cooling water flow rate to loads 4860 
+t/h;  
+- I&CD, controllers, interlocks and 
+PO, 
+MCPL, 
+HS, HU 
+1) Taking non-redundant components of the system 
+channel for unplanned repair during Unit operation 
+is performed in case of failure of these components. 
+Permissible repair time is 72 hours. 
+А1 Restore 
+the channel 
+operability 
+В1 Check the 
+operability of 
+the similar 
+component of 
+72 hours 
+ 
+8 hours 
+ 
+ 
+64 hours 
+ 
+current 
+ 
+current 
+ 
+ 
+current 
+ 
+[PAGE 82]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+76 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+alarms of the system shall be operable; another 
+system 
+channel 
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+31 (30, 24, 
+24) hours 
+ 
+31 (30, 24, 
+24) hours 
+cold  
+state 
+ 
+cold 
+state 
+[PAGE 83]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+77 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+changeover 
+to “Cold 
+state” 
+ PO, 
+MCPL, 
+HS, HU 
+ 
+ 
+2) Taking redundant components of the system 
+channel for unplanned repair during Unit power 
+operation is performed in case of failure of 
+redundant components of the channel 
+А1 Restore 
+the channel 
+operability 
+  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel 
+ 
+  
+В2 If B1 is 
+successful, 
+remain in the 
+current state 
+ 
+В3 If failure 
+of one more 
+channel is 
+detected in 
+B1, perform 
+unscheduled 
+240 hours  
+ 
+8 hours  
+ 
+ 
+ 
+ 
+232 hours 
+ 
+ 
+31 (30, 24, 
+24) hours 
+ 
+ 
+ 
+31 (30, 24, 
+24) hours 
+current 
+ 
+current 
+ 
+ 
+current 
+ 
+cold  
+state  
+ 
+ 
+cold  
+state 
+[PAGE 84]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+78 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+switchover to 
+the “Cold 
+state” 
+ 
+  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+ 
+  3) Inoperability of two PE channels А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”.  
+А2 Arrange 
+twenty-four-
+8 hour  
+ 
+As soon as 
+possible 
+cold  
+state  
+cold  
+state 
+[PAGE 85]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+79 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+1.3.1.2 At least one system channel is 
+operable 
+CSt, SR, 
+RF, CD 
+Inoperability of two PE channels Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+As soon as 
+possible 
+cold 
+state, 
+shutdow
+n for 
+repair, 
+refueling, 
+cooldow
+n 
+1.3.1.3 Activity at discharge of each 
+system channel is less than 18.5 Bq/kg 
+(5•10-9 Ci/kg)  
+PO, 
+(MCPL) 
+Increase in activity at discharge of any system 
+channel up to 18.5 Bq/kg (5•10-9 Ci/kg) 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+7 (6) hours cold state 
+1.3.2 KAA component cooling system for loads in 10UJA building 
+1.3.2.1 Both system channels are 
+operable, including: 
+- 11KAA10АС001, 12KAA20АС001 
+component cooling system heat 
+exchangers;  
+  
+PO, 
+(MCPL) 
+1) Inoperability of one КАА channel, as well as 
+failure to maintain the permissible level in the surge 
+tank due to failure of the non-redundant component 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+72 hours 
+8 hours 
+ 
+ 
+64 hours 
+ 
+current  
+ 
+current 
+ 
+ 
+current 
+[PAGE 86]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+80 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+- 11KAA11АР001, 11KAA12АР001, 
+12KAA21АР001, 12KAA22АР001 
+component cooling system pumps;  
+  
+- valves, I&CD, process protections and 
+interlocks, alarm;  
+- 11KAA10ВВ001, 12KAA20ВВ001 
+component cooling system surge tanks 
+shall be filled to a level not less than 
+3500 mm.  
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+31 (30) 
+hours 
+ 
+ 
+ 
+7 (6) hours  
+ 
+ 
+ 
+113 hours  
+24 hours 
+ 
+cold state 
+ 
+ 
+hot  
+state  
+ 
+ 
+hot  
+state  
+cold  
+state 
+[PAGE 87]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+81 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Hot state”  
+А3 Restore 
+the channel 
+operability  
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+ HS, HU 2) Inoperability of one КАА channel, as well as 
+failure to maintain the permissible level in the surge 
+tank due to failure of the non-redundant component 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+192 hours 
+8 hours 
+ 
+ 
+184 hours 
+ 
+24 hours 
+ 
+ 
+current  
+ 
+current  
+ 
+ 
+current  
+ 
+cold state 
+ 
+[PAGE 88]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+82 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+ 
+24 hours 
+ 
+cold state 
+[PAGE 89]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+83 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+state” 
+ 
+ PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the protected component of one 
+KAA channel 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component  
+В1 Check (by 
+ESFAS 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+240 hours  
+ 
+8 hours  
+ 
+ 
+ 
+ 
+232 hours  
+See Item 
+1.3.2.1, sub-
+item 1)  
+ 
+31 (30, 24, 
+24) hours 
+current  
+ 
+ 
+current  
+ 
+ 
+ 
+ 
+ 
+current  
+ 
+current  
+ 
+ 
+ 
+ 
+cold state 
+[PAGE 90]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+84 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+of other 
+redundant 
+component is 
+detected 
+under B1, act 
+as in case of 
+inoperability 
+of one KAA 
+channel 
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+[PAGE 91]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+85 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+ 4) Inoperability of two KAA channels, as well as 
+failure to maintain the permissible level in the surge 
+tank 
+А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”.  
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+31 (30, 24, 
+24) hours 
+ 
+As soon as 
+possible 
+cold state 
+ 
+cold state 
+1.3.2.2 At least one system channel is 
+operable  
+CSt, SR, 
+RF, CD  
+Inoperability of two KAA channels, including 
+impossibility to maintain the permissible level in the 
+surge tank 
+Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+As soon as 
+possible 
+ 
+cold 
+state, 
+shutdow
+n for 
+repair, 
+refueling 
+1.3.2.3 Absence of volumetric activity of 
+component cooling system water more 
+than 1.85•104 Bq/kg (5•10-7 Ci/kg) in 
+each system channel  
+PO, 
+(MCPL, 
+HS, HU)  
+3) Increase of component cooling system water 
+volumetric activity in any system channel more than 
+1.85•104 Bq/kg (5•10-7 Ci/kg) 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24) hours 
+cold state 
+[PAGE 92]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+86 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+1.3.3 Emergency power supply system for loads of reliability groups 1 and 2 (EPSS) 
+1.3.3.1 Both ECCS channels are operable, including:  
+1.3.3.1.1 The 11ХКА10, 12ХКА20 
+diesel generators and their auxiliary 
+systems are fully checked and are in 
+constant readiness for automatic or 
+remote start-up and automatic load 
+taking  
+1.3.3.1.2 The 11BDA, 12BDВ 10 kV 
+sections are powered through the 
+operating inputs of sections by the 
+normal operation sources and further 
+over the standard circuit to the 11BMA, 
+12ВМВ, 11ВМС, 12ВМD, 11ВМЕ, 
+12ВМF 0.4 kV sections and the 11BVA, 
+12ВVВ, 11ВVС, 12ВVD direct current 
+boards   1.3.3.1.3 The 11BTA11,12, 
+12BTA21,22 storage batteries are fully 
+charged and are in the constant recharge 
+mode  
+1.3.3.1.4 All UPSU are connected over 
+the standard circuit, UPSU rectifiers 
+carry DCB load and SB recharge 
+PO, 
+(MCPL) 
+1) Inoperability of one EPSS channel due to failure 
+of non-redundant component of any subsystems 
+listed in Item 1.3.3.1.1÷1.3.3.1.5 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+72 hours 
+8 hours  
+ 
+ 
+64 hours  
+ 
+31 (30) 
+hours 
+ 
+ 
+ 
+7 (6) hours  
+ 
+ 
+ 
+113 hours  
+24 hours 
+Current 
+ 
+current  
+ 
+ 
+current  
+ 
+cold state 
+ 
+ 
+hot state  
+ 
+ 
+hot state  
+cold state 
+[PAGE 93]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+87 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+state” 
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+А3 Restore 
+the channel 
+operability  
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+[PAGE 94]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+88 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+1.3.3.2 At least one system channel is 
+operable 
+CSt, SR, 
+RF, CD  
+Inoperability of two САЭ channels Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+As soon as 
+possible 
+cold 
+state, 
+shutdow
+n for 
+repair, 
+refueling 
+1.3.4 QKB, QKD, QKJ cold supply system for essential loads 
+1.3.4.1 At cooling water temperature of 
+11,12PEB systems more than 13.1 °С 
+above zero, both channels of QKB 
+system are operable, including:  
+- cold supply pumps 
+PO, 
+(MCPL) 
+1) Inoperability of one cold supply system channel 
+due to non-redundant component failure 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+72 hours  
+8 hours  
+ 
+ 
+64 hours  
+ 
+31 (30) 
+hours  
+ 
+ 
+ 
+7 (6) hours  
+ 
+ 
+ 
+113 hours  
+24 hours 
+current  
+ 
+current  
+ 
+ 
+current  
+ 
+cold 
+state  
+ 
+ 
+hot state  
+ 
+ 
+hot state  
+cold state 
+[PAGE 95]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+89 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+А3 Restore 
+the channel 
+operability  
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+[PAGE 96]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+90 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+ HS, HU 2) Inoperability of one channel of ventilation and air 
+conditioning system due to non-redundant 
+component failure 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+192 hours 
+8 hours  
+ 
+ 
+184 hours 
+ 
+24 hours  
+ 
+ 
+ 
+24 hours 
+current  
+ 
+current  
+ 
+ 
+current 
+ 
+cold state 
+ 
+ 
+cold state 
+[PAGE 97]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+91 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+  under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the redundant component of one 
+channel of the ventilation and air conditioning 
+system 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component  
+В1 Check (by 
+ESFAS 
+240 hours  
+ 
+8 hours  
+ 
+ 
+ 
+ 
+232 hours  
+current  
+ 
+ 
+current  
+ 
+ 
+ 
+ 
+[PAGE 98]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+92 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of other 
+redundant 
+component is 
+detected 
+under B1, act 
+as in case of 
+inoperability 
+of one 
+channel of 
+ventilation 
+ 
+See Item 
+1.3.4.1, sub-
+item 1)  
+ 
+ 
+31 (30, 24, 
+24) hours 
+ 
+current  
+ 
+current 
+ 
+ 
+ 
+ 
+ 
+cold 
+state  
+[PAGE 99]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+93 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+and air 
+conditioning 
+system  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+  4) Inoperability of two channels of ventilation and 
+air conditioning system due to non-redundant 
+component failure  
+А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”.  
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+31 (30, 24, 
+24) hours 
+As soon as 
+possible  
+cold state 
+ 
+cold state 
+[PAGE 100]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+94 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+channels  
+1.3.4.2 At least one system channel is 
+operable at 11,12PEB systems cooling 
+water temperature more than 13.1 °C 
+above zero 
+CS, PO, 
+RF, CD 
+Inoperability of two cold supply system channels Arrange 
+twenty-four-
+hour works to 
+restore 
+operability of 
+one channel 
+As soon as 
+possible 
+cold 
+state, 
+shutdow
+n for 
+repair, 
+refueling  
+1.4 Control safety systems  
+1.4.1 Control and protection system (CPS) 
+1.4.1.1  Actuating part of the emergency protection subsystem and engineered safety features actuation system  
+1.4.1.1.1  Actuating part of the 
+emergency protection subsystem and 
+engineered safety features actuation 
+system shall be operable 
+PO, 
+(MCPL) 
+1) Fault1) of one set of actuated part A1 Eliminate 
+the halt  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+8 hours  
+7 (6) hours 
+current  
+hot state  
+2) Failure in one channel or two channels of 
+different sets of actuating part 
+A1 Eliminate 
+the halt  
+8 hours  
+7 (6) hours  
+current  
+hot state  
+[PAGE 101]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+95 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+3) Fault of two or more channels of one set of EP 
+subsystem actuating part 
+Personnel 
+shall monitor 
+(duplicate) 
+passage of 
+EP signal 
+Immediately hot state  
+1.4.1.2 Neutron flux monitoring equipment JKT (NFME) 
+1.4.1.2.1 All channels of both NFME sets 
+are operable 
+PO 1) Inoperability of one NFME channel or two 
+NFME channels of different sets in the operating 
+range 
+A1 Restore 
+the 
+operability  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+8 hours  
+ 
+7 hours 
+current  
+ 
+hot state 
+[PAGE 102]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+96 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Hot state” 
+ P
+O 
+2) Inoperability of two channels or more of one 
+NFME set  
+Personnel 
+shall monitor 
+the passage 
+of EP signal  
+Immediately hot state 
+ MCPL 3) Inoperability of one NFME channel in the start-
+up range 
+A1 Stabilize 
+the reactor 
+power at the 
+level of not 
+more than 10-
+2% of Nnom. 
+Restore the 
+operability  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+8 hours  
+ 
+ 
+ 
+6 hours 
+current  
+ 
+ 
+ 
+hot state  
+ MCPL 4) Inoperability of two channels and more in the 
+start-up range of one NFME set  
+Personnel 
+shall monitor 
+Immediately hot state  
+[PAGE 103]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+97 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+the passage 
+of EP signal 
+ MCPL 5) Inoperability of one NFME channel in the source 
+range  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+6 hours hot state 
+ MCPL 6) Inoperability of two or more channels of one 
+NFME set in the source range  
+Personnel 
+shall monitor 
+the passage 
+of EP signal 
+Immediately hot state 
+ RF 7) Inoperability of one NFME channel in the source 
+range 
+A1 Stop 
+reactor 
+refueling.  
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability 
+ 
+Immediately  
+ 
+As soon as 
+possible 
+current  
+ 
+current 
+1.4.1.2.2 All channels of one NFME set 
+are operable. 
+HS, (HU, 
+CD) 
+1) Failure of one or more NFME channels in the 
+source range 
+A1 Restore 
+the 
+operability 
+(for CD state 
+- continue 
+cooldown)  
+А2 If А1 is 
+ 8 hours  
+ 
+ 
+24 (24, 24) 
+hours 
+current  
+ 
+ 
+cold state  
+[PAGE 104]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+98 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ 
+ CST, SR 2) Failure of one or more NFME channels in the 
+source range 
+Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability 
+Immediately  
+as soon as 
+possible 
+current 
+ 
+ 
+ 
+1.4.2 Engineered safety feature actuation system (ESFAS)  
+1.4.2.1 The software and hardware 
+complex of priority control (PC CAS) of 
+both safety system channels is operable 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+1) Inoperability of one ESFAS channel: 
+inoperability of any subsystems listed in the Items 
+1.4.2.1÷1.4.2.3 
+А1 Restore 
+the channel 
+operability  
+B1 Perform 
+operability 
+check of 
+subsystem 
+similar to 
+failed 
+72 hour  
+ 
+8 hours  
+ 
+64 hours  
+ 
+31 (30, 24, 
+24, 24) 
+hours  
+current  
+ 
+current  
+ 
+ 
+ 
+current  
+ 
+cold state  
+1.4.2.2 The computerized automation 
+system of local protections (LP CAS) of 
+both safety system channels is 
+serviceable 
+  
+1.4.2.3 Equipment sets of both channels   
+[PAGE 105]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+99 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+of the JMU hydrogen monitoring inside 
+containment system are operable, including hydrogen gas analyzers, 
+measuring systems of hydrogen and 
+oxygen gas analyzers, sensors for 
+measuring the temperature of the steam- 
+air mixture in the containment, 
+connecting cables, secondary equipment 
+subsystem in 
+the remaining 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+B3 If a 
+failure of 
+another 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+ 
+ 
+31 (30, 24, 
+24, 24) 
+hours 
+ 
+ 
+cold state 
+[PAGE 106]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+100 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+1.4.2.4  Diverse (additional) protection 
+system (included in CPS-ESFAS) of DP 
+in two safety system channels (two sets), 
+including I&CD, generation and 
+reception of DP commands to CPS CR 
+power interrupters, to RCPS as well as 
+means of implementation of DP 
+commands by actuated mechanisms, 
+information transmission to MCR safety 
+panel shall be operable 
+PO, 
+(MCPL),  
+HS 
+Defect in redundant part of DP equipment in one of 
+two sets (which does not interfere with DP set 
+operation) 
+Eliminate the 
+defect. Check 
+the 
+operability of 
+monitoring 
+and control 
+of standby 
+process 
+equipment in 
+this tank (for 
+redundant 
+equipment) 
+or respective 
+process 
+equipment in 
+another SS 
+channel (for 
+non-
+redundant 
+equipment)  
+If the defect 
+is not 
+24 hours 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7 (6 hours)  
+Current 
+state 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hot state 
+[PAGE 107]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+101 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+eliminated 
+within the 
+specified 
+time, provide 
+immediate 
+shutdown to 
+hot state at 
+scheduled 
+rate  
+ PO, 
+(reaching 
+MCPL), 
+HS  
+Defect in the redundant part of DP equipment in 
+both sets (not interfering with the DP sets operation) 
+Eliminate the 
+defect in one 
+of the sets.  
+Check the 
+operability of 
+monitoring 
+and control 
+of standby 
+process 
+equipment in 
+this channel 
+(for 
+redundant 
+equipment) 
+or respective 
+process 
+equipment in 
+another 
+12 hours.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+24 hours 
+Current 
+state.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hot state 
+[PAGE 108]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+102 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+safety system 
+channel (for 
+non-
+redundant 
+equipment). 
+Eliminate the 
+defects in 
+both sets. 
+If the defects 
+are not 
+eliminated 
+within the 
+specified 
+time, perform 
+immediate 
+shutdown at 
+schedule rate. 
+ Defects in both DP sets that interfere the DP 
+operation. 
+Immediate 
+shutdown to 
+hot state at 
+scheduled 
+rate 
+7 (6) hours Hot state 
+2 Safety related normal operation systems. Reactor compartment  
+2.1 Main primary circuit systems  
+2.1.1 JAA reactor  
+[PAGE 109]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+103 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.1.1.1 Pressure in the primary circuit, 
+temperature at the reactor core outlet, 
+differential pressure in the reactor core 
+shall be monitored 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Monitoring of one of the following parameters is 
+completely unavailable:  
+- pressure in the primary circuit;  
+- temperature at the core outlet;  
+- differential pressure over the core  
+Take 
+measures to 
+restore the 
+parameter 
+indications. 
+Monitor the 
+indications 
+by indirect 
+parameters. 
+Stop the 
+reactor with 
+EP button 
+(for power 
+operation, 
+reaching 
+MCPL states) 
+and change 
+over the Unit 
+to “Cold 
+state”  
+ 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+2.1.1.2 There shall be no boric solution 
+on the separation bellows and main joint 
+studs flooding 
+CST, SR Appearance of boric solution on separation bellows 
+and MRJ studs flooding (determined visually) 
+If necessary, 
+perform 
+metal 
+inspection. 
+Do not 
+increase 
+As soon as 
+possible 
+current 
+[PAGE 110]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+104 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+pressure and 
+temperature 
+until fault 
+elimination 

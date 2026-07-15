@@ -1,0 +1,6 @@
+{
+  "name": "Rooppur NPP Q&A Application",
+  "description": "An AI-powered Q&A application for the Rooppur NPP Unit 1 Technical Specification of Safe Operation (RPR.0534.1.0.BN.DZ0001, Version 2). It provides precise answers with page citations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

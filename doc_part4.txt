@@ -1,0 +1,2455 @@
+[PAGE 111]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+104 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.1.1.3 The integrity of primary circuit 
+coolant pressure limits shall be ensured, 
+including the absence of leaks through 
+the gaskets of flange joints of the main 
+reactor joint, CPS and ICM nozzles, and 
+all six leak alarms of flange joints of the 
+upper reactor unit nozzles shall be 
+operable  
+PO, 
+(MCPL, 
+HS, CSt, 
+HU, CD) 
+1) Appearance of:  
+- leaks through internal gasket of flange joints of 
+CPS and ICM nozzles;  
+- leaks through MRJ  internal gasket;  
+- leaks through ICDA leads;  
+- leaks or vapors on the upper unit  
+It is 
+necessary to 
+check the 
+sensor 
+indications, 
+perform 
+visual remote 
+monitoring 
+using the 
+camera. Leak 
+flow rate 
+measurement
+. Clarify the 
+leak location. 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to the 
+“Shutdown 
+for repair” 
+state 
+67 (66, 60, 
+36, 60, 60) 
+hours 
+shutdow
+n for 
+repair 
+  2) Primary circuit leak with flow rate of 0.23÷2.0 t/h 
+due to cracks or fistulas in the base metal and 
+welded joints of equipment and pipelines 
+(determined by ALMS, MLDS and by balance of 
+the primary circuit coolant)  
+A1 Be in the 
+current state 
+for 
+clarification  
+A2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair”  
+0.5 hours  
+ 
+67 (66, 60, 
+36, 60, 60) 
+hours  
+current  
+ 
+shutdow
+n for 
+repair  
+  3) Primary circuit leak with flow rate more than 0.7 
+t/h  and the leakage location is unknown or more 
+than 2 t/h with a known leakage location   
+Perform 
+emergency 
+reactor 
+shutdown 
+with EP 
+button (for 
+power 
+operation, 
+reaching 
+MCPL 
+states).  
+Go to actions 
+in accordance 
+with IMDBA 
+[33,34] 
+31 (30, 24, 
+24, 24) 
+hours  
+cold state  
+  4) Failure of one of the six leak alarms of flange 
+joints of the upper reactor unit nozzles  
+Perform 
+unscheduled 
+31 (30, 24, 
+24, 24) 
+cold state 
+[PAGE 112]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+106 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Cold 
+state” 
+hours  
+2.1.2 JEF pressurizer system 
+2.1.2.1 The pressurizer system shall be 
+operable 
+PO, 
+(MCPL) 
+1) Inoperability of both fast-acting PRZ injection 
+gate valves (mechanical failure) 
+A1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+A2 Restore 
+operability of 
+gate valves  
+А3 If 
+operability is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+7 (6) hours  
+ 
+17 (18) 
+hours 
+ 
+24 hours 
+hot state  
+hot state  
+cold state  
+ 2) Interlock failure in terms of action on fast-acting 
+PRZ injection gate valves 
+If a defect is 
+detected, 
+immediately 
+start 
+scheduled RP 
+unloading to 
+a level of 
+25% Nnom 
+5 hours 25% 
+Nnom 
+ HS, CD 3) Inoperability of both fast-acting PRZ injection 
+gate valves (mechanical failure) 
+A1 Restore 
+the 
+operability of 
+gate valves  
+А2 If 
+operability is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+24 hours  
+ 
+24 hours 
+current  
+ 
+cold state  
+ PO, 
+(MCPL, 
+HS, CSt, 
+HU, CD) 
+4) Leak through both gaskets of PRZ manhole hatch 
+or seals of PRZ TEH units  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair”  
+67 (66, 60, 
+36, 60, 60) 
+hours  
+shutdow
+n for 
+repair 
+[PAGE 113]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+107 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+  5) Leakage of internal gasket of PRZ manhole hatch 
+or TEH unit seal 
+If a defect is 
+detected, 
+immediately 
+start RP 
+changeover 
+to the 
+shutdown for 
+repair state in 
+the planned 
+process 
+sequence  
+Arrange 
+elimination 
+of defect 
+67 (66, 60, 
+36, 60, 60) 
+hours 
+shutdow
+n for 
+repair 
+  6) Complete absence of level monitoring in the PRZ  Stop the 
+reactor with 
+EP button 
+(for power 
+operation, 
+reaching 
+MCPL states) 
+and change 
+over the Unit 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+2.1.3 Steam generator with JEA supports  
+[PAGE 114]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+108 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.1.3.1 Tightness of SG flange joints in 
+the primary and secondary circuits shall 
+be ensured 
+PO 1) Leakage of one (first or second) gasket of flange 
+joint of SG primary circuit header  
+A1 Be in 
+“Power 
+operation” 
+state  
+A2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” 
+72 hours  
+ 
+67 hours 
+power 
+operation  
+shutdow
+n for 
+repair  
+ MCPL, 
+(HS, CSt, 
+HU, CD) 
+2) Leakage of one (first or second) gasket of flange 
+joint of SG primary circuit header 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” 
+66 (60, 36, 
+60, 60) 
+hours 
+shutdow
+n for 
+repair 
+  3) Leak through both gaskets of SG primary circuit 
+header 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” 
+67 (66, 60, 
+36, 60, 60) 
+hours 
+shutdow
+n for 
+repair 
+  4) Leak through both gaskets of Dn 800 hatch of SG 
+secondary circuit or SG manhole hatch 
+A1 Be in 
+“Power 
+operation” 
+state  
+А2 Perform 
+72 hours  
+ 
+31 hours 
+power 
+operation  
+cold state 
+[PAGE 115]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+109 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+  5) Leak through both gaskets of Dn 800 hatch of SG 
+secondary circuit or SG manhole hatch 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+ 
+30 (24, 24, 
+24) hours  
+ 
+cold state  
+ 
+  6) Leakage of internal gasket of Dn 800 hatch of the 
+secondary circuit or SG manhole hatch 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+30 (24, 24, 
+24) hours 
+cold state 
+2.1.3.2 Secondary circuit pressure and 
+level in SG shall be monitored 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Complete loss of monitoring of secondary circuit 
+pressure or level in SG by ESFAS means 
+Stop the 
+reactor with 
+EP button 
+(for power 
+operation, 
+reaching 
+MCPL states) 
+and change 
+over the Unit 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+[PAGE 116]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+110 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+to “Cold 
+state” 
+2.1.4 JEB reactor coolant pump set 
+2.1.4.1 RP power operation with the 
+number of RCPS actuated less than two 
+is prohibited during RCPS operation  
+PO, 
+(MCPL)  
+Failure of one RCPS of 2 operating ones or its 
+auxiliary systems, that requires its shutdown 
+according to RCPS OI 
+А1 Shut 
+down the 
+reactor with 
+EP button 
+and change 
+over the Unit 
+to “Hot state”  
+A2 Restore 
+the 
+operability 
+and start the 
+second RCPS  
+А3 If 
+operability is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+7 (6) hours  
+ 
+17 (18) 
+hours  
+24 hours 
+hot state  
+hot state  
+cold state 
+[PAGE 117]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+111 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.1.4.2 Tightness of RCPS main joint 
+seal shall be ensured 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Disturbance of tightness of main RCPS joint internal 
+gasket 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” 
+67 (66, 60, 
+36, 60, 60) 
+hours 
+shutdow
+n for 
+repair 
+2.1.5 JEC reactor coolant pipeline  
+2.1.5.1 The integrity of primary circuit 
+coolant pressure limits shall be provided, 
+including pipelines, which are covered 
+by the LBB concept (RCPL, connecting 
+pipeline of the pressurizer system, 
+pipelines of the ECCS passive part)  
+ 
+PO, 
+(MCPL, 
+HS, HU, 
+CSt, CD) 
+There is a leak in the pipelines by ALMS, MLDS 
+leak detection systems, radiation monitoring 
+indications.  
+ Leak location is known with flow rate of 0.23÷2.0 
+t/hour 
+ 
+ 
+ 
+ 
+A1 Be in the 
+current state 
+for situation 
+clarification  
+A2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” 
+0.5 hours  
+ 
+67 (66, 60, 
+36, 60, 60) 
+hours 
+current  
+ 
+shutdow
+n for 
+repair 
+2.2 Auxiliary systems  
+2.2.1 KBA volume and chemical control system 
+2.2.1.1 The following shall be operable:  
+- at least two 10KBA31,32 component 
+cooling system pumps with the condition 
+of confirmation of standby pump 
+operability every 72 hours;  
+- 10KBA10AC001 regenerative heat 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+1) Inoperability of the KBA10BB001 deaerator that 
+affects the course of the volume and chemical 
+control process 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state  
+[PAGE 118]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+112 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+exchanger and 10KBA10AC002 
+blowdown water aftercooler; - 
+10KBA10BB001 blowdown deaerator;  
+- 10KBA21AC001 cooler, 
+10KBA22AC001 aftercooler of makeup 
+water;  
+- primary circuit volume and chemical 
+control pipelines,  
+- valves, controllers, I&CD, alarm, 
+protection and interlocks 
+  2) Inoperability of the makeup water supply line to 
+the primary circuit 
+In case of 
+detection, 
+perform 
+immediate 
+emergency 
+shutdown 
+with EP 
+button 
+ cold state  
+  3) Inoperability of KBA heat exchange equipment 
+when the OL is exceeded by the difference in 
+coolant temperatures in the “cold” RCPL leg and 
+primary circuit makeup 
+ 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+ PO  4) Inoperability of two KBA pumps A1 Be in 
+“Power 
+operation”  
+24 hours  
+ 
+31 hours 
+power 
+operation  
+cold 
+[PAGE 119]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+113 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+ 
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+state  
+ MCPL, 
+(HS, HU, 
+CD) 
+5) Inoperability of two KBA pumps А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+30 (24, 24, 
+24) hours 
+cold state  
+  6) Inoperability of three KBA pumps Immediate 
+emergency 
+shutdown 
+with EP 
+button and 
+changeover 
+to cold state 
+ cold state  
+ CST, SR, 
+RF 
+7) Inoperability of KBA system equipment Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability 
+As soon as 
+possible 
+current 
+[PAGE 120]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+114 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.2.2 KTA primary coolant circuit drains and sampling system 
+2.2.2.1 The following shall be operable:  
+- at least two 10KTA21,22,23AR001 
+controlled leakage pumps with 
+confirmation of standby pump 
+operability every 72 hours;  
+- 10KTA10AC001 controlled leakage 
+heat exchanger;  
+- 10KTA10BB001 controlled leakage 
+collection tank;  
+- valves and pipelines that provide air, 
+drains and leaks removal from equipment 
+and pipelines of the primary circuit;  
+- controllers, I&CD, alarm, protection 
+and interlocks 
+PO 1) Inoperability of two KTA pumps A1 Be in 
+“PO”  
+ 
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+8 hours  
+ 
+31 hours  
+PO 
+ 
+cold state  
+MCPL, 
+(HS, HU, 
+CD) 
+2) Inoperability of two KTA pumps Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+30 (24, 24, 
+24) hours 
+cold state 
+3) Inoperability of three KTA pumps or 
+10KТA10AC001 controlled leakage heat exchanger  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+CST, SR, 
+RF 
+4) Inoperability of KTA system equipment 
+ 
+ 
+Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability 
+As soon as 
+possible 
+current 
+[PAGE 121]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+115 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.2.3 10LCQ10 SG blowdown and drains system  
+2.2.3.1 Before Unit reaches MCPL, the 
+SG blowdown and drains system shall be 
+in operation, providing constant and 
+periodic blowdown of all four steam 
+generators 
+PO 1) Termination of blowdown of salt compartment or 
+“pockets” of headers of at least one SG due to 
+blowdown system fault  
+A1 Restore 
+the 
+operability  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+A3 Restore 
+the 
+operability  
+А4 If А3 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+8 hours  
+ 
+7 hours  
+ 
+ 
+ 
+8 hours  
+ 
+24 hours 
+power 
+operation  
+hot state 
+ 
+ 
+hot state  
+cold state  
+[PAGE 122]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+116 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+to “Cold 
+state” 
+ MCPL, 
+(HS, HU, 
+CD) 
+2) Termination of blowdown of salt compartment or 
+“pockets” of headers of at least one SG due to 
+blowdown system fault  
+Change over 
+the Unit to 
+“Cold state” 
+30 (24, 24, 
+24) hours 
+cold state 
+2.2.4 PGB50 component cooling system of normal operation essential loads in 20UJA building 
+2.2.4.1 The following shall be operable:  
+- at least two 10PGB50АР001,002,003 
+component cooling system pumps with 
+the condition of confirmation of standby 
+pump operability every 72 hours;  
+- one of the 10PGB50АС001,002 
+component cooling system heat 
+exchangers;  
+- valves, alarms, protections and 
+interlocks of I&CD that provide the 
+operability of the listed equipment; 
+PO 1) Inoperability of two PGB50 pumps  A1 Restore 
+the 
+operability  
+A2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+24 hours  
+7 hours  
+current  
+hot state  
+ MCPL, 
+HS, HU, 
+CD 
+2) Inoperability of two PGB50 pumps Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+6 hours hot state 
+  3) Inoperability of PGB50 system for more than 3 
+minutes, including failure of three pumps or both 
+heat exchangers.  Termination of PGB component 
+cooling system water supply to one or more RCP 
+А1 Shut 
+down the 
+reactor with 
+EP button 
+immediately  
+ 
+ 
+immediately  
+hot state  
+ 
+hot state  
+hot state  
+[PAGE 123]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+117 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+and change 
+over the Unit 
+to “Hot state”  
+А2 Switch 
+off all RCPS 
+ 
+A3 Restore 
+PGB50 
+system 
+operability 
+А4 If А3 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ 
+72 hours 
+ 
+72 hours  
+cold state  
+ CST, SR, 
+RF 
+4) PGB50 system inoperability Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability 
+As soon as 
+possible 
+current 
+[PAGE 124]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+118 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+2.2.5 КРМ radioactive process blow-offs purification system 
+2.2.5.1 At least one process channel of 
+KPM system is serviceable 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+1) Complete loss of КРМ system operability Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+CST, SR, 
+RF 
+2) Complete loss of КРМ system operability Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+As soon as 
+possible 
+current 
+2.2.6 KU primary circuit sampling system 
+2.2.6.1 System for sampling from 10UJA 
+building equipment shall be operable - 
+KUA10-50 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Complete loss of rated WC parameters monitoring Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+2.2.7 Automated radiation safety monitoring system 
+2.2.7.1 Both ARMS channels initiating 
+safety functions are operable 
+OP 
+(MCPL, 
+HS, HU, 
+1) Inoperability of one ARMS channel A1 Eliminate 
+the fault. 
+Monitor the 
+72 hours  
+ 
+ 
+current  
+ 
+ 
+[PAGE 125]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+119 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+CD) failed 
+functions 
+and, if 
+necessary, 
+perform 
+functions 
+manually  
+А2 If А1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+ 
+ 
+31 (30, 24, 
+24, 24) 
+hours  
+ 
+ 
+cold state  
+  2) Inoperability of two АСРК channels Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+Monitor 
+failed 
+functions 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+[PAGE 126]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+120 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+and, if 
+necessary, 
+perform the 
+functions 
+manually 
+ CST, SR, 
+RF 
+3) Inoperability of two АСРК channels  Arrange 
+twenty-four-
+hour work to 
+restore the 
+operability of 
+one of the 
+channels. 
+Monitor the 
+failed 
+functions 
+and, if 
+necessary, 
+perform 
+functions 
+manually  
+As soon as 
+possible 
+current 
+2.2.8 Ventilation systems and air conditioning systems 
+2.2.8.1 Before the Unit reaches MCPL, 
+the ventilation and air conditioning 
+systems shall be operable, including:  
+- four plants of recirculation cooling 
+system of unattended rooms of inner 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Inoperability of the KLA01 system, which caused an 
+increase in parameters in the pit volume above the 
+regulated values 
+А1 Restore 
+the 
+operability.  
+A2 If A1 is 
+not 
+2 hours 
+ 
+0.5 hours  
+ 
+ 
+power 
+operation  
+power 
+operation  
+ 
+[PAGE 127]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+121 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+containment area (11KLA01, 12KLA01, 
+15KLA01);  
+- three plants of CPS drives recirculation 
+cooling system (11KLA03, 12KLA03, 
+15KLA03);  
+- six plants of recirculation cooling 
+system of rooms of personnel restricted 
+area in inner containment (11KLA04, 
+12KLA04, 15KLA04) 
+completed 
+for the 
+permissible 
+time or when 
+reaching the 
+temperature 
+of:  
+- construction 
+concrete - 70 
+°C above 
+zero;  
+- serpentenite 
+concrete of 
+“dry” 
+protection - 
+250 °C above 
+zero:  
+unload the 
+reactor to 
+90% Nnom  
+A3 Restore 
+the 
+operability  
+А4 If А3 is 
+not 
+completed 
+during the 
+ 
+ 
+ 
+ 
+4.5 hours 
+ 
+31 (30, 24, 
+24, 24) 
+hours  
+ 
+ 
+ 
+ 
+immediately  
+ 
+ 
+ 
+ 
+power 
+operation  
+cold state  
+ 
+ 
+ 
+ 
+cold state 
+[PAGE 128]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+122 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+permissible 
+time or 
+parameters 
+continue to 
+increase, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”.  
+В2 When the 
+following 
+temperature 
+is reached 
+for: 
+construction 
+concrete - 80 
+°C above 
+zero, 
+serpentenite 
+concrete of 
+“dry” 
+protection - 
+300 °C above 
+zero - 
+perform 
+[PAGE 129]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+123 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+emergency 
+reactor 
+shutdown 
+with EP 
+button and 
+change over 
+the Unit to 
+“Cold state”  
+  1) Increase of temperature at the upper unit outlet - 
+from 105 °C to 119 °C above zero. And decrease in 
+air flow rate for cooling less than 40,000 m3/h. 
+Personnel 
+shall 
+immediately 
+start 
+eliminating 
+the faults. 
+immediately Current 
+state 
+  2) Increase of temperature at the upper unit outlet 
+from 120 °С to 145 °С above zero and decrease in 
+air flow rate for cooling of the upper unit less than 
+40,000 m3/h  
+Not later than 
+in two hours 
+of operation 
+in this mode, 
+the personnel 
+shall shut 
+down the 
+Unit to the 
+cold state at 
+scheduled 
+rate and 
+inspect the 
+CPS CR 
+31 (30, 24, 
+24, 24) 
+hours 
+Cold 
+state 
+[PAGE 130]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+124 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+  3) Increase of temperature at the upper unit outlet 
+more than 145 °С above zero and termination of 
+upper unit cooling 
+Not later than 
+in two 
+minutes of 
+operation in 
+this mode, 
+the personnel 
+shall shut 
+down the 
+Unit to the 
+cold state at 
+scheduled 
+rate and 
+inspect the 
+CPS CR 
+31 (30, 24, 
+24, 24) 
+hours 
+Cold 
+state 
+  4) Inoperability of the KLA04 system, which caused 
+an increase in air temperature in the reactor hall 
+premises, RCP electric motors and circular corridors 
+of the containment more than 60 °С above zero 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+2.2.9 Nuclear fuel and activated elements handling systems  
+2.2.9.1 Lining of fuel pools, RIIC is 
+checked for tightness and there are no 
+leaks.  
+No leaks through the 10KTQ11BR002, 
+10KTQ12BR002, 10KTQ13BR002 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Appearance of level signal in KTQ tank. (In case of 
+FP lining leak more than 1 m3/day and FA in the 
+fuel pool) 
+Immediate 
+shutdown to 
+“Cold state” 
+at scheduled 
+rate 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+[PAGE 131]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+125 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+hydraulic locks  Value of leakage through the protective hydraulic 
+lock (on the RIC side) more than 1 L per day 
+Immediate 
+shutdown to 
+“Cold state” 
+at scheduled 
+rate 
+31 (30, 24, 
+24, 24) 
+hours 
+cold state 
+ In case of leakage through the main hydraulic lock 
+(on the FP side) exceeding 1 L per day 
+ 
+It is allowed 
+to operate the 
+Unit until the 
+nearest 
+shutdown, 
+provided that 
+the protective 
+hydraulic 
+lock is 
+operable 
+ current 
+state 
+2.2.10 10KRA10 nitrogen supply system for blow-offs from 10UJA the building equipment 
+2.2.10.1 At least one leg of RC high 
+pressure nitrogen supply system is 
+operable, namely:  
+- receiver;  
+- valves, including controllers;  
+- I&CD, interlocks and alarm  
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Inoperability of RC high pressure nitrogen supply 
+system 
+A1 Restore 
+the 
+operability  
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+8 hours  
+ 
+31 (30, 24, 
+24, 24) 
+hours 
+current  
+cold state 
+2.2.10.2 At least one leg of RC low Inoperability of low pressure nitrogen supply system Perform 31 (30, 24, cold state 
+[PAGE 132]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+126 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+pressure nitrogen supply system is 
+operable, namely:  
+- receiver;  
+- valves, including controllers;  
+- I&CD, interlocks and alarm  
+to RC loads or increase of hydrogen concentration in 
+blow-off from the 10UJA building equipment more 
+than 3.5%  
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+24, 24) 
+hours 
+2.2.11 QFA compressed air system for valve pneumatic drives 
+2.2.11.1 At least one leg of high-pressure 
+compressed air system for isolating valve 
+pneumatic drives is operable, namely:  
+- receiver;  
+- valves;  
+- I&CD, interlocks and alarm  
+PO, 
+(MCPL)  
+System failure with complete loss of air supply to 
+isolating valve pneumatic drives 
+A1 Restore 
+the 
+operability  
+A2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+10 hours  
+7 (6) hours 
+current  
+hot state 
+2.2.12 10KBC40 boron concentrate system 
+2.2.12.1 The 10KBC40 boron 
+concentrate system is operable, namely:  
+- at least two 10KBC50AP001,002,003 
+boron concentrate pumps are operable;  
+- the 0KBC40ВB001,002 tanks have 
+boric solution inventory with boric acid 
+concentration of 39.5-44.5 g/dm3 with 
+volume of at least 160 m3;  
+- valves, I&CD, alarm, protections and 
+interlocks 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+1) Decrease of total inventory of boric concentrate 
+less than 160 m3 or deviation of boric acid 
+concentration from permissible values 
+A1 Eliminate 
+the fault  
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+8 hours  
+31 (30, 24, 
+24, 24) 
+hours  
+current  
+cold state  
+[PAGE 133]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+127 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+  2) Inoperability of two 10KBC50AP001,002,003 
+pumps 
+A1 Restore 
+the 
+operability  
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+72 hours  
+ 
+31 (30, 24, 
+24, 24) 
+hours  
+current  
+ 
+cold state  
+  3) Inoperability of three 10KBC50AP001,002,003 
+pumps  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+31 (30, 24, 
+24, 24) 
+hours 
+cold state  
+3 Secondary circuit systems  
+3.1 LBA main steam pipeline system 
+3.1.1 Before bringing the reactor to 
+MCPL, the following shall be operable:  
+- mains steam pipelines system;  
+- BRU-A (11LBA10AA201, 
+11LBA20AA201, 12LBA30AA201, 
+12LBA40AA201 of each SG 
+LBA10,20,30,40AA201);  
+- electrically driven gate valves upstream 
+BRU-A (11LBA10AA201, 
+PO, 
+(MCPL)  
+ 
+1) Inoperability of one or two BRU-A (in terms of 
+mechanical part or non-redundant control devices)  
+ 
+A1 Restore 
+the 
+operability 
+It is allowed 
+not to check 
+3 (2) other 
+BRU-A.  
+A2 If A1 is 
+not 
+72 hours  
+ 
+ 
+ 
+7 (6) hours  
+current  
+ 
+ 
+hot state  
+[PAGE 134]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+128 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+11LBA20AA201, 12LBA30AA201, 
+12LBA40AA201)  
+- power supply, monitoring and control 
+systems (I&CD, alarm and interlocks are 
+connected)  
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+ 2) Inoperability of three BRU-A  Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+31 (30, 24) 
+hours  
+cold state  
+ 
+ 3) Inoperability of redundant control devices of one 
+(two) BRU-A  
+ 
+A1 Restore 
+the 
+operability 
+It is allowed 
+not to check 
+3 (2) other 
+BRU-A.  
+ 
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+24 hours  
+(up to three 
+days with 
+NPP CE 
+permit)  
+ 
+7 (6) hours  
+current  
+ 
+ 
+ 
+ 
+hot state 
+[PAGE 135]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+129 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+3.2 The BRU-K system (10MAN11,12,21,22,31,32,41,42AA201) MAN 
+3.2.1 The following shall be operable 
+before bringing the reactor to MCPL:  
+- BRU‑K 
+(10MAN11,12,21,22,31,32,41,42AA201
+);  
+- power supply, monitoring and control 
+systems (I&CD, alarm and interlocks are 
+connected) 
+PO 1) Inoperability of 3 BRU-K 
+(10MAN11,12,21,22,31,32,41,42AA201) 
+A1 Unload 
+RP to 50% 
+Nnom  
+ 
+ 
+A2 Restore 
+the 
+operability  
+ 
+A3 If A2 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+1 hours  
+ 
+ 
+71 hours  
+ 
+ 
+7 hours  
+power 
+operation  
+ 
+power 
+operation  
+ 
+hot state  
+ MCPL 2) Inoperability of 3 BRU-K A1 Restore 24 hours  reactor at 
+[PAGE 136]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+130 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+(10MAN11,12,21,22,31,32,41,42AA201) the 
+operability  
+ 
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+ 
+ 
+6 hours  
+MCPL  
+hot state  
+ PO  
+ 
+3) Inoperability of 4 BRU-K 
+(10MAN11,12,21,22,31,32,41,42AA201) 
+А1 Unload 
+the RP to 
+MCPL  
+ 
+ 
+A2 Restore 
+the 
+operability  
+ 
+A3 If A2 is 
+not 
+completed 
+for the 
+permissible 
+2 hours  
+ 
+ 
+22 hours  
+ 
+ 
+6 hours  
+reactor at 
+MCPL  
+reactor at 
+MCPL  
+hot state  
+[PAGE 137]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+131 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+3.3 LAB, FWP main feedwater pipeline systems, LAC FWP piping system 
+3.3.1 Before Unit heat-up:  
+- 10LAA10BB01 deaeration and feeding 
+plant shall be put into operation;  
+- 10LAJ01AP001 AFWP shall be ready 
+for operation;  
+- valves, I&CD, process protections and 
+interlocks, alarm 
+PO Disconnection of 5 FWP and actuation failure of 
+APP at power more than 75% Nnom or actuation 
+failure of PRLD at power less than 75% Nnom, as 
+well as if SG makeup stopped and it is impossible to 
+restore it on the leg with operating RCPS  
+Immediately 
+shut down 
+the reactor 
+with EP 
+button and 
+change over 
+the Unit to 
+“Hot state” 
+Immediately hot state 
+  Inoperability of two FWP pumps out of four and 
+actuation failure of standby pump. At N>75% Nnom  
+The Unit 
+power is 
+reduced due 
+to the 
+actuation of 
+reactor 
+accelerated 
+preventive 
+protection 
+and PRLD. 
+Monitoring 
+of APP 
+Immediately  50% 
+Nnom 
+[PAGE 138]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+132 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+actuation and 
+Unit 
+unloading 
+  Inoperability of three FWP pumps out of four and 
+actuation failure of standby pump. At N>75% Nnom  
+The Unit 
+power is 
+reduced due 
+to the 
+actuation of 
+reactor 
+accelerated 
+preventive 
+protection 
+and the 
+operation of 
+PRLD. 
+Monitoring 
+of APP 
+actuation and 
+Unit 
+unloading 
+Immediately 25% 
+Nnom 
+  Inoperability of one FWP pump out of four and 
+actuation failure of standby, and N > 75% Nnom  
+Unit power is 
+reduced due 
+to PRLD 
+actuation. 
+Monitoring 
+of PRLD 
+actuation and 
+Immediately 75% 
+Nnom 
+[PAGE 139]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+133 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+unloading 
+4 Unit systems  
+4.1 Safety related APCS systems  
+4.1.1 Control and protection system (CPS) 
+4.1.1.1 The reactor CR group and 
+individual control system shall be fully 
+operable, including the position 
+monitoring system  
+PO, 
+MCPL  
+1) Disturbance of the design sequence of CPS CR 
+groups movement  
+  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+7 (6) hours  
+ 
+hot state  
+ 
+  2) Spontaneous continuous upward movement of 
+any CPS CR or a group  
+Shut down 
+the reactor 
+with EP 
+button and 
+change over 
+the Unit to 
+“Hot state”  
+Immediately  hot state  
+  3) Drop of two or more CPS CR to the core bottom 
+(indication of CPS CR position 0%) 
+Shut down 
+the reactor 
+with EP 
+button and 
+change over 
+the Unit to 
+“Hot state”  
+Immediately  hot state  
+[PAGE 140]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+134 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+ PO 4) No monitoring of two CPS CR position A1 Unload 
+the reactor to 
+75% Nnom  
+A2 Eliminate 
+the fault  
+ 
+A3 If A2 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+0.5 hours  
+3 hours  
+ 
+7 hours  
+power 
+operation  
+power 
+operation  
+hot state 
+ MCPL 5) No monitoring of two CPS CR position A1 Eliminate 
+the fault  
+ 
+ 
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+3 hours  
+ 
+ 
+6 hours  
+reactor at 
+MCPL  
+hot state  
+[PAGE 141]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+135 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Hot state”  
+ PO, 
+(MCPL) 
+6) No monitoring of more than two CPS CR 
+position 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+7 (6) hours  state  
+ 7) Two CPS CR or more cannot be controlled from 
+CK  
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+7 (6) hours  state  
+ 8) Jamming of one CPS CR at a height of more than 
+27% from the core bottom 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+7 (6) hours  state  
+ 9) Jamming of one CPS CR at a height of less than 
+27% of the core bottom and the indication of 
+another CPS CR position is lost 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state” 
+7 (6) hours  hot state  
+ 10) Jamming of two CPS CR and more at a height 
+of less than 27% from the core bottom 
+Perform 
+unscheduled 
+Unit 
+changeover 
+7 (6) hours hot state 
+[PAGE 142]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+136 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+to “Hot state” 
+  11) Spontaneous uncontrolled downward movement 
+of two CPS CR groups or more with their seizure in 
+a non-standard position  
+Immediately 
+shut down 
+the reactor 
+using the PP-
+I key and 
+change over 
+the Unit to 
+“Hot state” 
+7 (6) hours hot state 
+ 12) Spontaneous uncontrolled downward movement 
+of any CPS CR group from the upper or 
+intermediate position with its seizure in a non- 
+standard position 
+Immediately 
+shut down 
+the reactor 
+using the PP-
+I key and 
+change over 
+the Unit to 
+“Hot state” 
+7 (6) hours hot state 
+ 13) Spontaneous uncontrolled downward movement 
+of two CPS CR or more from one or different 
+groups with their seizure in a non-standard position 
+ 
+Immediately 
+shut down 
+the reactor 
+using the PP-
+I key and 
+change over 
+the Unit to 
+“Hot state” 
+7 (6) hours hot state 
+  14) One CPS CR of any group at a height more than Immediately 7 (6) hours hot state 
+[PAGE 143]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+137 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+27% from the reactor core bottom cannot be 
+controlled and the position of another CPS CR of 
+any group is not monitored 
+shut down 
+the reactor 
+with the PP-I 
+key and 
+change over 
+the Unit to 
+“Hot state”  
+ 
+ PO 15) Faults in CPS CR control circuits that impede 
+the actuation of PP-I, PP-II 
+А1 If a defect 
+is found, start 
+unloading 
+with the GCS 
+switch to the 
+power level 
+of 5% Nnom  
+A2 Arrange 
+defect 
+elimination  
+A3 If A2 is 
+not 
+performed, 
+shut down 
+the reactor 
+with the  
+GCS switch 
+and change 
+over the Unit 
+immediately  
+ 
+ 
+7 hours  
+ 
+7 hours  
+ 
+immediately  
+power 
+operation  
+ 
+power 
+operation  
+hot  
+state  
+hot state  
+[PAGE 144]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+138 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+to “Hot state”  
+A4 If Item 
+A3 is not 
+performed. 
+Shut down 
+the reactor 
+with  EP 
+button.  
+ PO, 
+(MCPL) 
+16) Jamming of two or more CPS CR at any height Take 
+measures to 
+eliminate the 
+fault.  
+Shut down 
+the reactor 
+with EP 
+button and 
+change over 
+the Unit to 
+“Hot state” 
+7 (6) hours hot state 
+ MCPL 17) Faults in CPS CR control circuits that impede 
+the actuation of PP-I, PP-II  
+ 
+A1 Eliminate 
+the fault  
+ 
+ 
+А2 If A1 is 
+not 
+performed 
+for the 
+16 hours  
+ 
+ 
+6 hours  
+reactor at 
+MCPL  
+hot state  
+[PAGE 145]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+139 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+permissible 
+time, shut 
+down the 
+reactor with 
+the GCS 
+switch and 
+change over 
+the Unit to 
+“Hot state”  
+ PO, 
+(MCPL) 
+18) CPS CR operating group goes beyond the area 
+of permissible positions in accordance with Figure 
+of Appendix F 
+A1 Put the 
+group into 
+the optimal 
+interval by 
+adjusting the 
+boric acid 
+concentration
+. Monitor the 
+offset, Kv, 
+FA heating.  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+12 hours  
+ 
+ 
+ 
+ 
+7 (6) hours 
+current  
+ 
+ 
+ 
+ 
+hot state 
+[PAGE 146]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+140 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+changeover 
+to “Hot state”  
+4.1.1.2 All RMS channels shall be put 
+into operation after removal of UU and 
+PTU of the reactor.  
+Refuelin
+g  
+Failure of one or more RMS channels  A1 Refueling 
+termination.  
+A1 Eliminate 
+the fault  
+Immediately  
+ 
+Immediately 
+refueling  
+refueling  
+4.1.1.3   EP, PRLD actuating part is not 
+operable 
+PO EP, PRLD actuating part non-operability A1 Unload 
+the reactor 
+with PP-I key 
+to power of 
+5% Nnom  
+A2 Restore 
+the 
+operability  
+A3 If A2 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+Unit 
+changeover 
+to “Hot state”  
+1 hours  
+ 
+7 hours  
+ 
+ 
+6 hours  
+power 
+operation  
+power 
+operation  
+ 
+hot state  
+4.1.1.4  Actuated part of set of PP, PRLD 
+is  not operable 
+Inoperability of actuated part of PP, PRLD set A1 Unload 
+the reactor 
+with PP-I key 
+to power of 
+5% Nnom  
+A2 Restore 
+operability of 
+actuated part 
+of the set  
+A3 If A2 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+Unit 
+changeover 
+to “Hot state”  
+1 hours  
+ 
+7 hours  
+ 
+6 hours  
+power 
+operation  
+power 
+operation  
+ 
+hot state  
+[PAGE 147]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+141 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+4.1.2 Unit-level control system (ULCS)  
+4.1.2.1 At least one ULCS set is operable PO, 
+(MCPL)  
+ULCS failure to perform the function of remote 
+control or presentation of information at MCR  
+A1 Restore 
+the 
+operability  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time interval, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+72 hours  
+ 
+7 (6) hours  
+current  
+ 
+hot state  
+  
+4.2 Monitoring, control and diagnostic system (MCDS)  
+4.2.1 JBB in-core instrumentation system (ICIS) 
+4.2.1.1 Reaching RP nominal power after 
+refueling or shutdown with reactor 
+decompression is allowed only when 
+ICIS is operable and provides effective 
+core monitoring in the availability of at 
+least 90% of operable ICDA, provided 
+that the ICIS degradation degree for ICIS 
+CS3 is higher than zero and the ICIS 
+degradation degree for ICIS CAS-P is 
+higher than the first one.  
+ 
+PO 1) DE SS inoperability A1 Restore 
+the 
+operability of 
+engineering 
+workstation 
+(DE SS)  
+A2 If A1 is 
+not 
+performed 
+for the 
+permissible 
+time, reduce 
+the Unit 
+power to 
+20% at 
+scheduled 
+rate  
+A3 Restore 
+DE SS 
+operability  
+A4 If A3 is 
+7 days  
+ 
+ 
+2 hours  
+ 
+ 
+ 
+3 weeks 
+ 
+7 hours  
+power 
+operation  
+ 
+power 
+operation 
+ 
+ 
+power 
+operation 
+reaching 
+MCPL  
+[PAGE 148]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+142 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “reaching 
+MCPL” state  
+  2) Inoperability of both ICIS CS in steady operation 
+mode 
+A1 Restore 
+the 
+operability of 
+one or two 
+ICIS 
+computing 
+system while 
+maintaining 
+steady state 
+and core 
+power level  
+A2 If A1 is 
+not 
+performed 
+within the 
+permissible 
+8 hours  
+ 
+ 
+0.5 hours  
+ 
+ 
+ 
+3 days  
+ 
+ 
+7 hours 
+power 
+operation  
+ 
+power 
+operation  
+ 
+ 
+power 
+operation 
+ 
+reaching 
+MCPL  
+[PAGE 149]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+143 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+time, reduce 
+the Unit 
+power to 
+90% at 
+scheduled 
+rate  
+A3 Restore 
+the 
+operability of 
+one of ICIS 
+computing 
+system 
+A4 If A3 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “reaching 
+MCPL” state 
+  3) Achievement of conditions that characterize the 
+fourth ICDA degradation degree for ICIS computing 
+system 
+A1 Restore 
+the 
+operability of 
+ICIS sensors  
+8 hours  
+ 
+7 hours  
+power 
+operation  
+reaching 
+MCPL  
+[PAGE 150]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+144 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “reaching 
+MCPL” state 
+4.2.2 ALMS and MLDS 
+4.2.2.1 ALMS and MLDS shall be 
+operable 
+PO Inoperability of ALMS and MLDS2  A1 Restore 
+the 
+operability of 
+ALMS OR  
+В1 Restore 
+MLDS 
+operability  
+ 
+ 
+А2 If А1 or 
+B1 is not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to cold state 
+at scheduled 
+rate  
+7 days  
+ 
+7 days  
+ 
+ 
+24 hours  
+power 
+operation  
+power 
+operation  
+ 
+cold state  

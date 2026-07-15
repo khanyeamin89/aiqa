@@ -1,0 +1,678 @@
+[PAGE 151]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+144 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+4.2.3 RCP MDMS 
+4.2.3.1 RCP MDMS shall be operable PO Inoperability of RCP MDMS of any loops 
+operating or being started  
+A1 Restore 
+the 
+operability of 
+RCP MDMS  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+7 days  
+ 
+31 hours  
+power 
+operation  
+ 
+cold state  
+4.2.4 LPMS 
+4.2.4.1 LPMS shall be operable PO 1) Fault of one channel of LPMS (vessel or steam 
+generator) 
+A1 Be in the 
+current state  
+A2 Restore 
+operability of 
+LPMS  
+72 hours  
+ 
+until the 
+nearest 
+planned 
+shut-down 
+for repair 
+power 
+operation  
+ 
+ 
+  2) Failure of more than one LPMS channel  A1 Restore 
+the 
+operability of 
+LPMS.  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+7 days  
+ 
+31 hours  
+power 
+operation  
+ 
+cold state  
+[PAGE 152]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+146 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Cold 
+state” 
+4.2.5 VMD 
+4.2.5.1 VMD shall be operable PO Inoperability of VMD of RCPS, TG, or feed water 
+pumps 
+A1 Restore 
+the 
+operability  
+A2 If A1 is 
+not 
+completed 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+7 days  
+ 
+31 hours  
+power 
+operation  
+ 
+cold state  
+[PAGE 153]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+147 
+4 LIMITS AND CONDITIONS OF SAFE OPERATION 
+ 
+4.1 Safety limits 
+ 
+Safety limits of the reactor plant (and parameters characterizing these limits) during power operation and in shutdown states are 
+provided in Table 4.1. 
+ 
+Table 4.1 — Safety limits 
+ 
+No. Parameter name Safety limits 
+1 Core fuel element (FE) cladding temperature, °С, max 1200 
+2 Maximum temperature of fuel (uranium dioxide pellet) center, °С, max  2800 (for fresh fuel) 
+2500 (for burned-up fuel) 
+3 Boric acid concentration in the primary circuit (for subcritical state of 
+unloading, refueling or repair of the reactor), g/kg, min 
+16.0 
+4 Pressure in the primary circuit, MPa (kgf/cm2), max 
+- at coolant temperature at the reactor inlet of 140 °С max  
+- at coolant temperature at the reactor inlet of 140 °С min 
+ 
+17.6 (180) 
+4.4 (45) 
+5 Pressure in the secondary circuit, MPa (kgf/cm2), max 8.6 (88) 
+ 
+Note — Under pressure in the primary circuit we understand the pressure in the reactor “hot” leg.  
+Under pressure in the secondary circuit we understand the pressure in the main steam header. 
+[PAGE 154]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+148 
+4.2 Limiting settings of safety systems actuation 
+ 
+Limiting settings of safety systems actuation by primary circuit parameters and reactor protection signals are provided in Table 4.2. 
+ 
+Table 4.2 — Limiting settings of safety systems actuation (reactor protections in case of emergency situations and 
+emergency parameters) 
+ 
+No. Protective function Parameter to trigger the 
+protection 
+Setting value Unit of 
+measure 
+Comments (protection type) 
+1 2 3 4 5 6 
+1 Reactor trip 
+(EP) 
+1) Pressure in the primary 
+circuit 
+≥ 17.6 MPa (kgf/cm2) EP from 4 set (actuation by 2 
+from 4 channels) 
+ 2) Pressure in the primary 
+circuit 
+≤ 12.0 MPa (kgf/cm2) EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 3) Coolant temperature at 
+the reactor outlet 
+≥ 332 °С EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 4) Pressure in the primary 
+circuit depending on the 
+coolant temperature at the 
+reactor inlet (the limit of the 
+allowable pressure is 
+regulated depending on 
+the temperature of the inlet 
+coolant) 
+Pcalc = f(Tinl) - in 
+accordance with curve of 
+Appendix G 
+MPa (kgf/cm2) EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 5) Water level in the 
+pressurizer 
+≤ 3000 mm EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 6) Water level in the 
+pressurizer 
+≥ 12400 mm EP from 4 sets (actuation by 2 
+from 4 channels) 
+[PAGE 155]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+149 
+Continuation of Table 4.2 
+1 2 3 4 5 6 
+ 7) Interlocks of fast-acting 
+PRZ injection gate valves 
+on pressure 
+≥ 15.6 MPa (kgf/cm2) Actuation of opening interlock by 2 
+from 4 channels in 4 sets of 
+ESFAS. Interlock is bypassed at P 
+< 14.7 MPa 
+ 8) Water level in any of the 
+steam generators 
+≤ 1250 mm EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 9) Water level in any of the 
+steam generators 
+≥ 2400 mm EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 10) Pressure in the main 
+steam header 
+≥ 5.6 MPa (kgf/cm2) EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 11) Pressure in the main 
+steam header 
+≤ 4.1 MPa (kgf/cm2) EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 12) Disconnection of 
+operating RCPS 
+Disconnection of the last 
+operating RCPS (at 
+N > 5% Nnom) 
+- EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 13) Ionization chamber 
+currents 
+Overpower of neutron flux ≥ 111% Nnom EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 14) Ionization chamber 
+currents 
+Overpower in terms of the 
+rate of neutron flux 
+increase (period) 
+≤ 20 s EP from 4 sets (actuation by 2 
+from 4 channels) 
+ 15) Emergency button on 
+the MCR panel 
+EP button is pressed - Actuation is direct from safety desk 
+to circuit breakers 
+[PAGE 156]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+150 
+Limiting settings of safety systems actuation by parameters of the secondary circuit and containment are provided in Table 4.3. 
+ 
+Table 4.3 — Limiting settings of safety systems actuation by parameters of the secondary circuit and containment 
+ 
+No. Protective function Parameter to trigger the 
+protection 
+Setting value Unit of 
+measure 
+Comments (protection type) 
+1 2 3 4 5 6 
+2 Protective 
+actions on the 
+secondary 
+circuit 
+1) Fast-acting main steam 
+pipelines isolation valves 
+(FASIV) 
+Close when pressure in any 
+SG drops with rate: 
+dP/dt ≥ 0.05 MPa/s 
+(0.5 kgf/cm2•s) 
+MPa/s Close FASIV of all SG (actuation 
+by 2 from 4 channels) 
+ 2) BRU-A steam dumping 
+valve 
+Opens when pressure in 
+the main steam pipeline 
+loop: 
+≥ 5.2 MPa (kgf/cm2) 
+ 
+ 
+ 
+ 
+≤ 4.7 MPa (kgf/cm2) 
+MPa (kgf/cm2) Opens BRU-A of respective loop 
+(actuation by 2 from 4 channels) 
+ 
+ 
+Closes BRU-A (actuation by 2 
+from 4 channels) 
+ 3) SG overpressure 
+protection (POSV) 
+Opens when pressure in 
+the main steam pipeline 
+loop: 
+≥ 5.6 MPa (kgf/cm2) 
+ 
+ 
+ 
+ 
+≤ 5.0 MPa (kgf/cm2) 
+MPa (kgf/cm2) Opens POSV of respective loop 
+(actuation by 2 from 4 channels) 
+ 
+ 
+Closes POSV (actuation by 2 
+from 4 channels) 
+ 4) Auxiliary feedwater 
+pumps (AFWP) 
+Start up when level in any of 
+the steam generators drops 
+to: 
+≤ 1400 mm Starts AFWP (actuation by 2 from 
+4 channels) 
+[PAGE 157]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+151 
+Continuation of Table 4.3 
+1 2 3 4 5 6 
+3 Containment 
+protection 
+1) Sprinkler pumps (JMN) Start up when pressure in the 
+containment: 
+≥ 0.15 MPa (1.5 kgf/cm2) 
+(gauge pressure) 
+MPa Starts JMN pumps (actuation by 2 
+from 4 channels) 
+ 2) Containment isolation 
+valves (JM) 
+Close when pressure in the 
+containment: 
+≥ 0.12 MPa (1.2 kgf/cm2) 
+(gauge pressure) 
+MPa Closes isolation valves of JM system 
+(actuation by 2 from 4 channels) 
+ 3) Hydrogen monitoring 
+inside containment 
+system (JMU) 
+Starts up when pressure in 
+the containment: 
+≥ 0.10 MPa (1.0 kgf/cm2) 
+(gauge pressure) 
+MPa Starts JMU sets (actuation by 2 
+from 4 channels) 
+ 4) Negative pressure in 
+the outer containment 
+(KLB22) 
+Maintains pressure in the 
+annulus: 
+≤ -15 mm w.c. (-150 Pa) Pa Starts fans of KLB22 system 
+(actuation by 2 from 4 channels) 
+ 
+[PAGE 158]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+152 
+4.3 Limiting conditions of safe operation 
+ 
+4.3.1 Parameters of normal operation 
+ 
+Parameters of normal operation of the reactor plant and secondary circuit during power operation and in shutdown states are 
+provided in Table 4.4. 
+ 
+Table 4.4 — Parameters of normal operation 
+ 
+No. Parameter name Normative value Unit of Comments 
+measure 
+1 2 3 4 5 
+1 Thermal power of the reactor (Nnom) 1200 MW nominal power 
+2 Pressure in the primary circuit (at reactor outlet) 15.7 ± 0.3 MPa 
+3 Coolant temperature at the reactor inlet (at 100% Nnom) 291 ± 2 °С 
+4 Coolant temperature at the reactor outlet (at 100% Nnom) 321 ± 2 °С 
+5 Coolant flow rate through the reactor (with 2 operating 
+RCPS) 
+≥ 45000 t/h 
+6 Boric acid concentration in the primary circuit: 
+- power operation (100% Nnom) 
+- cold state (cooldown, repair) 
+- refueling state (reactor open, pit flooded) 
+ 
+0.0 - 10.0 
+≥ 16.0 
+≥ 16.0 
+g/kg 
+g/kg 
+g/kg 
+depending on fuel burn-up 
+ 
+ 
+7 Water level in the pressurizer (at 100% Nnom, average 
+coolant temperature of 306 °C) 
+7100 ± 200 mm 
+8 Pressure in the secondary circuit (main steam pipeline loop 
+at 100% Nnom) 
+4.6 ± 0.2 MPa 
+9 Water level in the steam generator (by level meter) 1950 ± 100 mm 
+10 Concentration of chlorides in the SG water ≤ 0.1 mg/kg 
+11 Concentration of sodium in the SG water ≤ 0.1 mg/kg 
+12 Activity of primary circuit coolant (by sum of reference 
+isotopes) 
+≤ 3.7•106 Bq/kg 
+ 
+[PAGE 159]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+153 
+4.3.2 Limits of normal operation parameters deviations 
+ 
+Limits of normal operation parameters deviations that require protective actions or power reductions are provided in Table 4.5. 
+ 
+Table 4.5 — Limits of normal operation parameters deviations 
+ 
+No. Parameter name Deviation limit Protective action required Comments 
+1 Primary circuit pressure (reactor outlet) ≥ 16.5 MPa Unscheduled power reduction to 50% 
+Nnom 
+If pressure is not restored within 
+10 minutes, shut down the reactor 
+2 Primary circuit pressure (reactor outlet) ≤ 14.5 MPa Unscheduled power reduction to 50% 
+Nnom 
+If pressure is not restored within 
+10 minutes, shut down the reactor 
+3 Coolant temperature at the reactor outlet ≥ 326 °С Unscheduled power reduction to 50% 
+Nnom 
+If temperature is not restored within 
+10 minutes, shut down the reactor 
+4 Water level in the pressurizer ≤ 4500 mm Unscheduled power reduction to 50% 
+Nnom 
+ 5 Water level in the pressurizer ≥ 9500 mm Unscheduled power reduction to 50% 
+Nnom 
+ 6 Water level in any steam generator ≤ 1650 mm Unscheduled power reduction to 50% 
+Nnom 
+ 7 Water level in any steam generator ≥ 2250 mm Unscheduled power reduction to 50% 
+Nnom 
+ 8 Pressure in the main steam header ≥ 5.2 MPa Unscheduled power reduction to 50% 
+Nnom 
+ 9 Pressure in the main steam header ≤ 4.3 MPa Unscheduled power reduction to 50% 
+Nnom 
+ 10 Sodium concentration in any SG water ≥ 0.5 mg/kg Unscheduled power reduction to 50% 
+Nnom and blowdown system checks 
+ 
+[PAGE 160]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+154 
+4.3.3 Operational parameters of safety systems 
+ 
+Operational parameters of safety systems that must be maintained during power operation are provided in Table 4.6. 
+ 
+Table 4.6 — Operational parameters of safety systems 
+ 
+No. System / component Parameter name Value Unit of 
+measure 
+Comments 
+1 2 3 4 5 6 
+1 JNG10 second stage 
+hydroaccumulators 
+(passive part of ECCS) 
+1) Water level in the tank ≥ 120 m3 
+ 2) Boric acid concentration 16.0 - 20.0 g/kg 
+ 3) Nitrogen pressure in the 
+gas space 
+3.0 ± 0.2 MPa 
+2 JNB50-80 passive heat 
+removal system (PHRS) 
+1) Boric acid concentration in 
+the tank 
+≥ 16.0 g/kg 
+ 2) Water level in the tank ≥ 85 % 
+3 JMN sprinkler system 1) Boric acid concentration in 
+the tank 
+≥ 16.0 g/kg 
+ 2) Water level in the tank ≥ 90 % 
+4 FAK10 fuel pool cooling 
+system 
+1) Water level in the fuel pool 
+liner 
+≥ 6800 mm 
+ 2) Boric acid concentration in 
+the fuel pool 
+≥ 16.0 g/kg 
+5 PE cooling water system 1) Cooling water flow rate to 
+loads 
+≥ 4860 t/h per channel 
+ 2) Activity of discharge water ≤ 18.5 Bq/kg 
+6 KAA component cooling 
+system 
+1) Surge tank level ≥ 3500 mm 
+ 2) Water activity in the circuit ≤ 1.85•104 Bq/kg 
+ 
+[PAGE 161]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+155 
+4.3.4 Operational limits of chemical parameters 
+ 
+Operational limits of chemical parameters of the primary and secondary circuits are provided in Table 4.7. 
+ 
+Table 4.7 — Operational limits of chemical parameters 
+ 
+No. Circuit / parameter Parameter name Normative limit Unit of Comments 
+measure 
+1 2 3 4 5 6 
+1 Primary circuit water 1) pH at 25 °C 5.5 - 10.2 depends on boric acid concentration 
+ 2) Boric acid concentration 0.0 - 10.0 g/kg depending on fuel burn-up 
+ 3) Chloride concentration ≤ 0.1 mg/kg 
+ 4) Fluoride concentration ≤ 0.1 mg/kg 
+ 5) Oxygen concentration ≤ 0.005 mg/kg 
+ 6) Hydrogen concentration 1.0 - 3.5 mg/kg 
+ 7) Ammonia concentration 10 - 25 mg/kg 
+2 Secondary circuit 
+(SG blowdown water) 
+1) pH at 25 °C 9.0 - 9.6 
+ 2) Chloride concentration ≤ 0.1 mg/kg 
+ 3) Sodium concentration ≤ 0.1 mg/kg 
+ 4) Silica concentration ≤ 0.2 mg/kg 
+ 5) Copper concentration ≤ 0.002 mg/kg 
+ 6) Iron concentration ≤ 0.02 mg/kg 
+ 7) Hydrazine concentration 0.01 - 0.03 mg/kg 
+ 
+[PAGE 162]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+156 
+4.3.5 Limits of radioactive emissions and discharges 
+ 
+Limits of radioactive emissions and discharges for Unit 1 are provided in Table 4.8. 
+ 
+Table 4.8 — Limits of radioactive emissions and discharges 
+ 
+No. Emission / discharge type Radionuclide group Daily limit Annual limit Unit of Comments 
+measure 
+1 2 3 4 5 6 7 
+1 Gas-aerosol emissions to 
+the atmosphere 
+1) Inert radioactive gases 
+(IRG) 
+1.1•1011 4.0•1013 Bq 
+ 2) Radioactive iodine 
+isotopes (I-131 equivalent) 
+1.8•107 6.5•109 Bq gaseous and aerosol forms 
+ 3) Cobalt-60 3.7•106 1.3•109 Bq aerosols 
+ 4) Cesium-137 7.4•106 2.7•109 Bq aerosols 
+ 5) Strontium-90 1.8•105 6.5•107 Bq aerosols 
+2 Liquid discharges to the 
+cooling pond (discharge 
+channel) 
+1) Tritium (H-3) 1.5•1011 5.5•1013 Bq 
+ 2) Cobalt-60 1.5•107 5.5•109 Bq 
+ 3) Cesium-134 3.7•106 1.3•109 Bq 
+ 4) Cesium-137 7.4•106 2.7•109 Bq 
+ 5) Strontium-90 1.8•105 6.5•107 Bq 
+ 
+[PAGE 163]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+157 
+4.3.6 Operational settings of radiation monitoring 
+ 
+Operational settings of radiation monitoring inside and outside the containment are provided in Table 4.9. 
+ 
+Table 4.9 — Operational settings of radiation monitoring 
+ 
+No. Measurement point Parameter name Alert setting Emergency Unit of Comments 
+setting measure 
+1 2 3 4 5 6 7 
+1 Main control room 
+(MCR) 
+Ambient dose equivalent 
+rate (gamma) 
+1.0 10.0 µSv/h continuous monitoring 
+2 Central control room 
+(CCR) 
+Ambient dose equivalent 
+rate (gamma) 
+0.5 5.0 µSv/h continuous monitoring 
+3 Containment service area Ambient dose equivalent 
+rate (gamma) 
+10.0 50.0 µSv/h periodic monitoring during access 
+4 Containment restricted 
+area 
+Ambient dose equivalent 
+rate (gamma) 
+100.0 500.0 µSv/h no access during power operation 
+5 Primary coolant pipeline Volumetric gamma activity 3.7•106 1.8•107 Bq/kg leak monitoring 
+6 Steam generator blowdown Volumetric gamma activity 3.7•104 1.8•105 Bq/kg primary-to-secondary leak 
+7 Turbine hall service area Ambient dose equivalent 
+rate (gamma) 
+0.5 2.5 µSv/h continuous monitoring 
+8 Exhaust stack Gas-aerosol volumetric 
+activity 
+3.7•103 1.8•104 Bq/m3 emission monitoring 
+9 Discharge channel Volumetric beta activity 1.0•103 5.0•103 Bq/m3 discharge monitoring 
+ 
+[PAGE 164]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+158 
+5 RULES OF SAFE OPERATION AND MAIN METHODS 
+ 
+5.1 General requirements 
+ 
+The operation of Rooppur NPP Unit 1 shall be carried out in strict compliance with the requirements of this Technical Specification, 
+the Design Safety Analysis Report (SAR), and operating instructions. Any deviations from the limits and conditions of safe operation 
+specified herein are considered violations and must be reported immediately to the Bangladesh Atomic Energy Regulatory Authority 
+(BAERA) and the NPP Chief Engineer. 
+ 
+All operational personnel of the Unit (including Shift Supervisors, Reactor Control Operators, Turbine Control Operators) must undergo 
+regular training, pass qualifications, and hold valid licenses for operating NPP systems. 
+ 
+5.2 Core loading and refueling rules 
+ 
+1) The reactor core loading and refueling operations shall be performed only in the “Refueling” state (CSt or CD, with the reactor 
+pressure vessel open and the refueling pit flooded with boric acid solution). 
+2) The boric acid concentration in the refueling pit and fuel pool shall be maintained at ≥ 16.0 g/kg at all times during fuel handling. 
+3) Continuous neutron flux monitoring shall be provided in the source range (using JKT instrumentation). If neutron monitoring is lost, 
+all fuel handling operations must be stopped immediately. 
+4) The refueling machine (10FAK30) must be fully tested, calibrated, and have all safety interlocks active. 
+5) Only approved fuel assemblies (FA) in accordance with the core loading scheme shall be loaded. Loading of damaged FA is 
+prohibited. 
+ 
+5.3 Reactor start-up and power ascension rules 
+ 
+1) Reactor start-up (transition from subcritical state to critical state and power ascension) is allowed only if all safety systems are fully 
+operable and in standby readiness. 
+2) During start-up, the rate of reactor power increase (neutron flux increase period) must be monitored and maintained at > 20 seconds. 
+3) The transition from the “reaching MCPL” state to the “Power Operation” state is performed by pulling out the control rods in a 
+strict sequence defined by the design. 
+4) The rate of primary circuit heat-up must not exceed 10 °C per hour. 
+5) Transition to 100% Nnom is performed in steps of 5-10% of nominal power with stabilization and chemical parameter checks. 
+[PAGE 165]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+159 
+5.4 Power operation rules 
+ 
+1) Power operation is allowed at thermal power levels up to 1200 MW (100% Nnom). 
+2) Steady power operation must be maintained with automatic control systems (reactor power regulator, turbine speed controller, 
+and steam generator level controllers) in active mode. 
+3) Primary circuit pressure, temperatures at reactor inlet/outlet, and pressurizer level must be monitored and kept within normal operation 
+parameters (Table 4.4). 
+4) The chemical composition of the primary and secondary circuit water must be monitored continuously and kept within normative 
+limits (Table 4.7). 
+5) Routine maintenance of safety systems is allowed only within the permissible repair times (72 or 192 hours) specified in Table 3.8. 
+ 
+5.5 Shutdown and cooldown rules 
+ 
+1) Scheduled reactor shutdown is performed by inserting the control rods (by GCS switch or automatic power reduction controller). 
+2) Emergency reactor shutdown (reactor trip) is initiated automatically by safety system settings or manually by pressing the EP 
+button on the MCR panel in case of any unsafe deviations. 
+3) After reactor shutdown, the decay heat removal is performed initially by steam dumping to the turbine condenser (via BRU-K) or 
+to the atmosphere (via BRU-A). 
+4) Cooldown of the primary circuit must be performed at a rate not exceeding 15 °C per hour. 
+5) The active cooldown using the JNA system is initiated when the primary circuit temperature drops below 140 °C and pressure 
+drops below 4.4 MPa. 
+6) During cooldown, the boric acid concentration in the primary circuit must be increased to ≥ 16.0 g/kg before the primary circuit 
+temperature drops below 100 °C. 
+ 
+[END OF SPECIFICATION DOCUMENT CHUNKS]

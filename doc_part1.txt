@@ -1,0 +1,2827 @@
+[PAGE 1]
+ 
+BANGLADESH ATOMIC ENERGY COMMISSION 
+(BAEC) 
+ 
+ROOPPUR NPP 
+UNIT No. 1 
+TECHNICAL SPECIFICATION  
+of safe operation of Rooppur NPP Unit 1  
+ 
+RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+202_ 
+RPR.0534.1.0.BN.DZ0001 
+
+[PAGE 2]
+
+[PAGE 3]
+ 
+BANGLADESH ATOMIC ENERGY COMMISSION 
+(BAEC) 
+ 
+  
+APPROVED 
+ Representative of Bangladesh Atomic 
+Energy Commission (BAEC) 
+   
+ "_____" ____________ 202__ 
+ 
+ROOPPUR NPP 
+UNIT No. 1 
+TECHNICAL SPECIFICATION  
+of safe operation of Rooppur NPP Unit 1  
+ 
+RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+202_ 
+RPR.0534.1.0.BN.DZ0001 
+ 
+
+[PAGE 4]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+4 
+Information about the document 
+1 DEVELOPED      BY AtomTechEnergo JSC 
+PUT INTO EFFECT: Order  of  ________ “____”, 20__  No._______ . 
+2 DATE OF THE NEXT REVISION ________ “____”, 20__ . 
+3 PUT INTO EFFECT AS A REVISION of the document “Technical 
+specification of safe operation of Rooppur N PP Unit 1” RPR.0534.1.0.BN.DZ0001,  
+Version 1. 
+4 The original document is stored in the archive of the Production and Technical 
+Department of Rooppur NPP. 
+5 A paper registered copy of the document and an electronic scanned copy (color 
+in "pdf" format with sc anning resolution parameters not lower than 300 dpi) are sent 
+to all concerned organizations. 
+  
+[PAGE 5]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+5 
+Approval sheet  
+ Position Surname Signature Date 
+Developed 
+ 
+  
+  
+Agreed 
+  
+  
+Agreed 
+  
+  
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+Agreed     
+[PAGE 6]
+
+[PAGE 7]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+5 
+Table of contents 
+1 General provisions .................................................................................................. 6 
+2 Operation state and modes of the Unit .................................................................... 8 
+3 Safe operation limits and conditions ..................................................................... 14 
+4 Operation limits  and conditions ......................................................................... 150 
+5 Safe operation rules and main methods .............................................................. 175 
+6 Nuclear fuel handling .......................................................................................... 229 
+7 Unit control in case of normal operation disturbances ....................................... 238 
+8 Conditions for inspections, testing and M&R of safety related equipment and 
+systems ...................................................................................................................... 278 
+9 Organization of operation .................................................................................  279 
+Appendix A (mandatory) List of EP, ESFAS signals ............................................... 303 
+Appendix B (mandatory) List of PP-1, PP-2, APP signals ....................................... 322 
+Appendix C (mandatory) Limitations on equipment loading conditions ................. 326 
+Appendix D  (mandatory) Water chemistry standards of the primary and secondary 
+circuits ....................................................................................................................... 337 
+Appendix E (mandatory) P1c(T) graphs for switching on RCPS, Нprz(Тav) .......... 376 
+Appendix F (mandatory) Algorithms for control of power and distribution of reactor 
+power density ............................................................................................................ 378 
+Appendix G  (mandatory) Operation conditions for safety related systems 
+(components) state of operability under Unit normal operation conditions ............. 397 
+Appendix H (mandatory) Conditions for safe storage and transportation of nuclear 
+fuel ............................................................................................................................. 425 
+Symbols and abbreviations ........................................................................................ 428 
+Terms and definitions ................................................................................................ 439 
+Regulatory references ................................................................................................ 444 
+Familiarization list ..................................................................................................... 446 
+List of changes (additions) registration ..................................................................... 447 
+Familiarization list of changes (additions) ................................................................ 448 
+ 
+[PAGE 8]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+6 
+1  General provisions 
+1.1 The Technical specification of safe operation of Rooppur NPP Unit 1 
+(hereinafter referred to as TSSO), which contains rules and basic operation 
+techniques, general procedure of safety  related operations, limits and conditions of 
+safe operation, as well as operation limits of basic parameters and operation 
+conditions based on the state of operability of safety related systems (components) in 
+the normal operation mode of the Unit, is the main document that determines the safe 
+operation of the NPP Unit. 
+1.2 TSSO is developed with the participation of NPP and RP designers in 
+accordance with the NPP design and Preliminary safety analysis report in compliance 
+with the standard specification. 
+1.3 TSSO is designed in accordance with the requirements of 
+RPR.0534.0.0.OP.BZ0002 [31]. 
+1.4 The TSSO and the changes made to it shall be agreed with the 
+organizations involved in the development of the specified specification. 
+1.5 Operation instructions for equipment and  systems are developed based 
+on the TSSO, as well as design and engineering documentation. Operation instruction 
+for equipment and systems shall not contradict the requirements of the technical 
+specification. 
+1.6 The TSSO scope is the control of the Unit durin g normal operation and 
+in case of disturbances of normal operation. 
+1.7 Technical support of TSSO is provided by Rooppur NPP. 
+1.8 TSSO adjustment is performed based on the obtained results at the 
+stages of first approach of criticality and power start -up, and the final safety analysis 
+report of Rooppur NPP Unit No. 1. 
+1.9 Changes to the technical specification are made by notice of change, 
+which shall be agreed with the organizations that have agreed on the specification, 
+approved by the operating organization and appr oved by the national regulatory 
+authority in the prescribed manner (BAERA). 
+1.10 The technical specification of safe operation is adjusted before putting 
+the Unit into operation on the basis of the final safety analysis report of Unit No.1. 
+1.11 Scope and frequency of inspections and tests of safety related systems 
+(system components) as well as criteria, when equipment is considered operable, are 
+given in the document “Regulations for inspections and tests of safety related 
+systems” for Unit No. 1 of Rooppur NPP. [ 35]. 
+1.12 The document contains excessive pressure values i n accordance with the 
+values of displaying information at the MCR (ODM mimic panel and MCR operators 
+automated workstations), except for specially specified cases. 
+1.13 The TSSO validity period is set as 5 y ears from the date of putting into 
+effect the final TSSO version, after which the document is subject to revision. 
+[PAGE 9]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+7 
+1.14 The technical specification is developed on the basis of design 
+documents, Preliminary Safety Analysis Report for Rooppur NPP Unit, Russian 
+Federal Rules and Regulations in the Field of Nuclear Energy Use, as well as 
+standards and guidance documents of Concern Rosenergoatom JSC operating 
+organization effective as of the Contract signing date: 
+ NP-001-97 General regulations on ensuring of nuclear  power plants safety 
+OPB-88/97 (PNAE G-01-011-97); 
+ NP-044-03 Rules for design and safe operation of pressurized vessels for 
+nuclear facilities; 
+ NP-045-03 Rules for design and safe operation of steam and hot water 
+pipelines for nuclear facilities; 
+ NP-082-07 Nuclear safety rules of reactor units of nuclear power plants; 
+ PNAE G -7-008-89 Rules of design and safe operation of equipment and 
+pipelines of nuclear power facilities; 
+ GOST 2.105 -95 Unified system for design documentation. General 
+requirements for text documents; 
+ GOST 2.106 -96 Unified system for design documentation. Text 
+documents; 
+ GOST 2.301-68 Unified system for design documentation. Formats; 
+ RD EO 1.1.2.19.0699 -2006 Operation and maintenance of uninterrupted 
+power supply unit; 
+ STO 1.1.1.01.003.0779 -2014 Technical documentation. Operation 
+documentation. Procedure of development and handling. Documents on the 
+maintenance of processes (operation instructions, diagrams, diagrams books); 
+ STO 1.1.1.01.0678-2007 Principal rules for nuclear power plants operation; 
+ Rooppur NPP. Reactor plant V -523. Thermal-hydraulic calculation. Part 
+1. Steady-state mode. 10JAA-MED0021. 523 РР1. OKB “Gidropress”; 
+ Rooppur NPP. Reactor plant V -523. Program of hydraulic tests of 
+reactor plant equipment 10UJA-MDC0004. 523 D37; 
+ Technical design of Rooppur NPP construction; 
+ Rooppur NPP. Units No. 1, 2. Agreement on using the KKS coding system. 
+RPR-QM-AEB0001; 
+ Rooppur NPP. Units No. 1, 2. KKS application guide; 
+ Rooppur NPP. Units No. 1, 2. List of KSS codes of functional and process 
+systems; 
+ Radiation safety regulations of Rooppur NPP. RPR.0534.0.0.RS.DZ0001. 
+[PAGE 10]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+8 
+2 Operation state and modes of the Unit 
+2.1 Safe operation limits are established in relation to the operation states of 
+the Unit implemented during its operation: 
+ S1 state - power operation (PO); 
+ S2 state - minimum controlled power level (MCPL); 
+ S3 state - hot state (HS); 
+ S4 state - cold state (CSt); 
+ S5 state - shutdown for repair (SR); 
+ S6 state - refueling (RF); 
+ S7 state - heat-up (HU); 
+ S8 state - cooldown (CD). 
+2.2 The boundaries between the states are set as follows: 
+1) Between the S6 state ( refueling) and the S5 state (shutdown for repair) - 
+removal/installation of hydraulic locks between the fuel pool and the reactor pit; 
+2) Between the S5 state (shutdown for repair) and the S4 state (cold) - 
+decompression of one of/seals of all joints of the primary circuit; 
+3) Between the S4 state (cold) and the HU state (heat -up) - the temperature 
+of the primary circuit coolant at the reactor outlet is less/more than 70 °C above zero; 
+4) Between the S7 state (heat-up) and the S3 state (hot) - the temperature of 
+the primary circuit coolant at the reactor inlet is less/more than 260 оС above zero; 
+5) Between the S3 state (hot) and S2 state (MCPL) - all CPS CR groups are 
+completely injected into the core/CPS CR groups extraction from the core is started; 
+6) Between the S2 state (MCPL) and S1 state (power operation) - neutron 
+power less/more than 1% Nnom; 
+7) Between the S3 state (hot) and S8 (cooldown) - the temperature of the 
+primary circuit coolant at the reactor inlet is more/less than 260 оС above zero; 
+8) Between the S8 state (cooldown) and the S4 state (cold) - the 
+temperature of the primary circuit coolant at the reactor outlet is more/less than  
+700 оС above zero. 
+2.3 Modes implemented during RP operation within NO and DNO states are 
+selected in order to provide analysis of equipment strength and are given in  
+Appendix C: 
+- normal operation modes in Table C.1 (Appendix C); 
+- modes of operation with deviations (failure modes) in Table C.2  
+(Appendix C); 
+- emergency modes in Table C.3 (Appendix C); 
+2.4 The S1 operation state (“Power operation”) is characterized by the 
+following values of the main parameters and characteristics: 
+ the reactor is critical, Keff = 1 (in steady state); 
+ reactor power is more than 1% Nnom; 
+ primary circuit pressure P1 = (16.1±0.3) MPa (in steady state); 
+[PAGE 11]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+9 
+ primary circuit coolant temperature at reactor inlet is more than 285°С 
+above zero; 
+ steam pressure at SG outlet (6.7-6.9) ± 0.1 MPa; 
+ at least two RCPS are in operation. 
+2.5 The S2 operation state (MCPL) is characterized by the following values 
+of the main parameters and characteristics: 
+ Кeff ≤ 1; 
+ reactor neutron power  ≤  1% Nnom; 
+ primary circuit pressure PI = (16.1±0.3) MPa; 
+ primary circuit coolant temperature at reactor inlet at the moment of 
+reaching MCPL is more than 275 - 285оС above zero; 
+ steam pressure at SG outlet is (5.8 - 6.7) MPa; 
+ at least two RCPS are in operation. 
+2.6 The S3 operation state (hot state) is characterized by the following 
+values of basic parameters and characteristics: 
+ all CPS CR on the bottom limit switches (or on LAS); 
+ primary circuit coolant temperature at the reactor inlet is 2 75-284 оС above 
+zero; 
+ primary circuit pressure PI = (16.1±0.3) MPa; 
+ steam pressure at SG outlet РII is 5,75 до 6,7 MPa; 
+ the reactor is sub-critical, the conditions for ensuring sub-criticality depend 
+on the further planned operation modes: 
+1) at subsequent reaching MCPL - reactor sub -criticality at any time of the 
+cycle at all CPS CR taken up is provided by boric acid. H3ВО3 concentration in the 
+primary circuit provides subcriticality not less than 0.01 in the core state with the 
+maximum effective multiplication factor without taking into  account the CPS CR 
+inserted into the core and is determined in accordance with the album of neutron -
+physical characteristics; 
+2) during subsequent cooldown - sub-criticality, not less than 0.01, is provided 
+by injected CPS CR taking into account the stick ing of one of the most effective CR. 
+Prior to cooldown, boric acid concentration is provided in accordance with the 
+requirement defined for S4 (“cold” state). 
+2.7 The S4 operation state (cold state) is characterized by the following 
+values of the main parameters and characteristics: 
+ reactor is in sub -critical state, Н 3ВО3 concentration in the primary circuit 
+provides at least 0.02 sub-criticality without taking into account the CPS CR 
+inserted into the core; 
+ all CPS CR are on the bottom limit switches (or on LAS); 
+ primary circuit coolant temperature at the reactor outlet is below 70 oC 
+above zero; 
+ combination of pressure and temperature of the reactor vessel meets the 
+brittle fracture resistance criterion. 
+[PAGE 12]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+10 
+2.8 The S5 operation state (shutdown for repair) is characte rized by the 
+following values of the main parameters and characteristics: 
+ the reactor is sub -critical, Н 3ВО3 concentration in the primary circuit 
+provides sub -criticality of at least 0.02 without taking into account the CPS CR 
+used for repair work, but not lower than the level value by (600 ± 50) mm 
+higher than the axis of the “cold” reactor nozzles; 
+ a concentration of boric acid corresponding to the S6 state (refueling) shall 
+be created in the primary circuit coolant in case of PTU extraction. 
+2.9 The S6 operation state (refueling) is characterized by the following 
+values of the main parameters and characteristics: 
+ the reactor is subcritical, the concentration of Н3ВО3 in the primary 
+circuit is at least 16 g/dm3 and provides subcriticality of at least 0.02 without taking 
+into account CPS CR inserted into the core;  
+ coolant temperature at reactor outlet is less than 60 °С above zero; 
+ UU and PTU are removed; 
+ RFP and FP are filled to the required level with Н 3ВО3 solution with a 
+concentration of at least 16 g/dm3. 
+ hydraulic lock is removed, reactor pit is combined with fuel pool. 
+ 
+Note - the main parameters and characteristics are the parameters and characteris tics 
+of the NPP, which significantly affect the parameters characterizing the NPP safety in 
+the respective state. 
+ 
+2.10 The S7 operation state (heat-up) is transient one from S4 to S3, in which 
+tightness checks and hydraulic tests of the primary and secondary c ircuits are 
+performed. In the process of heat -up, the operating personnel shall connect and/or 
+monitor the readiness of Unit systems and equipment. 
+The reactor in this state is sub -critical, Н 3ВО3 concentration in the primary 
+circuit provides sub -criticality of at least 0.02 without taking into account the CPS 
+CR injected into the core and is determined in accordance with the album of neutron -
+physical characteristics; 
+2.11 The S8 operation state (cooldown) is transient one from S3 to S4 in 
+which, as the RP is cooled down, the operating personnel perform and/or monitor the 
+shutdown of the appropriate systems and equipment of the Unit.  
+[PAGE 13]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+11 
+The reactor in this state is sub-critical. The Н3ВО3 concentration in the primary 
+circuit provides sub -criticality of at least 0.02 without taking into account the CPS 
+CR injected into the core and is determined in accordance with the album of neutron -
+physical characteristics. 
+2.12 Various operation modes at NPP can be considered within each state, 
+including inspections and tests stipulated by the specification, which shall be taken 
+into account when forming safe operation limits. 
+2.13 Scheduled MT and repair of safety system channel are allowed in S6 
+(refueling) and S5 (shutdown for repair) states only after completion of refueling 
+when assembling the reactor. 
+ 
+[PAGE 14]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+12 
+Table 2.1 - Unit operation states 
+No. Operation state Multiplication 
+factor, Keff 
+RP power 
+(NFME), 
+% 
+Primary circuit 
+BAS 
+concentration, 
+g/dm3 
+Reactor inlet 
+temperature, 
+°С 
+Reactor 
+outlet 
+temperature, 
+°С 
+Additional conditions 
+1 Power 
+operation  
+(S1) 
+1 >1 Сcur1) > 285 - 
+Pressure PI = 16.1±0.3 MPa; steam pressure 
+at SG outlet is (6.7 - 6.9) ± 0.1 MPa; at least 
+two RCPS are in operation 
+2 Reaching 
+MCPL  
+(S2) ≤ 1 ≤1 from 20 5) to Сcur 
+1) > 275 - 
+One of the CPS CR groups is above the BLS 
+PI = 16.1±0.3 MPa; steam pressure at SG 
+outlet is (4.6 - 6.7) MPa; at least two RCPS 
+are in operation 
+3 Hot  
+(S3) < 0.99  3) - from Сmin. 2) up 
+to 20 5) 275 ÷ 285 - 
+CPS CR are on BLS (LAS); P I = 16.1±0.3 
+MPa; steam pressure in SG PII is from 5.8 to 
+6.7 MPa 
+4 Cold  
+(S4) < 0.98  3) - 16 ÷ 20 5) - < 70 RP is sealed; RP housing pressure and 
+temperature meets brittle fracture criterion 
+5 Shutdown for 
+repair  
+(S5) < 0.98  3) - 164) ÷ 20 5) - < 70 
+The RP is unsealed. The level in RP is 300 - 
+400 mm lower than MRJ or reduced to 
+perform repair work, but not lower than (600 
+± 50) mm above the level of the axis of the 
+“cold” RP nozzles 
+6 Refueling  
+(S6) < 0.98  3) - 164) ÷ 20 5) - < 60 
+Level in RFP (elev. +25.45 ± 0.1) m; UU 
+and PTU are removed; hydraulic lock is 
+removed, reactor pit is combined with FP 
+7 Heat-up  
+(S7) < 0.98  3) - 164) ÷ 20 5) < 275 ≥70 RP is sealed 
+8 Cooldown  
+(S8) < 0.98  3) - 164) ÷ 20 5) < 275 ≥70 RP is sealed 
+[PAGE 15]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+13 
+N o t e s :  
+1) 1) - Сcur corresponding to the critical concentration of boric acid for a particular load, power level, CPS CR position, xenon and sama rium 
+poisoning, loading operation duration; 
+2) 2) - Cmin, minimum permissible value tha t provides sub-criticality of at least 1% (excluding CPS CR injected into the core) at the moment of 
+the cycle (according to the album of NFF of this fuel load); 
+3) 3) - given the position of CPS CR injected into the core; 
+4) 4) - Cmin, the minimum permiss ible BAS concentration that provides the sub -criticality of at least 2% (excluding CPS CR injected into the 
+core); 
+5)  5) - difference of boric acid concentrations in the primary circuit and in PRZ is less than 0.5 g/dm3; 
+ 
+[PAGE 16]
+Rooppur NPP Technical specification of safe operation of Rooppur 
+NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+14 
+3 Safe operation limits and conditions 
+3.1 Limits of safe operation by process parameters 
+3.1.1 Safe operation limits (SOL) are design -specified values of process 
+parameters, deviations from which can lead to an accident. 
+SOL characterize the possibility of radioactive substances and/or ionizing 
+radiation release beyond the boundaries of physical barriers on the way of their 
+spreading into the environment. 
+3.1.2 SOL are divided as follows by impact on physical barriers: 
+1) SOL by impact on the physical barrier are established for process 
+parameters, the exceedance of which beyond these limits may lead to damage to the 
+barrier. Exceeding the SOL by impact on the physical barrier indicates the RP 
+changeover to the “pre-emergency” state. 
+2) SOL by the physical barrier state are established for the process parameters  
+that characterize the amount of radioactive substances and/or ionizing radiation that 
+went beyond the design boundaries for normal operation. Exceeding the SOL by the 
+physical barrier state indicates a disturbance of the physical barrier integrity and the  
+fact of accident occurrence. 
+3.1.3 Main RP parameters that determine the integrity of physical barriers 
+and their limit values, deviation from which may lead to disturbance of safe operation 
+limits are given in Table 3.1. 
+3.1.4 Monitoring of parameters by which SOL a re established shall be 
+performed in accordance with Table 3.1. 
+3.1.5 The subsection shows the SOL in various states of the Unit normal 
+operation, as well as personnel actions to change over the RP to a safe state when the 
+SOL are exceeded. The range of process parameters determined by the established 
+SOL is monitored by safety systems, which actuate when the controlled parameters 
+reach the respective actuation setpoints. Safety system actuation setpoints are given 
+in Appendix A of this specification. 
+3.1.6 SOL for the  release of radionuclides from TPS with SNF are given in 
+Table 3.2. 
+3.1.7 SOL parameters that characterize the impact on the respective physical 
+barriers are given in Table 3.4. 
+3.1.8 Method and place of measurement of parameters of safe operation 
+limits by impact on physical barriers are given in Table 3.3 
+3.1.9 Information on the type of monitoring of the safe operation limit 
+parameters with indication of necessary operating personnel actions in case of loss of 
+monitoring equipment of the respective safe operation limits is given in Table 3.5. 
+3.1.10 After disturbance of safe operation conditions and limits for equipment 
+and pipelines, as well as in case of equipment failures, it is necessary to perform their 
+extraordinary technical examination. 
+[PAGE 17]
+Rooppur NPP Technical specification of safe operation of Rooppur 
+NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+15 
+3.1.11 In case of complete loss of the mon itoring equipment of the parameter 
+that characterize SOL, including indirect methods, the subsequent operation of the 
+Unit is not allowed and it shall be stopped. 
+3.1.12 In case of disturbance of SOL, it is necessary to immediately perform: 
+ shutdown of NPP Unit; 
+ depending on the consequences of SOL disturbance: perform the necessary 
+inspection procedures (inspection) of equipment (damaged physical barrier) or 
+eliminate the consequences of SOL disturbance.  
+ perform repair work (if necessary) and inspection of the r espective  
+equipment to exclude the general cause of SOL disturbance; 
+ perform the reliability analysis of indications of the monitoring equipment 
+of the parameter that characterize the SOL. 
+3.1.13 In case of SOL disturbance, the operating personnel shall change o ver 
+the reactor plant to the S5 state (shutdown for repair). In case of SOL disturbance in 
+the S5 state, this state shall be preserved until the disturbance consequences are 
+eliminated. 
+3.1.14 In case of SOL disturbance, the operating organization shall investiga te 
+the disturbance causes and consequences to exclude the occurrence of such 
+disturbance in the future. 
+3.1.15 Inspection is performed for a physical barrier that has been 
+overexposed from a parameter for which SOL is established. 
+3.1.16 In case of disturbance of SOL th at characterize the impact on the first 
+or second physical barriers, it is necessary to identify FAs that have been subjected to 
+excessive impact that lead to SOL disturbance. 
+3.1.17 For these FAs, perform CIM and, based on the results, decide on the 
+method of their further storage in the FP. 
+3.1.18 In case of disturbance of a SOL that characterizes the impact on the 
+primary circuit coolant boundary or on the secondary pressure boundary, the metal of 
+equipment and pipelines shall be inspected by the respective monitoring systems to 
+identify possible defects, discontinuities, cracks, etc., which can lead to the formation 
+of primary or secondary circuit coolant leaks in the process of further operation. 
+3.1.19 Further operation of the equipment and pipelines is possible only with 
+the approval of the respective equipment/pipelines designer  with an additional 
+assessment of the impact of SOL disturbance on the equipment life and approval of 
+the supervisory authority. 
+3.1.20 Further operation of the equipment and pipelines is possible only with 
+the approval of the respective equipment/pipelines designer with an additional 
+assessment of the impact of safe operation limit disturbance on the equipment life and 
+approval of the PRB supervisory authority (BAERA). 
+3.1.21 In case of integrity disturbance of the boundaries of the third physical 
+barrier and the formation of a leak, as a result of wh ich the limits of safe operation 
+were disturbed, the operating personnel shall shut down the r eactor and change over 
+the Unit to the S5 state (shutdown for repair). These actions reduce the impact of 
+leakage on radiation consequences for personnel and the public within the established 
+dose limits. Further personnel actions to isolate the leak, restore the operable state of 
+the primary circuit boundary are performed depending on the place of leakage and the 
+radiation situation in the NPP premises. 
+3.1.22  In case o f disturbance of SOL that characterize the impact on the 
+second physical barrier of FA in the fuel pool (item 6, item 12 of Table 3.1), it is 
+necessary to make a decision on the method of further storage of FA available at the 
+time of disturbance in the fu el pool, as well as on methods for eliminating the 
+consequences (if any) of safe operation limit disturbance agreed with the nuclear fuel 
+supplier and approved by the operating organization. 
+ 
+ 
+ 
+[PAGE 18]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+17 
+Table 3.1 - List of safe operation limits as per process parameters 
+Parameter Barrier 
+Operation state limit values 
+Note 
+S1 S2 S3 S4 S5 S6 S7 S8 
+Safe operation limits that characterize impact on physical barriers. 
+1 Departure from 
+nucleate boiling ratio 
+by local heat flow, 
+rel. units.  
+1, 2 
+fuel matrix, FE 
+cladding 
+ 
+1 
+ 
+-1) 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+At power level of more 
+than 20% Nnom, at which 
+calculation is provided 
+(Nnom - nominal reactor 
+power) 
+2 Primary circuit 
+coolant level by 
+CLMS by the height 
+of the upper 
+generatrix of reactor 
+inlet nozzles 
+2 
+FE cladding 
+ 
+available 
+ 
+available 
+ 
+available 
+ 
+available 
+ 
+available 
+ 
+- 
+ 
+available 
+ 
+available 
+ 
+Appearance of level by 
+indications of discrete 
+sensor. 
+3 Primary circuit 
+coolant level in the 
+reactor by the lower 
+generatrix of the inlet 
+nozzle, m  
+2 
+FE cladding - - - - 0 03) - - 
+The level of the primary 
+circuit coolant in the 
+reactor by the standard 
+level meter (Nr = 0 m) 
+corresponds to the lower 
+generatrix of the inlet 
+nozzle 
+4 Primary circuit 
+pressure, MPa 
+3  
+primary circuit 
+boundary  
+20.19 20.19 20.19 4) - - 24,55)4) 4) - 
+5 Secondary circuit 
+pressure, MPa  
+36)  
+primary circuit 
+boundary  
+9.22 9.22 9.22 - - - 9.227)/ 
+11.95) 
+9.227) - 
+  
+[PAGE 19]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+18 
+Continuation of Table 3.1 
+Parameter Barrier 
+Operation state limit values 
+Note 
+S1 S2 S3 S4 S5 S6 S7 S8 
+6 Level in the fuel pool, 
+m, from the FP bottom 
+2 
+FE cladding 
+6 6 6 6 6 63)/168) 6 6 - 
+7 Reactor neutron 
+power, % Nnom: 
+- with four operating 
+RCPS;  
+- with three operating 
+RCPS;  
+- with two operating 
+RCPS 
+ 
+1 fuel matrix  
+ 
+ 
+ 
+108 
+ 
+75 
+ 
+48 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+8 Reactor period, s  1fuel matrix. 9 8 - - - - - -  
+9 Linear heat generation 
+rate for FE and GFE, 
+W/cm 
+1fuel matrix. see 
+note 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+Corresponds to the 5% 
+exceedance of values given 
+in Figure F.7. 
+Set for power level more 
+than 20% Nnom. 
+10 Boric acid 
+concentration in the 
+primary circuit coolant, 
+g/dm3. 
+1fuel matrix.  
+- 
+ 
+- 
+ 
+- 
+see 
+note 
+see note see note see 
+note 
+see note Values that provide reactor 
+sub-criticality not less than 
+0.02 (excluding CPS CR 
+injected into the core), plus 
+1 g/dm3 
+11 Coolant temperature 
+at the reactor outlet, °С  
+2  
+FE cladding  
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 80 80 
+ 
+- 
+ 
+- - 
+ 
+  
+[PAGE 20]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+19 
+Continuation of Table 3.1 
+Parameter Barrier Operation state limit values Note 
+S1 S2 S3 S4 S5 S6 S7 S8 
+12 Water temperature 
+in the FP, °С 
+ 
+2  
+FE cladding 80 80 80 80 80 80 80 80 
+- 
+Safe operation limits that characterize the state of physical barriers. 
+1 Total specific activity 
+of the primary circuit 
+coolant by reference 
+iodine-131-135 
+radionuclides in units of 
+iodine-131 dose 
+equivalent (given the 
+primary circuit coolant 
+flow rate to AWT 30 
+t/h), Bq/kg 
+ 
+ 
+1, 2 
+FE cladding fuel 
+matrix 
+ 
+ 
+1.5*106 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+ 
+- 
+ 
+Limit value that provides 
+the absence of exceeding 
+quotas for the annual 
+population dose at the 
+SPA9) (sanitary protection 
+area) border 
+2 Primary circuit leak 
+flow rate, t/h  
+3 
+primary circuit 
+boundary 
+2.0 2.0 2.0 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+It is the limit value that 
+provides the absence of 
+exceeding the limit value 
+of activity in the 
+containment 
+  
+[PAGE 21]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+20 
+Continuation of Table 3.1 
+Parameter Barrier Operation state limit values note 
+S1 S2 S3 S4 S5 S6 S7 S8  
+3 Flow rate of primary-
+to-secondary leak, kg/h  
+3 
+primary circuit 
+boundary 
+5 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+ 
+- 
+It is the limit value that 
+provides the absence of 
+activity limit value 
+exceeding in the secondary 
+circuit 
+ 
+N o t e  1 :  
+1) 1) in case of inadvertent power increase in MCPL state, this safe operation limit is actually monitored in the S1 state when the power r eaches more 
+than 20% Nnom; 
+2) 2) with CLMS sensors switched off and with FA in the reactor; 
+3) 3) in the absence of transport and handling operations (THO) related to FA transportation; 
+4) 4) is determined using the curve according to Figure 3.1; 
+5) 5) for hydraulic test conditions; 
+6) 6) given the permissible availability of primary-to-secondary coolant leakage; 
+7) 7) at SG housing temperature more than 100 °С above zero; 
+8) 8) during transport and handling operations related to FA transportation.  
+9) 9) the specified level of activity corresponds to 25 leaking FE (0.048% of the total number of fuel elements in the core) provid ed that uniform 
+distribution of unsealed fuel elements by energy stress and burnup is postulated and there are no significant changes in the micro- and macrostructure 
+of the fuel matrix, which significantly reduce its ability as the first physical barrier to del ay the spread of radioactive fission products, as well as if the 
+ratio between the amounts of gas -leaking fuel elements and fuel elements with a direct contact of nuclear fuel with the coolant is 10:1, which 
+corresponds to the ratio adopted in NP-082-07. 
+N o t e  2 :  
+barrier 1 - fuel matrix;  
+barrier 2 - FE/GFE cladding; 
+barrier 3 - primary circuit coolant boundary 
+ 
+[PAGE 22]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+21 
+Table 3.2 - Limits of safe operation by radionuclides release from TPS with SNF 
+Requirement. 
+ 
+Value 
+ 
+Permissible loss of radioactive content under normal transportation 
+conditions, within an hour, maximum  А2 10-6 
+Permissible loss of radioactive content in emergency transportation 
+situations, per week, maximum  А2 
+N o t e  - А2 - value of activity of radioactive material, which is used to determine the limits of 
+activity according to the relevant NP-053-04 requirements, unit of measurement - TBq 
+Table 3.3 - Method and place of measurement of SOL parameters by impact on 
+physical barriers 
+Item 
+No. 
+Parameter, characteristic, 
+unit of measurement 
+Measurement method 
+and place 
+Parameter 
+measurement 
+range 
+Measurement 
+accuracy 
+1. Critical power ratio on FE 
+surface, rel. units 
+Calculation in ICIS 
+CAS-P by measured 
+DCD currents and 
+indications of general 
+process measurement 
+sensors 
+1-10 ± 20% of the current 
+value of the 
+departure from 
+nucleate boiling 
+ratio 
+2. Reactor neutron power,% 
+Nnom 
+NFME 1-150 ±1 
+3. Reactor period, s: 
+- start-up range; 
+- operating range 
+NFME  
+5-599 
+5-999 
+ 
+20% of current 
+10 % of current 
+4. Linear heat generation rate, 
+W/cm 
+CAS-P 15-470 Not more than ± 
+10% of the current 
+value in steady 
+mode 
+5. Primary circuit coolant 
+temperature, °С 
+Thermocouples KTK-
+01 (XA) in “cold” and 
+“hot” legs of loops 
+0-400 ±0.5 
+6. Primary circuit coolant level 
+in the reactor, m 
+Level meter installed in 
+the reactor 
+0-4.0 ±0.075 
+7. Pressure above the core, 
+MPa 
+Sampling and 
+measurement of 
+pressure in the reactor 
+0-25.0 ±0.13 
+8. Pressure in SG, MPa Sampling and 
+measurement of 
+pressure at SG outlet 
+0-10.0 ±0.05 
+9. Primary circuit coolant level 
+by CLMS, m 
+CLMS Discrete 
+parameter 
+±0.05 
+  
+[PAGE 23]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+22 
+Continuation of Table 3.3 
+Item 
+No. 
+Parameter, characteristic, 
+unit of measurement 
+Measurement method 
+and place 
+Parameter 
+measurement 
+range 
+Measurement 
+accuracy 
+10. Primary circuit coolant leak 
+flow rate 
+Monitoring is performed 
+by APCS means by 
+change of the primary 
+circuit coolant balance. 
+Leak dete ction system 
+(ALMS, MLDS) 
+indications can be used 
+as an auxiliary method 
+To be 
+specified at 
+the FSAR 
+development 
+stage 
+To be 
+specified at the 
+FSAR 
+development 
+stage 
+11. Boric acid concentration in 
+the primary circuit coolant, 
+g/dm3 
+Boron concentration 
+meters of the sample 
+preparation system. 
+Primary circuit coolant 
+sampling for laboratory 
+radiochemical analysis 
+0 - 25 To be 
+specified at the 
+FSAR 
+development 
+stage 
+12. Primary circuit coolant 
+temperature, °С 
+Resistance temperature 
+detectors in “cold” and 
+“hot” legs of loops 
+0 - 400 ±0.5 
+13. Coolant level in the reactor, 
+m 
+Level meter installed in 
+the reactor 
+From 0 to 4.0 ±0.075 
+14. Level in the FP, m Level meter installed i n 
+the FP 
+  
+From 0 to 
+11.225 
+To be 
+specified at the 
+FSAR 
+development 
+stage 
+15. Water temperature in the FP Temperature sensors 
+installed in the FP 
+To be 
+specified at 
+the FSAR 
+development 
+stage 
+To be 
+specified at the 
+FSAR 
+development 
+stage 
+16. Specific activity of iodine 
+isotopes in the primary 
+circuit coolant, Bq/kg 
+Primary circuit coolant 
+sampling for laboratory 
+radiochemical analysis 
+To be 
+specified at 
+the FSAR 
+development 
+stage 
+To be 
+specified at the 
+FSAR 
+development 
+stage 
+  
+[PAGE 24]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+23 
+Table 3.4 - SOL parameters that characterize the impact on the respective physical 
+barriers 
+Operation 
+state 
+Fuel matrix FE/GFE cladding Boundary of reactor primary 
+circuit coolant 
+S1 Departure from 
+nucleate boiling ratio. 
+Primary circuit 
+coolant activity level.  
+Reactor neutron 
+power.  
+Reactor period.  
+Linear heat generation 
+rate 
+Departure from nucleate 
+boiling ratio. 
+Primary circuit coolant level 
+by CLMS. 
+Primary circuit coolant 
+activity level. 
+Level in the FP. 
+Water temperature in the FP 
+Primary circuit pressure. 
+Secondary circuit pressure. 
+Primary circuit coolant leak 
+flow rate (limits the activity 
+in the containment). 
+Flow rate of primary -to-
+secondary circuit coolant 
+leakage (limits the activity in 
+the secondary circuit). 
+S2 1) Reactor period Primary circuit coolant level 
+by CLMS  
+Level in the FP.  
+Water temperature in the FP 
+Primary circuit pressure.  
+Secondary circuit pressure.  
+Primary circuit coolant leak 
+flow rate (limits the activity 
+in the containment) 
+S3 - 
+S42) Boric acid 
+concentration in the 
+primary circuit 
+coolant 
+Primary circuit pressure 
+S5 Primary circuit coolant level 
+by CLMS.  
+Primary circuit coolant level in 
+the reactor3). 
+Primary circuit coolant 
+temperature at the reactor 
+outlet  
+Level in the FP.  
+Water temperature in the FP  
+- 
+S6 Level in the FP.  
+Water tempera ture in the 
+FP.  
+Primary circuit coolant level 
+in the reactor1).  
+Primary circuit coolant 
+temperature at the reactor 
+outlet.  
+С72) Boric acid 
+concentration in the 
+primary circuit 
+coolant  
+Primary circuit coolant level 
+by CLMS.  
+Level in the FP.  
+Water temperature in the FP 
+Primary circuit pressure.  
+Secondary circuit pressure (at 
+SG housing temperature more 
+than 100 °С above zero)  
+S8 
+[PAGE 25]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+24 
+N o t e s  
+1) 1) for the MCPL state, the permissible upper power limit is 1% Nnom; if initiating event 
+occurs that leads to a power increase above this value, the RP goes to the “PO” state, for 
+which the SOL by power is determined. 
+2) 2) the integrit y of the reactor coolant circuit boundary is checked by visual inspection 
+when tightness tests in these states are performed. 
+3) 3) disturbance of safe operation limit shall be determined by the operating personnel given 
+the level meter indications and ind irect signs of reactor level decrease (intensive steaming, 
+increase in the reactor coolant temperature to saturation one, etc.), including using video 
+monitoring equipment. 
+ 
+Table 3.5 - Actions in case of loss of safe operation limits monitoring equipment 
+Item 
+No. 
+Parameter Type of 
+monitoring 
+Operation 
+state 
+Actions of operating personnel in 
+case of loss of monitoring equipment 
+1. Departure from 
+nucleate boiling 
+ratio on FE/GFE 
+surface 
+Continuous, at 
+reactor power 
+over 20% Nnom 
+S1 Check the EP actuation/perform 
+unscheduled reactor shutdown at 
+scheduled rate, with Unit changeover 
+to the “Hot” state 
+ 
+2. Reactor neutron 
+power 
+Continuous S1 Check the EP actuation/perform 
+immediate reactor shutdown with EP 
+button, with Unit changeover to 
+“Hot” state 
+3. Reactor period Continuous S1, S2 Check/perform immediate reactor 
+shutdown with EP button, with Unit 
+changeover to “Hot” state 
+4. Linear heat 
+generation rate 
+Continuous, at 
+reactor power 
+over 20% Nnom 
+S1 Check the EP actuation/perform an 
+unscheduled reactor shutdown at 
+scheduled rate, change over the Unit 
+to “Hot” state 
+5. Reactor outlet 
+pressure 
+Continuous S1, S2 Check the EP actuation / perform an 
+immediate reactor shutdown with the 
+EP button, change over the Unit to 
+“Hot” state 
+S3, S4, 
+S7, S8 
+Disconnect and prevent the 
+connection of technical means, the 
+operation of which can potentially 
+lead to pressure increase in the 
+primary circuit 
+  
+[PAGE 26]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+25 
+Continuation of Table 3.5 
+Item 
+No. 
+Parameter Type of 
+monitoring 
+Operation 
+state 
+Actions of operating personnel in 
+case of loss of monitoring equipment 
+6. Pressure in SG 
+of any loop with 
+operating RCP 
+Continuous S1, S2 Check the EP actuation / perform an 
+immediate reactor shutdown with the 
+EP button, change over the Unit to 
+“Hot” state 
+S3, S4, S8 Disconnect and exclude the 
+connection of technical means the 
+operation of which can potentially 
+lead to pressure increase in the 
+secondary circuit 
+7. Primary circuit 
+coolant level in 
+the reactor 
+Continuous S5 Stop operations that potentially lead 
+to a decrease in the level in the 
+reactor 
+S6 Complete transportation by placing 
+FA in final position in the FP or 
+reactor.  
+Stop refueling process 
+8. Primary circuit 
+coolant level in 
+the reactor by 
+CLMS 
+Continuous S1, S2 Check the temperature of the primary 
+circuit coolant at the cartridges outlet. 
+When monitoring the temperature of 
+the primary circuit coolant at the 
+outlet of cartridges of the respective 
+saturation line at the current pressure, 
+monitor/perform an unscheduled 
+reactor shutdown, change over the 
+Unit to “Hot” state 
+S3, S4, 
+S5, S8 
+Stop operations that potentially lead 
+to a decrease in the level in the 
+reactor 
+ 
+ 
+S7 Stop the heat-up procedure. Stop 
+operations that potentially lead to a 
+decrease in the level in the reactor. 
+Resume heat-up after monitoring is 
+restored  
+9. Monitoring of 
+coolant level in 
+the PRZ 
+Continuous S1,S2 Immediate reactor shutdown with EP 
+button with further changeover to 
+cold state 
+ 
+[PAGE 27]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+26 
+Continuation of Table 3.5 
+Item 
+No. 
+Parameter Type of 
+monitoring 
+Operation 
+state 
+Actions of operating personnel in 
+case of loss of monitoring equipment 
+10. Boric acid 
+concentration in 
+the primary 
+circuit coolant 
+Continuous using 
+boron concentration 
+meters/periodic 
+using sampling 
+S4, S5, S6 Check the absence of/prevent the 
+supply of “clean” condensate to the 
+primary circuit 
+S7, S8 Stop heat-up/cooldown procedures. 
+Check the absence of/prevent “clean’ 
+condensate supply to the primary 
+circuit. Resume heat-up/cooldown 
+after restoration of monitoring 
+11. Primary circuit 
+coolant 
+temperature at 
+the reactor 
+outlet 
+Continuous S5, S6 Monitor the operation of the primary 
+circuit emergency planned cooldown 
+system in the residual heat removal 
+mode. Monitor the primary circuit 
+coolant level in the reactor 
+12. Water 
+temperature in 
+the FP 
+Continuous S1, S2, 
+S3, S4, 
+S5, S6, 
+S7, S8 
+ 
+Monitor the operation of the FP 
+cooling system. Monitor the water 
+level in the FP. 
+13. Level in the FP Continuous S1, S2, 
+S3, S4, 
+S5, S7, S8 
+Visually monitor the state of the 
+water level in the FP (using industrial 
+television) using the appropriate 
+equipment of monitoring the water 
+temperature in the FP, as well as by 
+the operability of the fuel cooling 
+system in the fuel pool 
+S6 Stop the refueling process before 
+alternative monitoring. In case of 
+loss of monitoring equipment during 
+FA transportation, terminate 
+transportation by placing FA in final 
+position in the FP or reactor.  
+Monitor the state of water level in 
+the FP visually and the water 
+temperature in the FP using the 
+respective monitoring equipment 
+ 
+[PAGE 28]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+27 
+Continuation of Table 3.5 
+Item 
+No. 
+ 
+Parameter Type of 
+monitoring 
+Operation 
+state 
+Actions of operating personnel in 
+case of loss of monitoring equipment 
+14. Specific 
+activity of 
+iodine isotopes 
+in the primary 
+circuit coolant, 
+Bq/kg 
+Periodic S1 In case of loss of standard sampling, 
+shut down the reactor and change 
+over the Unit to “Hot” state within 
+24 hours from the moment of 
+detection 
+15. Primary circuit 
+coolant leak 
+flow rate 
+Periodic S1, S2, S3 Monitor the level of the primary 
+circuit coolant in the RP equipment.  
+The operating personnel actions are 
+given in the IMDBA in case of 
+ALMS or MLDS inoperability. 
+S4, S7 Loss of monitoring is not considered 
+as it is performed by visual 
+inspection 
+16. Primary-to-
+secondary 
+leakage flow 
+rate 
+Periodic S1 In case of loss of standard sampling 
+from any SG, shut down the reactor, 
+change over the Unit to “Hot” state 
+within 24 hours from the moment of 
+detection 
+17. Activity of 
+radioactive 
+gases and 
+aerosols in 
+NPP emissions 
+Continuous S1, S2, 
+S3, S4, 
+S5, S7, S8 
+Inoperability of one channel for 
+monitoring inert gases, iodine 
+isotopes emission to the vent. stack - 
+current state.  
+Monitoring is performed by 
+redundant channel.  
+Inoperability of two channels for 
+monitoring inert gases, iodine 
+isotopes emission to the vent. stack - 
+if a defect is detected, immediately 
+start unscheduled unloading to 
+MCPL.  
+Arrange defect elimination. 
+Monitoring 
+3.1.23 In case of SOL disturbance, the operating personnel shall: 
+ perform (monitoring of) NPP Unit shutdown; 
+ depending on the consequences of SOL disturbance, perform the necessary 
+inspection procedures (inspection) of e quipment corresponding to the potentially 
+damaged physical barrier or eliminate the consequences of SOL disturbance. 
+3.1.24 After the repair work (if necessary), the respective equipment shall be 
+inspected to exclude the general cause of SOL disturbance and indic ations reliability 
+of the monitoring equipment of the parameter that characterizes the SOL, for which a 
+disturbance was detected, shall be analyzed. 
+[PAGE 29]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+28 
+3.1.25  In case of violation of the safe operation limits, the operating personnel 
+changes over the reactor plant to the S5 state (shutdown for repair) and takes 
+appropriate measures to eliminate the cause of the violation, including transfer of the 
+RP to a safe state and prevention of the violation consequences. In case of SOL 
+disturbance in the S5 state, this state shall be preserved until the disturbance 
+consequences are eliminated. 
+3.1.26 In case of disturbance of safe operation limits that characterize the 
+impact on the first or second physical barriers, it is necessary to identify FAs that 
+have been subjected to excessi ve impact resulting in the safe operation limit 
+disturbance. 
+For these FAs, CIM shall be performed and a decision shall be made on the 
+method of their further storage in the fuel pool based on the results. 
+3.1.27 Further operation of these FAs and their use in en ergy production is 
+possible only with the approval of the FE/GFE designer and the approval of the PRB 
+supervisory authority (BAERA). 
+3.1.28 In case of safe operation limit disturbance by the level of activity of 
+reference radionuclides in the primary circuit coolant and confirmation (fulfillment of 
+sampling conditions, steady state, operation of primary circuit coolant purification 
+systems) of a disturbance, the operating personnel shall shut down the reactor plant, 
+change it over to the S5 state (shutdown for rep air) with further performance of CIM 
+of all FAs to identify leaky FAs and replace them. 
+3.1.29 In case of disturbance of a safe operation limit that characterizes the 
+impact on the primary circuit coolant boundary or on the secondary pressure 
+boundary, the metal of equipment and pipelines shall be inspected by the respective 
+monitoring systems to identify possible defects, discontinuities, cracks, etc., which 
+can lead to the formation of primary or secondary circuit coolant leaks in the process 
+of further operation. 
+3.1.30 Further operation of the equipment and pipelines is possible only with 
+the approval of the respective equipment/pipelines designer with an additional 
+assessment of the impact of safe operation limit disturbance on the equipment life and 
+approval of the PRB supervisory authority (BAERA). 
+3.1.31 In case of integrity disturbance of the boundaries of the third physical 
+barrier and the formation of a leak, as a result of which the limits of safe operation 
+were disturbed, the operating personnel shall shut down the r eactor and change over 
+the Unit to the S5 state (shutdown for repair). Further personnel actions to isolate the 
+leak, restore the operable state of the primary circuit boundary are performed 
+depending on the place of leakage and the radiation situation in the NPP premises. 
+3.1.32 In case of disturbance of SOL that characterize the impact on the 
+second physical barrier of FA in the fuel pool (item 6, item 12 of Table 3.1), it is 
+necessary to make a decision on the method of further storage of FA available at the 
+time of disturbance in the fuel pool, as well as on methods for eliminating the 
+consequences (if any) of safe operation limit disturbance agreed with the nuclear fuel 
+manufacturer, general designer and approved by the operating organization. 
+[PAGE 30]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+29 
+3.2 Safe operation limits by radiation parameters 
+3.2.1 NPP safe operation limits are values of design process parameters, 
+deviations from which can lead to an accident.  
+3.2.2 An accident is a disturbance in the NPP operation, at which radioactive 
+substances and/or ionizing radiation we re released beyond the design limits for 
+normal operation in quantities exceeding the established limits of safe operation. 
+3.2.3 Monitoring of process parameters, maintaining them within operation 
+limits during normal operation and limitation during operation w ith deviations 
+provides prevention of safe operation limits disturbance. 
+3.2.4 Disturbance of SOL characterizes the possibility of release of radioactive 
+substances and/or ionizing radiation due to the damage to the physical barrier on the 
+way of ionizing radiation and radioactive substances spread into the environment. 
+3.2.5 In case of disturbance of safe operation limits by radiation parameters 
+when being in the S1 state (power operation), S2 (MCPL) the reactor plant shall be 
+immediately stopped with EP button and changed over to the S4 state (cold state). 
+In case of disturbance of safe operation limits by radiation parameters when 
+being in the S3, S7, S8 states, it is immediately changed over to the S4 state. 
+The reactor plant is changed over to the S5 state (shutdow n for repair) to 
+eliminate safe operation limit disturbance by radiation parameters in the S4 state.  
+3.2.6 In case of SOL disturbance in the S5 state, this state shall be preserved 
+until the disturbance consequences are eliminated.  
+3.2.7 SOL for the NPP Unit for emi ssions and discharges in accordance with 
+SP AS -03 are set at the level of admissible discharges (AD) and maximum 
+permissible emissions (MPE), and are given in Tables 3.6 and 3.7. 
+3.2.8 The SOL and EP values set for one NPP Unit shall not exceed the value 
+during operation of all two NPP Units.  
+3.2.9 The upper boundary (quota) of the annual population exposure dose from 
+gas-aerosol emissions and discharges for the entire NPP site shall be in the amount of 
+100 μSv/year. This quota is divided into two equal parts between gas -aerosol 
+emissions and liquid discharges - 50 μSv for each of these radiation factors. 
+3.2.9.1 Upper boundary (quota) for population exposure from emissions and 
+discharges during NPP normal operation, μSv per year is given in Tables 3.6 and 3.7. 
+3.2.9.2 Annual operation limits (OL) for emissions are s et at the level of 
+permissible emissions (PE), annual operation limits (OL) for discharges are set at the 
+level of 20% of admissible discharges (AD). 
+3.2.10 The lower boundary (target limit) of the annual effective population 
+exposure dose is established as the t arget limit when optimizing radiation protection 
+in normal operation mode. This value for both gas -aerosol emissions and liquid 
+discharges is 10 μSv/year per one Unit 
+  
+[PAGE 31]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+30 
+Table 3.6 - Admissible discharge (AD) of radioactive substances of Rooppur NPP  
+Nuclide AD * (SOL), Bq/year 
+51Cr 2.50∙1013 
+54Mn 3.31∙109 
+59Fe 1.51∙1011 
+58Co 9.98∙1010 
+60Co 2.98∙109 
+65Zn 3.79∙109 
+89Sr 5.11∙1012 
+90Sr 3.62∙1011 
+95Zr 1.50∙1012 
+103Ru 2.05∙1011 
+106Ru 4.49∙109 
+131I 5.80∙1010 
+134Cs 1.83∙109 
+137Cs 2.70∙109 
+141Ce 2.32∙1012 
+144Ce 2.75∙1011 
+3Н 8.55∙1014 
+N o t e  - * OL= AD / 5 in accordance with the procedure for calculation of admissible discharges 
+(Item 11.2.3.1.9 of PSAR) Item 5.4.4.6 RPR.0534.0.0.OP.BZ0002. In accordance with the design 
+(Item 16.1.1.9.10 of Chapter 16 o f SAR), the actual safe operation limits by radiation parameters 
+will be established after the completion of SAW of the radiation monitoring system.  
+[PAGE 32]
+Rooppur NPP Technical specification of safe operation of Rooppur NPP 
+Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+31 
+Table 3.7 - Maximum permissible emission (MPE) of radionuclides 
+Radionuclides Maximum permissible emission (MPE)*, 
+Bq/year 
+IRG 3.45∙1015 
+131I (gas and aerosol forms) 9.00∙1010 
+60Со 3.70∙1010 
+134Cs 4.50∙109 
+137Cs 1.00∙109 
+N o t e s :  
+1. The value of MPE* = 5 AD in accordance with Item 5.15 of SP AS -03. AD values are given in 
+Table 4.6 of the TSSO. 
+2. The actual MPE values will be e stablished after the completion of SAW of the radiation 
+monitoring system in accordance with Item 16.1.1.9.10 of Chapter 16 of the SAR. 
+3.2.11 Primary circuit coolant leakage into blowdown water and 131I 
+radionuclide specific activity value in SG blowdown water a ccording to safe 
+operation limits: 
+ limit value of primary circuit coolant leakage for individual steam 
+generators is 5 kg/h; 
+ the limit value of reduced specific activity of 131I in blowdown water from 
+the “salt” compartment of each steam generator of the Unit is 740 Bq/kg. 
+3.3 Operational conditions 
+3.3.1 List of operational conditions and their scope in different RP states are 
+given in Table 3.8 “Operational conditions (OCs) and their scope in different RP 
+states”, 
+3.3.1.1 It is prohibited to operate the Unit equipment that  has exhausted its 
+design life of cyclic loading. Operation can be continued if the substantiation analysis 
+submitted by the operating organization is agreed under the established procedure. 
+Restrictions on equipment loading conditions are given in Appendix C. 
+3.3.1.2 Disturbance of OCs shall be recorded at the moment of start of RP 
+shutdown to the hot or cold state (or changeover to “shutdown for repair” state from 
+cold state) given in column 6 of Table 3.8. Disturbance elimination in the initial 
+(current) RP state within the permissible time given in column 5 of Table 3.8 is not a 
+disturbance of OCs (the time specified in brackets in column 5 corresponds to the 
+initial RP state given in brackets in column 2). 
+ 
+[PAGE 33]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+32 
+Table 3.8 - Operational conditions (OCs) and their scope in different RP states 
+ 
+Operational conditions Initial 
+state Anticipated operational occurrence 
+Operating 
+personnel 
+actions 
+Time of 
+performance 
+Final 
+state 
+1 2 3 4 5 6 
+1 Safety systems  
+1.1 Protective safety systems 
+1.1.1 JNA reactor coolant circuit emergency and planned cooldown and fuel pool cooling system (active part)  
+1.1.1.1 Both system channels are 
+operable, including:  
+- low pressure 11JNA11AP001, 
+12JNA21AP001 emergency cooldown 
+pumps;  
+- high pressure 11JNA12AP001, 
+12JNA22AP001 emergency cooldown 
+pumps;  
+- 11JNA12BN001, 12JNA22BN001 
+main water jet pumps;  
+- 11JNA10AC001, 12JNA20AC001 
+emergency cooldown heat exchangers; 
+- valves, I&CD, PP&I, alarm;  
+- fuel pool shall contain emergency 
+inventory of boric acid solution of at 
+least 16 g/dm3 with volume of at least 
+750 m3 above normal level required for 
+spent fuel storage 
+PO, 
+(MCPL) 
+1) Inoperability of one JNA channel due to non -
+redundant component failure  
+ 
+A redundant component is a channel component, in 
+case of failure of which its function is pe rformed by 
+a serviceable similar component, while the channel 
+remains operational.  
+ 
+Non-redundant component is a channel component 
+that has no redundancy, the failure of which leads to 
+a channel failure 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+B2 If B1 is 
+successful,   
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1,  
+72 hours 
+ 
+8 hours 
+ 
+ 
+64 hours  
+ 
+31 (30) 
+hours 
+ 
+ 
+ 
+7 (6) hours 
+ 
+ 
+113 hours 
+ 
+ 
+24 (23)  
+current 
+ 
+current 
+ 
+ 
+current 
+ 
+cold  
+state 
+ 
+ 
+hot  
+state 
+ 
+ 
+hot  
+state 
+ 
+cold state 
+[PAGE 34]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+33 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+   perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2. If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+А3 Restore 
+the channel 
+operability 
+ 
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+hours  
+[PAGE 35]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+34 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ HS, 
+(HU) 
+2) Inoperability of one JNA channel due to non-
+redundant component failure 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+192 hours  
+ 
+8 hours  
+ 
+184 hours  
+ 
+24 hours  
+ 
+ 
+ 
+24 hours 
+current  
+ 
+current  
+ 
+ 
+current  
+ 
+cold  
+state  
+ 
+ 
+cold  
+state 
+[PAGE 36]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+35 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the protected component of one 
+JNA channel 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component  
+В1 Check (by 
+ESFAS 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+В2 If B1 is 
+successful, 
+remain in the 
+current state 
+В3 If failure 
+of another 
+redundant 
+channel 
+component is 
+detected 
+under B1, act 
+as in case of 
+non- 
+operability of 
+one JNA 
+channel 
+А2 If 
+operability 
+240 hours 
+ 
+ 
+8 hours 
+ 
+ 
+ 
+ 
+ 
+232 hours 
+ 
+See Item 
+1.1.1.1  
+sub-item 1)  
+ 
+ 
+31 (30, 24, 
+24) hours 
+See Item 
+1.1.1.1 
+sub-item 
+1) 
+ 
+ 
+ 
+cold  
+state 
+[PAGE 37]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+36 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ PO, 
+(MCPL, 
+HS, HU) 
+4) Inoperability of two JNA channels (except for 
+failures of components of the primary circuit coolant 
+outlet lines) 
+А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”. 
+ 
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels  
+31 (30, 24, 
+24) hours 
+ 
+ 
+As soon as 
+possible 
+cold  
+state 
+ 
+ 
+cold  
+state 
+1.1.1.2 At least one system channel is 
+operable 
+CSt, SR, 
+RF, CD 
+Inoperability of two JNA channels Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+As soon as 
+possible 
+cold  
+state, 
+shutdow
+n for 
+repair, 
+refueling 
+1.1.2 JNG50 emergency reactor core cooling system (passive part) 
+1.1.2.1 ECCS passive part is operable. 
+Each accumulator shall contain boric 
+acid solution with a temperature 20-70 
+°С above zero, concentration 16-20 
+g/dm3 at nitrogen pressure in tanks (5.9 
+±0.1) MPa and solution level in tanks 
+(7350±50) mm. The system is connected 
+to the primary circuit (except for the 
+primary circuit hydraulic tests mode) in 
+the “heat-up” state at a pressure in the 
+primary circuit of more than 6.37 MPa. 
+The system is disconnected from the 
+primary circuit in the “cooldown” state 
+with a decrease in the primary circuit 
+pressure less than 8.83 - 9.81 MPa 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+Inoperability of one channel, including: 
+- leak from ECCS accumulator, leakage of both 
+manhole-hatch gaskets or TEH unit sealing 
+assembly;  
+- inoperability of both POSV of ECCS accumulator;  
+- inoperability of at least one of fast-acting gate 
+valves or interlocks initiating their closing;  
+- deviation of temperature, pressure, boric acid level 
+or concentration beyond the permissible limits and 
+impossibility to correct these parameters;  
+- leakage of both Dn300 check valves on the line of 
+HA communication with the reactor 
+А1 Obtain 
+confirmation 
+of failure 
+occurrence  
+А2 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+0.5 hours  
+ 
+31 (30, 24, 
+24, 24) 
+hours 
+current 
+ 
+cold  
+state 
+1.1.3 JND emergency boron injection system 
+1.1.3.1 Both system channels are 
+operable, including: 
+- high pressure 11JND11AP001, 
+11JND12AP001, 12JND21AP001, 
+12JND22AP001 boron supply pumps;  
+PO, 
+(MCPL) 
+1) Inoperability of one JND channel due to non-
+redundant component failure 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+72 hours 
+ 
+8 hours 
+ 
+ 
+current 
+ 
+current 
+ 
+ 
+[PAGE 38]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+39 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+- valves, I&CD, process protections and 
+interlocks, alarm;  
+- the 11,12JND10,20BB001 tanks have 
+an inventory of boron solution of at least 
+15 m3 in each with concentration of 39.5-
+44.5 g/dm3 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+64 hours 
+ 
+31 (30) 
+hours 
+ 
+ 
+ 
+7 (6) hours 
+ 
+ 
+ 
+113 hours 
+ 
+ 
+24 hours 
+current 
+ 
+cold  
+state 
+ 
+ 
+hot  
+state 
+ 
+ 
+ 
+hot  
+state 
+ 
+cold  
+state 
+[PAGE 39]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+40 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+ 
+А3 Restore 
+the channel 
+operability  
+ 
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ HS, HU 2) Inoperability of one JND channel due to non-
+redundant component failure 
+А1 Restore 
+the channel 
+operability 
+В1 Check the 
+operability of 
+the similar 
+192 hours 
+ 
+8 hours 
+ 
+ 
+184 hours  
+current 
+ 
+current 
+ 
+ 
+current 
+[PAGE 40]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+41 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state 
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+ 
+24 hours  
+ 
+ 
+24 hours 
+ 
+cold  
+state 
+ 
+ 
+cold  
+state 
+[PAGE 41]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+42 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Cold 
+state” 
+PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the protected component of one 
+JND channel 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component 
+В1 Check (by 
+ESFAS 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+В2 If B1 is 
+successful, 
+remain in the 
+240 hours  
+ 
+8 hours  
+ 
+ 
+ 
+ 
+232 hours 
+See Item 
+1.1.3.1, sub-
+item 1)  
+ 
+ 
+ 
+31 (30, 24, 
+24) hours 
+current 
+ 
+current 
+ 
+ 
+ 
+ 
+ 
+current 
+ 
+current 
+ 
+ 
+ 
+ 
+cold  
+state 
+[PAGE 42]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+43 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+current state  
+В3 If failure 
+of other 
+redundant 
+component is 
+detected 
+under B1, act 
+as in case of 
+inoperability 
+of one JND 
+channel 
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ PO, 
+(MCPL, 
+HS, HU) 
+4) Inoperability of two JND channels А1 Perform 
+unscheduled 
+Unit 
+changeover 
+31 (30, 24, 
+24) hours 
+As soon as 
+possible  
+cold  
+state 
+cold  
+state 
+[PAGE 43]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+44 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+to “Cold 
+state”. 
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+1.1.4 CPS drive JDA system (CPS mechanical part) 
+1.1.4.1 CPS drive JDA system shall 
+provide the time of each CR drop to the 
+bottom limit switches in EP mode not 
+more than 4 s at normal parameters of the 
+primary circuit (pressure, temperature of 
+the primary circuit coolant, flow rate 
+through the reactor) 
+PO, 
+(MCPL)  
+Exceeding the CPS CR fall time Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+for repair” to 
+inspect the 
+drive 
+67 (66) 
+hours 
+shutdow
+n for 
+repair 
+1.1.4.2 CPS drive JDA system shall 
+provide the time of each CR drop to the 
+bottom limit switches in EP mode not 
+more than 4 s at normal parameters of the 
+primary circuit (pressure, temperature of 
+the primary circuit coolant, flow rate 
+through the reactor) 
+GBS Exceeding the CPS CR fall time А1. MCPL 
+reaching is 
+forbidden 
+Perform 
+unscheduled 
+Unit 
+changeover 
+to “Shutdown 
+immediately 
+ 
+60 h 
+current 
+ 
+shutdow
+n for 
+repair 
+[PAGE 44]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+45 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+for repair” to 
+inspect the 
+drive 
+ 
+1.1.5 JNB10 steam generator emergency cooldown system (ECS) 
+1.1.5.1 Both ECS system channels are 
+operable, including: 
+- SG emergency cooldown pumps  
+11JNB10AP001, 
+11JNB10AP002,  
+12JNB30AP001,  
+12JNB30AP002;  
+- SG emergency cooldown heat 
+exchangers  
+11JNВ10AC001, 12JNВ30AC001; 
+- valves, I&CD, process protections and 
+interlocks, alarm 
+PO, 
+(MCPL) 
+1) Inoperability of one JNB10 channel due to failure 
+of non-redundant component 
+А1 Restore 
+the channel 
+operability 
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+72 hours 
+8 hours 
+ 
+ 
+64 hours 
+ 
+31 (30) 
+hours 
+ 
+ 
+ 
+7 (6) hours 
+ 
+ 
+ 
+113 hours  
+ 
+24 hours 
+current 
+ 
+current 
+ 
+ 
+current 
+ 
+cold  
+state 
+ 
+ 
+hot  
+state 
+ 
+ 
+hot  
+state 
+cold  
+state 
+[PAGE 45]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+46 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+Unit 
+changeover 
+to “Cold 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Hot state”  
+А3 Restore 
+the channel 
+operability  
+А4 If 
+operability 
+under A3 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+[PAGE 46]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+47 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+changeover 
+to “Cold 
+state” 
+ HS, HU 2) Inoperability of one JNB10 -40 channel due to 
+failure of non-redundant component 
+А1 Restore 
+the channel 
+operability  
+В1 Check the 
+operability of 
+the similar 
+component of 
+another 
+system 
+channel  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of one more 
+channel is 
+detected 
+under B1, 
+perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+192 hours 
+ 
+8 hours 
+ 
+84 hours 
+ 
+24 hours 
+ 
+ 
+ 
+24 hours 
+current 
+ 
+current 
+ 
+ 
+current 
+ 
+cold  
+state  
+ 
+ 
+cold  
+state 
+[PAGE 47]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+48 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+state”  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ PO, 
+(MCPL, 
+HS, HU) 
+3) Inoperability of the protected component of one 
+JNB10 channel 
+А1 Restore 
+the 
+operability of 
+a redundant 
+channel 
+component 
+В1 Check (by 
+ESFAS 
+signals from 
+NO power 
+supply 
+systems, 
+except for 
+start-up by 
+240 hours 
+ 
+8 hours 
+ 
+ 
+ 
+ 
+232 hours 
+ 
+See Item 
+1.1.5.1 sub-
+item 1)  
+ 
+ 
+current 
+ 
+ 
+current 
+ 
+ 
+ 
+ 
+ 
+current 
+ 
+current 
+ 
+ 
+[PAGE 48]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+49 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+DG) the 
+operability of 
+another 
+redundant 
+channel 
+component  
+В2 If B1 is 
+successful, 
+remain in the 
+current state  
+В3 If failure 
+of other 
+redundant 
+component is 
+detected 
+under B1, act 
+as in case of 
+inoperability 
+of one JNB10 
+channel  
+А2 If 
+operability 
+under A1 is 
+not restored 
+for the 
+permissible 
+time, perform 
+ 
+31 (30, 24, 
+24) hours  
+ 
+ 
+cold  
+state 
+[PAGE 49]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+50 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state” 
+ PO, 
+(MCPL, 
+HS, HU) 
+4) Inoperability of two JNB10 channels А1 Perform 
+unscheduled 
+Unit 
+changeover 
+to “Cold 
+state”. 
+А2 Arrange 
+twenty-four-
+hour works to 
+restore the 
+operability of 
+one of the 
+channels 
+31 (30, 24, 
+24) hours 
+ 
+As soon as 
+possible 
+cold  
+state 
+ 
+cold  
+state 
+[PAGE 50]
+Rooppur NPP 
+Technical specification of safe operation of Rooppur NPP Unit 1 RPR.0534.1.0.BN.DZ0001 
+Version 2 
+ 
+50 
+Continuation of Table 3.8 
+1 2 3 4 5 6 
+1.1.6 KTP emergency gas removal system 
+1.1.6.1 The emergency gas removal 
+system shall be operable 
+OP 
+(MCPL, 
+HS, HU, 
+CD) 
+There is an increase in parameters in the system to 
+alarm actuation setpoints with closed valves on the 
+emergency gas removal lines 
+А1 Obtain 
+confirmation 
+of failure 
+occurrence  
+А2 Perform 
+unscheduled 
+Unit 
+0.5 hours 
+ 
+31 (30, 24, 
+24, 24) 
+hours 
+current 
+ 
+cold  
+state 
